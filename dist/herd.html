@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research · HERD | Institution Atlas</title>
+  <meta name="description" content="University of Delaware research expenditures from the NCSES HERD Survey.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2308233b'/%3E%3Cpath d='M32 8 45 32 32 56 19 32Z' fill='%2300a6a6'/%3E%3Ccircle cx='32' cy='32' r='8' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="herd">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Institution Atlas home"><span class="brand-mark" aria-hidden="true"><i></i></span><span><strong>Institution Atlas</strong><small>Public records, one institution at a time</small></span></a>
+    <div class="header-meta"><span class="status-dot"></span> Sources verified 13 Sep 2026</div>
+  </header>
+  <nav class="page-nav" aria-label="Atlas sections">
+    <a href="index.html"><span>01</span> Identity &amp; peers</a>
+    <a href="ipeds.html"><span>02</span> IPEDS core</a>
+    <a class="active" href="herd.html" aria-current="page"><span>03</span> Research · HERD</a>
+  </nav>
+  <section class="control-rail" aria-label="Persistent atlas controls">
+    <label>Institution<select id="institution-control" disabled><option>University of Delaware</option></select></label>
+    <label>Reporting boundary<select id="boundary-control"><option value="CORE">Core campus</option><option value="CORE_FFRDC">Core + FFRDC</option><option value="CORE_AFFIL">Core + affiliates</option><option value="CORE_HEALTH">Core + health system</option><option value="SYSTEM">System</option></select></label>
+    <label>Peer group<select id="peer-control"><option value="DFR_SUBMITTED">Submitted DFR group</option><option value="DFR_DEFAULT">NCES default group</option><option value="ANALYTICAL">Analytical peers</option><option value="CUSTOM">Custom peers</option></select></label>
+    <label>Data year<select id="year-control" disabled><option>FY2024</option></select></label>
+    <label>Release vintage<select id="vintage-control" disabled><option>NCSES_HERD_FY2024</option></select></label>
+  </section>
+
+  <main id="main" class="page-shell">
+    <div id="boundary-alert" class="boundary-alert" hidden></div>
+    <section class="source-header herd-header">
+      <div><p class="eyebrow">NCSES · Higher Education Research and Development Survey</p><h1>Research · HERD</h1><p>Separately accounted research and development expenditures reported for the institutional fiscal year.</p></div>
+      <a class="official-button" href="https://ncsesdata.nsf.gov/profiles/site?method=view&amp;tin=U3284001" target="_blank" rel="noreferrer">Official profile <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="provenance-bar" aria-label="Source provenance">
+      <div><span>Source</span><strong>NCSES HERD</strong></div><div><span>Period</span><strong>FY2024</strong></div><div><span>Vintage</span><strong>NCSES_HERD_FY2024</strong></div><div><span>Unit</span><strong>Thousands of dollars</strong></div><div><span>Verification</span><strong class="verified-text">Reconciled</strong></div>
+    </section>
+
+    <div class="requires-core">
+      <section id="herd-metrics" class="metric-grid" aria-label="HERD summary metrics"></section>
+
+      <section class="dashboard-grid equal-grid">
+        <article class="panel panel-wide">
+          <div class="panel-heading"><div><p class="section-kicker">Funding source</p><h2>Research expenditures by source</h2></div><button class="quiet-button" data-download="herd">Download chart data</button></div>
+          <div id="herd-source-chart" class="source-bars"></div>
+          <div class="chart-footer"><span>Unit: $ millions</span><span>Institutional fiscal year 2024</span><span>Release: NCSES_HERD_FY2024</span></div>
+        </article>
+        <article class="panel panel-wide">
+          <div class="panel-heading"><div><p class="section-kicker">Peer comparison</p><h2>Total R&amp;D expenditures</h2><p id="herd-peer-note" class="provenance"></p></div></div>
+          <div id="herd-comparison" class="comparison-focus"></div>
+          <div class="chart-footer"><span>Unit: $ millions</span><span>Boundary-verified peers only</span></div>
+        </article>
+      </section>
+
+      <section class="panel data-table-panel">
+        <div class="panel-heading"><div><p class="section-kicker">Peer coverage</p><h2>HERD reporting entities</h2></div><span id="herd-coverage-pill" class="review-pill"></span></div>
+        <p class="panel-intro">Conditional rows remain in the active peer set but are excluded from the comparison median until their reporting boundaries are approved.</p>
+        <div id="herd-table" class="table-wrap"></div>
+      </section>
+
+      <section class="panel definition-strip">
+        <div><p class="section-kicker">Keep the measures separate</p><h2>Expenditures are not award amounts</h2></div>
+        <p>HERD reports R&amp;D expenditures in the institution's fiscal year. NSF Awards and USAspending report awards, obligations, outlays, and transactions on different grains and federal periods. This page does not combine them.</p>
+      </section>
+    </div>
+  </main>
+  <footer><span>Institution Atlas prototype</span><span>HERD source checked 13 Sep 2026 · Monthly review planned</span></footer>
+  <dialog id="method-dialog" class="method-dialog"><form method="dialog"><button aria-label="Close methodology">×</button></form><p class="section-kicker">Analytical peer method</p><h2>How similarity is calculated</h2><div id="method-content"></div></dialog>
+  <script src="atlas-data.js"></script><script src="app.js"></script>
+</body>
+</html>

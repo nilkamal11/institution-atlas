@@ -1,0 +1,357 @@
+{
+  "method": {
+    "candidatePool": "The 30 institutions in Delaware's 2025 submitted DFR comparison group.",
+    "distance": "Weighted Euclidean distance after z-score standardization. Spending, enrollment, faculty scale, and endowment use log1p transforms. Missing values use the candidate-pool median plus a 0.35 penalty. A control mismatch adds 1.5 before the square root.",
+    "featureWeights": [
+      {
+        "feature": "Research spending",
+        "weight": 1.5,
+        "transform": "log1p"
+      },
+      {
+        "feature": "Research doctorates",
+        "weight": 1.25,
+        "transform": "log1p"
+      },
+      {
+        "feature": "Enrollment",
+        "weight": 1.0,
+        "transform": "log1p"
+      },
+      {
+        "feature": "Graduate share",
+        "weight": 1.0,
+        "transform": "none"
+      },
+      {
+        "feature": "Bachelor's degree share",
+        "weight": 0.75,
+        "transform": "none"
+      },
+      {
+        "feature": "Master's degree share",
+        "weight": 0.75,
+        "transform": "none"
+      },
+      {
+        "feature": "Doctoral degree share",
+        "weight": 0.75,
+        "transform": "none"
+      },
+      {
+        "feature": "Estimated faculty scale",
+        "weight": 0.75,
+        "transform": "log1p"
+      },
+      {
+        "feature": "Endowment scale",
+        "weight": 0.75,
+        "transform": "log1p"
+      }
+    ],
+    "staffingProxy": "Estimated faculty scale equals fall enrollment divided by the Scorecard student-faculty ratio. It is used for ranking only and is not displayed as an observed faculty count.",
+    "classificationRule": "Carnegie labels are display metadata and are not used in the distance calculation."
+  },
+  "ranking": [
+    {
+      "unitid": "153603",
+      "distance": 0.945,
+      "factors": [
+        "Research spending",
+        "Doctoral degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "129020",
+      "distance": 1.763,
+      "factors": [
+        "Research spending",
+        "Master's degree share",
+        "Estimated faculty scale"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "196097",
+      "distance": 1.817,
+      "factors": [
+        "Research doctorates",
+        "Enrollment",
+        "Estimated faculty scale"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "230764",
+      "distance": 1.982,
+      "factors": [
+        "Endowment scale",
+        "Graduate share",
+        "Master's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "166629",
+      "distance": 2.029,
+      "factors": [
+        "Bachelor's degree share",
+        "Research doctorates",
+        "Master's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "233921",
+      "distance": 2.198,
+      "factors": [
+        "Endowment scale",
+        "Doctoral degree share",
+        "Bachelor's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "199193",
+      "distance": 2.839,
+      "factors": [
+        "Endowment scale",
+        "Doctoral degree share",
+        "Master's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "151351",
+      "distance": 2.942,
+      "factors": [
+        "Doctoral degree share",
+        "Endowment scale",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "234076",
+      "distance": 2.951,
+      "factors": [
+        "Enrollment",
+        "Estimated faculty scale",
+        "Master's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "104179",
+      "distance": 3.431,
+      "factors": [
+        "Master's degree share",
+        "Graduate share",
+        "Bachelor's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "171100",
+      "distance": 3.782,
+      "factors": [
+        "Bachelor's degree share",
+        "Master's degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "163286",
+      "distance": 3.807,
+      "factors": [
+        "Doctoral degree share",
+        "Bachelor's degree share",
+        "Master's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "167358",
+      "distance": 3.881,
+      "factors": [
+        "Endowment scale",
+        "Doctoral degree share",
+        "Research doctorates"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "186380",
+      "distance": 3.985,
+      "factors": [
+        "Endowment scale",
+        "Master's degree share",
+        "Bachelor's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "215293",
+      "distance": 4.115,
+      "factors": [
+        "Master's degree share",
+        "Graduate share",
+        "Research doctorates"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "199120",
+      "distance": 4.196,
+      "factors": [
+        "Master's degree share",
+        "Enrollment",
+        "Bachelor's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "214777",
+      "distance": 4.391,
+      "factors": [
+        "Graduate share",
+        "Bachelor's degree share",
+        "Doctoral degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "243780",
+      "distance": 4.517,
+      "factors": [
+        "Master's degree share",
+        "Bachelor's degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "145637",
+      "distance": 4.726,
+      "factors": [
+        "Endowment scale",
+        "Doctoral degree share",
+        "Research spending"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "190415",
+      "distance": 4.981,
+      "factors": [
+        "Enrollment",
+        "Doctoral degree share",
+        "Research doctorates"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "211440",
+      "distance": 5.073,
+      "factors": [
+        "Doctoral degree share",
+        "Research spending",
+        "Research doctorates"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "174066",
+      "distance": 5.116,
+      "factors": [
+        "Master's degree share",
+        "Graduate share",
+        "Bachelor's degree share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "164988",
+      "distance": 5.304,
+      "factors": [
+        "Endowment scale",
+        "Research spending",
+        "Enrollment"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "201645",
+      "distance": 5.403,
+      "factors": [
+        "Endowment scale",
+        "Estimated faculty scale",
+        "Research spending"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "204796",
+      "distance": 5.452,
+      "factors": [
+        "Bachelor's degree share",
+        "Master's degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "131496",
+      "distance": 5.499,
+      "factors": [
+        "Research spending",
+        "Enrollment",
+        "Estimated faculty scale"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "228723",
+      "distance": 5.609,
+      "factors": [
+        "Master's degree share",
+        "Bachelor's degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "139755",
+      "distance": 5.859,
+      "factors": [
+        "Doctoral degree share",
+        "Endowment scale",
+        "Research doctorates"
+      ],
+      "controlMatch": true
+    },
+    {
+      "unitid": "147767",
+      "distance": 6.539,
+      "factors": [
+        "Enrollment",
+        "Research doctorates",
+        "Research spending"
+      ],
+      "controlMatch": false
+    },
+    {
+      "unitid": "170976",
+      "distance": 6.598,
+      "factors": [
+        "Master's degree share",
+        "Doctoral degree share",
+        "Graduate share"
+      ],
+      "controlMatch": true
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+institution,unitid,boundary_id,peer_provenance,data_year,release_vintage,variable,value,unit,reporting_period,suppression_status,boundary_status
+University of Delaware,130943,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,24221,students,Fall 2023,reported,exact
+University of Delaware,130943,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,19772,students,Fall 2023,reported,exact
+University of Delaware,130943,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,4449,students,Fall 2023,reported,exact
+University of Delaware,130943,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,21680,students,Fall 2023,reported,exact
+Boston University,164988,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,36624,students,Fall 2023,reported,exact
+Boston University,164988,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,18656,students,Fall 2023,reported,exact
+Boston University,164988,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,17968,students,Fall 2023,reported,exact
+Boston University,164988,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,29104,students,Fall 2023,reported,exact
+Carnegie Mellon University,211440,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,15596,students,Fall 2023,reported,exact
+Carnegie Mellon University,211440,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,7289,students,Fall 2023,reported,exact
+Carnegie Mellon University,211440,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,8307,students,Fall 2023,reported,exact
+Carnegie Mellon University,211440,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,14517,students,Fall 2023,reported,exact
+Case Western Reserve University,201645,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,12266,students,Fall 2023,reported,exact
+Case Western Reserve University,201645,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,6186,students,Fall 2023,reported,exact
+Case Western Reserve University,201645,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,6080,students,Fall 2023,reported,exact
+Case Western Reserve University,201645,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,11143,students,Fall 2023,reported,exact
+Cornell University,190415,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,26264,students,Fall 2023,reported,exact
+Cornell University,190415,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,16051,students,Fall 2023,reported,exact
+Cornell University,190415,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,10213,students,Fall 2023,reported,exact
+Cornell University,190415,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,25334,students,Fall 2023,reported,exact
+Georgetown University,131496,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,20392,students,Fall 2023,reported,exact
+Georgetown University,131496,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,7968,students,Fall 2023,reported,exact
+Georgetown University,131496,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,12424,students,Fall 2023,reported,exact
+Georgetown University,131496,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,15453,students,Fall 2023,reported,exact
+Georgia Institute of Technology-Main Campus,139755,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,47946,students,Fall 2023,reported,exact
+Georgia Institute of Technology-Main Campus,139755,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,19505,students,Fall 2023,reported,exact
+Georgia Institute of Technology-Main Campus,139755,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,28441,students,Fall 2023,reported,exact
+Georgia Institute of Technology-Main Campus,139755,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,25178,students,Fall 2023,reported,exact
+Indiana University-Bloomington,151351,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,47527,students,Fall 2023,reported,exact
+Indiana University-Bloomington,151351,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,36833,students,Fall 2023,reported,exact
+Indiana University-Bloomington,151351,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,10694,students,Fall 2023,reported,exact
+Indiana University-Bloomington,151351,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,42650,students,Fall 2023,reported,exact
+Iowa State University,153603,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,30177,students,Fall 2023,reported,exact
+Iowa State University,153603,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,25332,students,Fall 2023,reported,exact
+Iowa State University,153603,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,4845,students,Fall 2023,reported,exact
+Iowa State University,153603,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,27309,students,Fall 2023,reported,exact
+Michigan State University,171100,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,51316,students,Fall 2023,reported,exact
+Michigan State University,171100,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,40483,students,Fall 2023,reported,exact
+Michigan State University,171100,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,10833,students,Fall 2023,reported,exact
+Michigan State University,171100,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,45915,students,Fall 2023,reported,exact
+North Carolina State University at Raleigh,199193,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,37323,students,Fall 2023,reported,exact
+North Carolina State University at Raleigh,199193,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,27323,students,Fall 2023,reported,exact
+North Carolina State University at Raleigh,199193,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,10000,students,Fall 2023,reported,exact
+North Carolina State University at Raleigh,199193,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,31842,students,Fall 2023,reported,exact
+Northeastern University,167358,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,31159,students,Fall 2023,reported,exact
+Northeastern University,167358,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,15891,students,Fall 2023,reported,exact
+Northeastern University,167358,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,15268,students,Fall 2023,reported,exact
+Northeastern University,167358,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,29738,students,Fall 2023,reported,exact
+Northwestern University,147767,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,23203,students,Fall 2023,reported,exact
+Northwestern University,147767,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,9157,students,Fall 2023,reported,exact
+Northwestern University,147767,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,14046,students,Fall 2023,reported,exact
+Northwestern University,147767,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,19451,students,Fall 2023,reported,exact
+Ohio State University-Main Campus,204796,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,60046,students,Fall 2023,reported,exact
+Ohio State University-Main Campus,204796,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,45728,students,Fall 2023,reported,exact
+Ohio State University-Main Campus,204796,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,14318,students,Fall 2023,reported,exact
+Ohio State University-Main Campus,204796,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,51944,students,Fall 2023,reported,exact
+Pennsylvania State University-Main Campus,214777,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,50399,students,Fall 2023,reported,exact
+Pennsylvania State University-Main Campus,214777,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,42223,students,Fall 2023,reported,exact
+Pennsylvania State University-Main Campus,214777,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,8176,students,Fall 2023,reported,exact
+Pennsylvania State University-Main Campus,214777,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,48720,students,Fall 2023,reported,exact
+Purdue University-Main Campus,243780,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,52905,students,Fall 2023,reported,exact
+Purdue University-Main Campus,243780,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,39864,students,Fall 2023,reported,exact
+Purdue University-Main Campus,243780,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,13041,students,Fall 2023,reported,exact
+Purdue University-Main Campus,243780,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,44479,students,Fall 2023,reported,exact
+Rutgers University-New Brunswick,186380,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,50617,students,Fall 2023,reported,exact
+Rutgers University-New Brunswick,186380,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,36588,students,Fall 2023,reported,exact
+Rutgers University-New Brunswick,186380,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,14029,students,Fall 2023,reported,exact
+Rutgers University-New Brunswick,186380,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,43738,students,Fall 2023,reported,exact
+Stony Brook University,196097,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,25865,students,Fall 2023,reported,exact
+Stony Brook University,196097,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,17549,students,Fall 2023,reported,exact
+Stony Brook University,196097,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,8316,students,Fall 2023,reported,exact
+Stony Brook University,196097,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,22210,students,Fall 2023,reported,exact
+Texas A & M University-College Station,228723,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,76633,students,Fall 2023,reported,exact
+Texas A & M University-College Station,228723,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,59933,students,Fall 2023,reported,exact
+Texas A & M University-College Station,228723,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,16700,students,Fall 2023,reported,exact
+Texas A & M University-College Station,228723,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,65547,students,Fall 2023,reported,exact
+University of Arizona,104179,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,53001,students,Fall 2023,reported,exact
+University of Arizona,104179,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,41899,students,Fall 2023,reported,exact
+University of Arizona,104179,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,11102,students,Fall 2023,reported,exact
+University of Arizona,104179,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,41526,students,Fall 2023,reported,exact
+University of Connecticut,129020,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,27364,students,Fall 2023,reported,exact
+University of Connecticut,129020,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,19388,students,Fall 2023,reported,exact
+University of Connecticut,129020,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,7976,students,Fall 2023,reported,exact
+University of Connecticut,129020,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,24327,students,Fall 2023,reported,exact
+University of Illinois Urbana-Champaign,145637,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,56563,students,Fall 2023,reported,exact
+University of Illinois Urbana-Champaign,145637,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,35564,students,Fall 2023,reported,exact
+University of Illinois Urbana-Champaign,145637,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,20999,students,Fall 2023,reported,exact
+University of Illinois Urbana-Champaign,145637,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,47118,students,Fall 2023,reported,exact
+University of Maryland-College Park,163286,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,40813,students,Fall 2023,reported,exact
+University of Maryland-College Park,163286,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,30608,students,Fall 2023,reported,exact
+University of Maryland-College Park,163286,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,10205,students,Fall 2023,reported,exact
+University of Maryland-College Park,163286,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,36362,students,Fall 2023,reported,exact
+University of Massachusetts-Amherst,166629,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,31810,students,Fall 2023,reported,exact
+University of Massachusetts-Amherst,166629,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,23936,students,Fall 2023,reported,exact
+University of Massachusetts-Amherst,166629,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,7874,students,Fall 2023,reported,exact
+University of Massachusetts-Amherst,166629,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,25662,students,Fall 2023,reported,exact
+University of Michigan-Ann Arbor,170976,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,52065,students,Fall 2023,reported,exact
+University of Michigan-Ann Arbor,170976,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,33730,students,Fall 2023,reported,exact
+University of Michigan-Ann Arbor,170976,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,18335,students,Fall 2023,reported,exact
+University of Michigan-Ann Arbor,170976,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,48167,students,Fall 2023,reported,exact
+University of Minnesota-Twin Cities,174066,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,54890,students,Fall 2023,reported,exact
+University of Minnesota-Twin Cities,174066,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,39556,students,Fall 2023,reported,exact
+University of Minnesota-Twin Cities,174066,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,15334,students,Fall 2023,reported,exact
+University of Minnesota-Twin Cities,174066,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,38441,students,Fall 2023,reported,exact
+University of North Carolina at Chapel Hill,199120,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,32234,students,Fall 2023,reported,exact
+University of North Carolina at Chapel Hill,199120,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,20681,students,Fall 2023,reported,exact
+University of North Carolina at Chapel Hill,199120,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,11553,students,Fall 2023,reported,exact
+University of North Carolina at Chapel Hill,199120,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,29668,students,Fall 2023,reported,exact
+University of Pittsburgh-Pittsburgh Campus,215293,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,34525,students,Fall 2023,reported,exact
+University of Pittsburgh-Pittsburgh Campus,215293,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,25171,students,Fall 2023,reported,exact
+University of Pittsburgh-Pittsburgh Campus,215293,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,9354,students,Fall 2023,reported,exact
+University of Pittsburgh-Pittsburgh Campus,215293,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,27001,students,Fall 2023,reported,exact
+University of Utah,230764,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,35260,students,Fall 2023,reported,exact
+University of Utah,230764,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,26827,students,Fall 2023,reported,exact
+University of Utah,230764,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,8433,students,Fall 2023,reported,exact
+University of Utah,230764,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,29283,students,Fall 2023,reported,exact
+University of Virginia-Main Campus,234076,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,25924,students,Fall 2023,reported,exact
+University of Virginia-Main Campus,234076,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,17612,students,Fall 2023,reported,exact
+University of Virginia-Main Campus,234076,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,8312,students,Fall 2023,reported,exact
+University of Virginia-Main Campus,234076,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,23325,students,Fall 2023,reported,exact
+Virginia Polytechnic Institute and State University,233921,CORE,Submitted DFR group,2023,IPEDS_EF2023A,total_enrollment,38294,students,Fall 2023,reported,exact
+Virginia Polytechnic Institute and State University,233921,CORE,Submitted DFR group,2023,IPEDS_EF2023A,undergraduate_enrollment,30504,students,Fall 2023,reported,exact
+Virginia Polytechnic Institute and State University,233921,CORE,Submitted DFR group,2023,IPEDS_EF2023A,graduate_enrollment,7790,students,Fall 2023,reported,exact
+Virginia Polytechnic Institute and State University,233921,CORE,Submitted DFR group,2023,IPEDS_EF2023A,full_time_enrollment,35433,students,Fall 2023,reported,exact

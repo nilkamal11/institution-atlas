@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "atlas_sha256": "3d6c300637f46e89dc4f79a38ac3a8102fc31bbc2edf2203ab40c7995a01d684",
+  "reconciled_values": 14,
+  "vintage_diff_rows": 155,
+  "download_rows": {
+    "ipeds": 124,
+    "herd": 31
+  },
+  "download_fields": [
+    "institution",
+    "unitid",
+    "boundary_id",
+    "peer_provenance",
+    "data_year",
+    "release_vintage",
+    "variable",
+    "value",
+    "unit",
+    "reporting_period",
+    "suppression_status",
+    "boundary_status"
+  ],
+  "failures": []
+}

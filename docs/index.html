@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identity and peers | Institution Atlas</title>
+  <meta name="description" content="A source-traceable institutional profile for the University of Delaware.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2308233b'/%3E%3Cpath d='M32 8 45 32 32 56 19 32Z' fill='%2300a6a6'/%3E%3Ccircle cx='32' cy='32' r='8' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="identity">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Institution Atlas home">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span><strong>Institution Atlas</strong><small>Public records, one institution at a time</small></span>
+    </a>
+    <div class="header-meta"><span class="status-dot"></span> Sources verified 13 Sep 2026</div>
+  </header>
+
+  <nav class="page-nav" aria-label="Atlas sections">
+    <a class="active" href="index.html" aria-current="page"><span>01</span> Identity &amp; peers</a>
+    <a href="ipeds.html"><span>02</span> IPEDS core</a>
+    <a href="herd.html"><span>03</span> Research · HERD</a>
+  </nav>
+
+  <section class="control-rail" aria-label="Persistent atlas controls">
+    <label>Institution<select id="institution-control" disabled><option>University of Delaware</option></select></label>
+    <label>Reporting boundary<select id="boundary-control">
+      <option value="CORE">Core campus</option>
+      <option value="CORE_FFRDC">Core + FFRDC</option>
+      <option value="CORE_AFFIL">Core + affiliates</option>
+      <option value="CORE_HEALTH">Core + health system</option>
+      <option value="SYSTEM">System</option>
+    </select></label>
+    <label>Peer group<select id="peer-control">
+      <option value="DFR_SUBMITTED">Submitted DFR group</option>
+      <option value="DFR_DEFAULT">NCES default group</option>
+      <option value="ANALYTICAL">Analytical peers</option>
+      <option value="CUSTOM">Custom peers</option>
+    </select></label>
+    <label>Data year<select id="year-control" disabled><option>Source-specific</option></select></label>
+    <label>Release vintage<select id="vintage-control" disabled><option>Latest verified</option></select></label>
+  </section>
+
+  <main id="main" class="page-shell">
+    <div id="boundary-alert" class="boundary-alert" hidden></div>
+
+    <section class="institution-banner">
+      <div>
+        <p class="eyebrow">Public research university · Newark, Delaware</p>
+        <h1>University of Delaware</h1>
+        <p class="lede">One reviewed identity connects education, research, awards, and publication sources without hiding where their reporting boundaries differ.</p>
+      </div>
+      <div class="readiness-card" aria-label="Pilot readiness">
+        <span class="readiness-label">Pilot gate</span>
+        <strong>Tier 0 confirmed</strong>
+        <ul><li>One IPEDS institution</li><li>Exact HERD crosswalk</li><li>No administered FFRDC</li></ul>
+      </div>
+    </section>
+
+    <section class="id-ribbon" aria-label="Core identifiers">
+      <div><span>IPEDS</span><strong>130943</strong></div>
+      <div><span>OPEID</span><strong>00143100</strong></div>
+      <div><span>NCSES</span><strong>U3284001</strong></div>
+      <div><span>ROR</span><strong>01sbq1a82</strong></div>
+      <div><span>UEI</span><strong>T72NHKM259N3</strong></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel panel-wide">
+        <div class="panel-heading">
+          <div><p class="section-kicker">Reviewed crosswalk</p><h2>Institution identity</h2></div>
+          <button class="quiet-button" data-download="identity">Download rows</button>
+        </div>
+        <div id="identity-table" class="table-wrap"></div>
+      </article>
+
+      <aside class="panel source-note">
+        <p class="section-kicker">Boundary in use</p>
+        <h2 id="boundary-title">Core campus</h2>
+        <p id="boundary-copy">The degree-granting institution reported to IPEDS under UNITID 130943.</p>
+        <dl>
+          <div><dt>IPEDS</dt><dd>Exact</dd></div>
+          <div><dt>HERD</dt><dd>Exact</dd></div>
+          <div><dt>OpenAlex</dt><dd>Review children</dd></div>
+        </dl>
+        <a class="source-link" href="https://nces.ed.gov/ipeds/institution-profile/130943" target="_blank" rel="noreferrer">Open IPEDS profile <span aria-hidden="true">↗</span></a>
+      </aside>
+    </section>
+
+    <section class="panel peer-panel">
+      <div class="panel-heading peer-heading">
+        <div><p class="section-kicker">Comparison set</p><h2 id="peer-title">Submitted DFR group</h2><p id="peer-provenance" class="provenance"></p></div>
+        <div class="peer-stat"><strong id="peer-count">30</strong><span>institutions</span></div>
+      </div>
+      <div id="coverage-strip" class="coverage-strip"></div>
+      <div id="custom-editor" class="custom-editor" hidden></div>
+      <div id="peer-list" class="peer-list"></div>
+    </section>
+
+    <section class="dashboard-grid lower-grid">
+      <article class="panel panel-wide">
+        <div class="panel-heading"><div><p class="section-kicker">Research organization boundary</p><h2>Related organizations</h2></div><span class="review-pill">7 review decisions</span></div>
+        <p class="panel-intro">ROR lists six child organizations and one related hospital. Proposed dispositions remain visible until they are reviewed.</p>
+        <div id="related-list" class="related-list"></div>
+      </article>
+      <aside class="panel method-card">
+        <p class="section-kicker">Analytical peers</p>
+        <h2>Transparent by design</h2>
+        <p>The model uses spending, doctorates, enrollment, degree mix, staffing scale, financial scale, and control. Carnegie labels are display metadata.</p>
+        <button class="primary-button" data-open-method>View method</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer><span>Institution Atlas prototype</span><span>Latest checked 13 Sep 2026 · Monthly source review planned</span></footer>
+
+  <dialog id="method-dialog" class="method-dialog">
+    <form method="dialog"><button aria-label="Close methodology">×</button></form>
+    <p class="section-kicker">Analytical peer method</p>
+    <h2>How similarity is calculated</h2>
+    <div id="method-content"></div>
+  </dialog>
+
+  <script src="atlas-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

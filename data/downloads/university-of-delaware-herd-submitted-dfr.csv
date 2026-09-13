@@ -1,0 +1,32 @@
+institution,unitid,boundary_id,peer_provenance,data_year,release_vintage,variable,value,unit,reporting_period,suppression_status,boundary_status
+University of Delaware,130943,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,465780,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Boston University,164988,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,784355,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Carnegie Mellon University,211440,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,505262,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Case Western Reserve University,201645,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,642546,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Cornell University,190415,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1613631,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Georgetown University,131496,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,376600,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Georgia Institute of Technology-Main Campus,139755,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1528637,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Indiana University-Bloomington,151351,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,896983,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Iowa State University,153603,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,462347,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Michigan State University,171100,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,931848,thousands of dollars,Institutional fiscal year 2024,reported,exact
+North Carolina State University at Raleigh,199193,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,717004,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Northeastern University,167358,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,346900,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Northwestern University,147767,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1257859,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Ohio State University-Main Campus,204796,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,,thousands of dollars,Institutional fiscal year 2024,reported,conditional_not_compared
+Pennsylvania State University-Main Campus,214777,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1302971,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Purdue University-Main Campus,243780,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,931513,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Rutgers University-New Brunswick,186380,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,836800,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Stony Brook University,196097,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,319258,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Texas A & M University-College Station,228723,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,,thousands of dollars,Institutional fiscal year 2024,reported,conditional_not_compared
+University of Arizona,104179,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1012404,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Connecticut,129020,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,,thousands of dollars,Institutional fiscal year 2024,reported,conditional_not_compared
+University of Illinois Urbana-Champaign,145637,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,906751,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Maryland-College Park,163286,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,,thousands of dollars,Institutional fiscal year 2024,reported,conditional_not_compared
+University of Massachusetts-Amherst,166629,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,281730,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Michigan-Ann Arbor,170976,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,2110961,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Minnesota-Twin Cities,174066,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1409710,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of North Carolina at Chapel Hill,199120,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1598751,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Pittsburgh-Pittsburgh Campus,215293,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,1504665,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Utah,230764,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,789271,thousands of dollars,Institutional fiscal year 2024,reported,exact
+University of Virginia-Main Campus,234076,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,813772,thousands of dollars,Institutional fiscal year 2024,reported,exact
+Virginia Polytechnic Institute and State University,233921,CORE,Submitted DFR group,2024,NCSES_HERD_FY2024,total_r_and_d_expenditures,656916,thousands of dollars,Institutional fiscal year 2024,reported,exact

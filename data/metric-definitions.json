@@ -1,0 +1,40 @@
+{
+  "standard_ratios": [
+    {
+      "id": "undergraduate_share",
+      "numerator": {
+        "source": "IPEDS_EF2023A",
+        "boundary": "CORE",
+        "period": "Fall 2023",
+        "population": "all enrolled students"
+      },
+      "denominator": {
+        "source": "IPEDS_EF2023A",
+        "boundary": "CORE",
+        "period": "Fall 2023",
+        "population": "all enrolled students"
+      }
+    },
+    {
+      "id": "federal_research_share",
+      "numerator": {
+        "source": "NCSES_HERD_FY2024",
+        "boundary": "CORE",
+        "period": "Institutional fiscal year 2024",
+        "population": "separately accounted R&D expenditures"
+      },
+      "denominator": {
+        "source": "NCSES_HERD_FY2024",
+        "boundary": "CORE",
+        "period": "Institutional fiscal year 2024",
+        "population": "separately accounted R&D expenditures"
+      }
+    }
+  ],
+  "validation_dimensions": [
+    "source",
+    "boundary",
+    "period",
+    "population"
+  ]
+}

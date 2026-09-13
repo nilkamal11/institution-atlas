@@ -1,0 +1,15 @@
+page,variable,source,source_locator,official_value,display_data_value,unit,result
+IPEDS core,totalEnrollment,IPEDS EF2023A,UNITID=130943; EFALEVEL=1; EFTOTLT,24221,24221,students,match
+IPEDS core,undergraduate,IPEDS EF2023A,UNITID=130943; EFALEVEL=2; EFTOTLT,19772,19772,students,match
+IPEDS core,graduate,IPEDS EF2023A,UNITID=130943; EFALEVEL=12; EFTOTLT,4449,4449,students,match
+IPEDS core,fullTime,IPEDS EF2023A,UNITID=130943; EFALEVEL=21; EFTOTLT,21680,21680,students,match
+IPEDS core,partTime,IPEDS EF2023A,UNITID=130943; EFALEVEL=41; EFTOTLT,2541,2541,students,match
+Research HERD,Federal government,NCSES HERD FY2024,ncses_inst_id=U3284001; row=Federal government,229392,229392,thousands of dollars,match
+Research HERD,State and local government,NCSES HERD FY2024,ncses_inst_id=U3284001; row=State and local government,12408,12408,thousands of dollars,match
+Research HERD,Business,NCSES HERD FY2024,ncses_inst_id=U3284001; row=Business,4611,4611,thousands of dollars,match
+Research HERD,Nonprofit organizations,NCSES HERD FY2024,ncses_inst_id=U3284001; row=Nonprofit organizations,8527,8527,thousands of dollars,match
+Research HERD,Institution funds,NCSES HERD FY2024,ncses_inst_id=U3284001; row=Institution funds,196593,196593,thousands of dollars,match
+Research HERD,All other sources,NCSES HERD FY2024,ncses_inst_id=U3284001; row=All other sources,14249,14249,thousands of dollars,match
+Research HERD,Total,NCSES HERD FY2024,ncses_inst_id=U3284001; row=Total,465780,465780,thousands of dollars,match
+Research HERD,total_personnel,NCSES HERD FY2024,ncses_inst_id=U3284001; personnel; column=Total,4310,4310,people,match
+Research HERD,total_fte,NCSES HERD FY2024,ncses_inst_id=U3284001; fte; column=Total,2434,2434,FTE,match

@@ -1,0 +1,8 @@
+institution_key,boundary_id,alias,alias_type,source,source_url,verified_date,status,note
+UD_CORE,CORE,University of Delaware,official_name,IPEDS HD2024,https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip,2026-09-13,confirmed,Primary display name
+UD_CORE,CORE,UD,abbreviation,IPEDS HD2024,https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip,2026-09-13,confirmed,IPEDS IALIAS and ROR name
+UD_CORE,CORE,U. Delaware,source_display_name,NCSES Academic Institution Profiles,https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001,2026-09-13,confirmed,NCSES profile label
+UD_CORE,CORE,UNIVERSITY OF DELAWARE,source_normalized_name,NIH RePORTER and USAspending,https://api.reporter.nih.gov/v2/projects/search,2026-09-13,confirmed,Uppercase federal award-system form
+UD_CORE,CORE,Universidad de Delaware,translated_name,ROR API,https://api.ror.org/v2/organizations/https%3A%2F%2Fror.org%2F01sbq1a82,2026-09-13,confirmed,ROR Spanish name
+UD_CORE,CORE,Université du Delaware,translated_name,ROR API,https://api.ror.org/v2/organizations/https%3A%2F%2Fror.org%2F01sbq1a82,2026-09-13,confirmed,ROR French name
+UD_CORE,CORE,The University Of Delaware,patent_assignee_variant,Google Patents sample record,https://patents.google.com/patent/US5475144A/en,2026-09-13,probable,Do not use for production matching until checked against an official USPTO source

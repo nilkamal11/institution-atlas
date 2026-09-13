@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPEDS core | Institution Atlas</title>
+  <meta name="description" content="University of Delaware enrollment and institutional records from IPEDS.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2308233b'/%3E%3Cpath d='M32 8 45 32 32 56 19 32Z' fill='%2300a6a6'/%3E%3Ccircle cx='32' cy='32' r='8' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="ipeds">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Institution Atlas home"><span class="brand-mark" aria-hidden="true"><i></i></span><span><strong>Institution Atlas</strong><small>Public records, one institution at a time</small></span></a>
+    <div class="header-meta"><span class="status-dot"></span> Sources verified 13 Sep 2026</div>
+  </header>
+  <nav class="page-nav" aria-label="Atlas sections">
+    <a href="index.html"><span>01</span> Identity &amp; peers</a>
+    <a class="active" href="ipeds.html" aria-current="page"><span>02</span> IPEDS core</a>
+    <a href="herd.html"><span>03</span> Research · HERD</a>
+  </nav>
+  <section class="control-rail" aria-label="Persistent atlas controls">
+    <label>Institution<select id="institution-control" disabled><option>University of Delaware</option></select></label>
+    <label>Reporting boundary<select id="boundary-control"><option value="CORE">Core campus</option><option value="CORE_FFRDC">Core + FFRDC</option><option value="CORE_AFFIL">Core + affiliates</option><option value="CORE_HEALTH">Core + health system</option><option value="SYSTEM">System</option></select></label>
+    <label>Peer group<select id="peer-control"><option value="DFR_SUBMITTED">Submitted DFR group</option><option value="DFR_DEFAULT">NCES default group</option><option value="ANALYTICAL">Analytical peers</option><option value="CUSTOM">Custom peers</option></select></label>
+    <label>Data year<select id="year-control"><option value="IPEDS_EF2023A">Fall 2023</option><option value="IPEDS_EF2022A">Fall 2022</option></select></label>
+    <label>Release vintage<select id="vintage-control"><option value="IPEDS_EF2023A">IPEDS_EF2023A</option><option value="IPEDS_EF2022A">IPEDS_EF2022A</option></select></label>
+  </section>
+
+  <main id="main" class="page-shell">
+    <div id="boundary-alert" class="boundary-alert" hidden></div>
+    <section class="source-header">
+      <div><p class="eyebrow">IPEDS · Enrollment component</p><h1>IPEDS core</h1><p>Enrollment at the degree-granting institution reported under UNITID 130943.</p></div>
+      <a class="official-button" href="https://nces.ed.gov/ipeds/reported-data/130943" target="_blank" rel="noreferrer">Official source <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="provenance-bar" aria-label="Source provenance">
+      <div><span>Source</span><strong>NCES IPEDS</strong></div><div><span>Period</span><strong id="ipeds-period-label">Fall 2023</strong></div><div><span>Vintage</span><strong id="ipeds-vintage-label">IPEDS_EF2023A</strong></div><div><span>Unit</span><strong>Students</strong></div><div><span>Verification</span><strong class="verified-text">Reconciled</strong></div>
+    </section>
+
+    <div class="requires-core">
+      <section id="ipeds-metrics" class="metric-grid" aria-label="IPEDS summary metrics"></section>
+
+      <section class="dashboard-grid chart-layout">
+        <article class="panel panel-wide">
+          <div class="panel-heading"><div><p class="section-kicker">Fall enrollment</p><h2>Institution and active peer median</h2><p id="ipeds-peer-note" class="provenance"></p></div><button class="quiet-button" data-download="ipeds">Download chart data</button></div>
+          <div id="ipeds-chart" class="comparison-chart"></div>
+          <div class="chart-footer"><span>Unit: students</span><span id="ipeds-chart-period">Reporting period: Fall 2023</span><span id="ipeds-chart-vintage">Release: IPEDS_EF2023A</span></div>
+        </article>
+        <aside class="panel definition-card">
+          <p class="section-kicker">What this includes</p><h2>IPEDS reporting institution</h2>
+          <p>Counts cover students reported by University of Delaware for this component and vintage. Fall and 12-month enrollment are separate reporting periods; this page uses fall enrollment only.</p>
+          <dl><div><dt>UNITID</dt><dd>130943</dd></div><div><dt>OPEID8</dt><dd>00143100</dd></div><div><dt>Response flag</dt><dd id="response-flag">—</dd></div></dl>
+        </aside>
+      </section>
+
+      <section class="panel data-table-panel">
+        <div class="panel-heading"><div><p class="section-kicker">Peer coverage</p><h2>Enrollment records</h2></div><span id="ipeds-coverage-pill" class="review-pill"></span></div>
+        <div id="ipeds-table" class="table-wrap"></div>
+      </section>
+
+      <section class="panel state-check">
+        <div><p class="section-kicker">Display rule check</p><h2>Zero, missing, and suppressed stay distinct</h2><p>This is an interface test, not an institutional statistic. Suppressed and missing cells are excluded from calculations.</p></div>
+        <div class="state-samples"><span><b>0</b> Reported zero</span><span><b>—</b> Missing</span><span class="suppressed"><b>S</b> Suppressed</span></div>
+      </section>
+    </div>
+  </main>
+  <footer><span>Institution Atlas prototype</span><span>IPEDS source checked 13 Sep 2026 · Monthly review planned</span></footer>
+  <dialog id="method-dialog" class="method-dialog"><form method="dialog"><button aria-label="Close methodology">×</button></form><p class="section-kicker">Analytical peer method</p><h2>How similarity is calculated</h2><div id="method-content"></div></dialog>
+  <script src="atlas-data.js"></script><script src="app.js"></script>
+</body>
+</html>

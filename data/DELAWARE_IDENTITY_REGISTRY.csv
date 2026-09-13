@@ -1,0 +1,17 @@
+institution_key,boundary_id,identifier_type,identifier_value,source,source_url,verified_date,verifier,status,note
+UD_CORE,CORE,UNITID,130943,IPEDS HD2024,https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip,2026-09-13,Codex,confirmed,Primary IPEDS reporting institution
+UD_CORE,CORE,OPEID8,00143100,IPEDS HD2024,https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip,2026-09-13,Codex,confirmed,Leading zeros retained
+UD_CORE,CORE,OPEID6,001431,College Scorecard API,https://api.data.gov/ed/collegescorecard/v1/schools.json?id=130943,2026-09-13,Codex,confirmed,API field ope6_id; leading zeros retained
+UD_CORE,CORE,EIN,516000297,IPEDS HD2024 and IRS Form 990,https://apps.irs.gov/pub/epostcard/cor/516000297_202006_990_2021052518186864.pdf,2026-09-13,Codex,confirmed,Display form is 51-6000297
+UD_CORE,CORE,UEI,T72NHKM259N3,IPEDS HD2024 and USAspending award record,https://www.usaspending.gov/award/CONT_AWD_12639526F0081_12K3_12639522D0030_12K3,2026-09-13,Codex,confirmed,Current federal recipient identifier
+UD_CORE,CORE,DUNS,059007500,NIH RePORTER API,https://api.reporter.nih.gov/v2/projects/search,2026-09-13,Codex,confirmed,Legacy federal identifier; leading zero retained
+UD_CORE,CORE,NCSES_INST_ID,U3284001,NCSES HERD FY2024 public-use file,https://ncses.nsf.gov/821/assets/0/files/higher_education_r_and_d_2024.zip,2026-09-13,Codex,confirmed,Exact HERD row maps to UNITID 130943
+UD_CORE,CORE,HERD_INST_ID,001431,NCSES HERD FY2024 public-use file,https://ncses.nsf.gov/821/assets/0/files/higher_education_r_and_d_2024.zip,2026-09-13,Codex,confirmed,Source-native inst_id
+UD_CORE,CORE,ROR,01sbq1a82,ROR API,https://api.ror.org/v2/organizations/https%3A%2F%2Fror.org%2F01sbq1a82,2026-09-13,Codex,confirmed,Primary University of Delaware organization record
+UD_CORE,CORE,OPENALEX_INSTITUTION_ID,I86501945,OpenAlex API,https://api.openalex.org/institutions?filter=ror:https://ror.org/01sbq1a82,2026-09-13,Codex,confirmed,Returned with exact ROR link
+UD_CORE,CORE,FUNDREF,100006094,ROR API,https://api.ror.org/v2/organizations/https%3A%2F%2Fror.org%2F01sbq1a82,2026-09-13,Codex,confirmed,ROR preferred FundRef identifier
+UD_CORE,CORE,NIH_ORG_IPF_CODE,2076701,NIH RePORTER API,https://api.reporter.nih.gov/v2/projects/search,2026-09-13,Codex,confirmed,Exact organization-name match; external_org_id is the same value
+UD_CORE,CORE,NSF_AWARDEE_UEI,T72NHKM259N3,NSF Awards API,https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3,2026-09-13,Codex,confirmed,NSF API uses the federal UEI as awardee identifier
+UD_CORE,CORE,USASPENDING_RECIPIENT_UEI,T72NHKM259N3,USAspending award record,https://www.usaspending.gov/award/CONT_AWD_12639526F0081_12K3_12639522D0030_12K3,2026-09-13,Codex,confirmed,Recipient and parent recipient both resolve to the same UEI in the sampled award
+UD_CORE,CORE,PATENT_ASSIGNEE_NAME,University of Delaware,Google Patents sample record,https://patents.google.com/patent/US4387265A/en,2026-09-13,Codex,probable,Observed assignee string; official PatentsView or USPTO identity confirmation remains required before display
+UD_CORE,CORE,PATENT_ASSIGNEE_NAME,The University Of Delaware,Google Patents sample record,https://patents.google.com/patent/US5475144A/en,2026-09-13,Codex,probable,Observed assignee variant; official PatentsView or USPTO identity confirmation remains required before display
