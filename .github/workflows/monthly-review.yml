@@ -1,0 +1,42 @@
+name: Build atlas and review evidence links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/**"
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/monthly-review.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "23 11 3 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build complete static pages
+        run: python scripts/build_static_site.py
+      - name: Validate no-JavaScript publication
+        run: python scripts/validate_static_site.py
+      - name: Check every published official evidence link
+        run: python scripts/check_official_links.py ${{ github.event_name == 'push' && '' || '--record' }}
+      - name: Include the recorded monthly result
+        if: github.event_name != 'push'
+        run: python scripts/build_static_site.py
+      - name: Commit scheduled review record
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "institution-atlas-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/link-check.json docs dist
+          git diff --cached --quiet || git commit -m "Record monthly atlas source review"
+          git push

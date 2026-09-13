@@ -1,5 +1,6 @@
 (() => {
   const data = window.ATLAS_DATA;
+  if (!data) return;
   const key = "institution-atlas-state-v1";
   const defaults = {
     boundary: "CORE",
@@ -10,11 +11,20 @@
   let state;
   try { state = { ...defaults, ...JSON.parse(localStorage.getItem(key) || "{}") }; }
   catch { state = { ...defaults }; }
+  if (state.boundary !== "CORE") state.boundary = "CORE";
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const save = () => localStorage.setItem(key, JSON.stringify(state));
   const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+  const external = (label, url, className = "inline-evidence") => `<a class="${esc(className)}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} <span aria-hidden="true">↗</span></a>`;
+  const unitidUrl = (unitid, year = "2023") => `https://nces.ed.gov/ipeds/reported-data/html/${encodeURIComponent(unitid)}?surveyNumber=15&viewMode=print&year=${encodeURIComponent(year)}`;
+  const ncsesUrl = id => `https://ncsesdata.nsf.gov/profiles/site?method=view&tin=${encodeURIComponent(id)}`;
+  const identifierUrl = row => {
+    if (["UNITID", "OPEID8"].includes(row.identifier_type)) return unitidUrl("130943");
+    if (row.identifier_type === "NCSES_INST_ID") return ncsesUrl(row.identifier_value);
+    return row.source_url;
+  };
 
   const activePeerIds = () => state.peerMode === "CUSTOM" ? state.customPeers : data.peerModes[state.peerMode].unitids;
   const activeMode = () => data.peerModes[state.peerMode];
@@ -78,7 +88,7 @@
     if (!target) return;
     const rows = data.identifiers.filter(row => row.status === "confirmed").slice(0, 14);
     target.innerHTML = `<table><thead><tr><th>Identifier</th><th>Value</th><th>Source</th><th>Status</th></tr></thead><tbody>${rows.map(row => `
-      <tr><td>${esc(row.identifier_type.replaceAll("_", " "))}</td><td class="id-value">${esc(row.identifier_value)}</td><td>${esc(row.source)}</td><td><span class="confirm-badge">Confirmed</span></td></tr>`).join("")}</tbody></table>`;
+      <tr><td>${esc(row.identifier_type.replaceAll("_", " "))}</td><td class="id-value">${external(row.identifier_value, identifierUrl(row), "id-link")}</td><td>${external(row.source, row.source_url, "source-evidence")}</td><td><span class="confirm-badge">Confirmed</span></td></tr>`).join("")}</tbody></table>`;
   }
 
   function renderPeerMode() {
@@ -115,14 +125,14 @@
       const record = data.records[id];
       const rank = ranking[id];
       const factors = state.peerMode === "ANALYTICAL" && rank ? `<small>Closest on ${esc(rank.factors.join(", ").toLowerCase())}</small>` : "";
-      return `<div class="peer-item"><strong title="${esc(record.name)}">${esc(record.name)}</strong><span>${esc(record.location)} · UNITID ${id}</span>${factors}</div>`;
+      return `<div class="peer-item"><strong title="${esc(record.name)}">${esc(record.name)}</strong><span>${esc(record.location)} · ${external(`UNITID ${id}`, unitidUrl(id))}</span>${factors}</div>`;
     }).join("");
   }
 
   function renderRelated() {
     const target = $("#related-list");
     if (!target) return;
-    target.innerHTML = data.relatedOrganizations.map(row => `<div class="related-row"><strong>${esc(row.related_name)}</strong><span>${esc(row.relationship)} · ${esc(row.related_identifier.replace("https://ror.org/", "ROR "))}</span><span class="disposition">${esc(row.proposed_disposition.replaceAll("_", " "))}</span></div>`).join("");
+    target.innerHTML = data.relatedOrganizations.map(row => `<div class="related-row"><strong>${esc(row.related_name)}</strong><span>${esc(row.relationship)} · ${external(row.related_identifier.replace("https://ror.org/", "ROR "), row.related_identifier)}</span><span class="disposition">${esc(row.proposed_disposition.replaceAll("_", " "))}</span></div>`).join("");
   }
 
   function renderMethod() {
@@ -216,7 +226,7 @@
       table.innerHTML = `<table><thead><tr><th>Institution</th><th>Total</th><th>Undergraduate</th><th>Graduate</th><th>Difference from Delaware</th><th>Status</th></tr></thead><tbody>${peers.map(row => {
         const rowIpeds = ipedsRecord(row);
         const diff = rowIpeds.totalEnrollment - focalIpeds.totalEnrollment;
-        return `<tr><td><strong>${esc(row.name)}</strong><br><span class="table-sub">UNITID ${row.unitid}</span></td><td>${formatInt(rowIpeds.totalEnrollment)}</td><td>${formatInt(rowIpeds.undergraduate)}</td><td>${formatInt(rowIpeds.graduate)}</td><td class="${diff >= 0 ? "difference-positive" : "difference-negative"}">${diff >= 0 ? "+" : ""}${formatInt(diff)}</td><td><span class="boundary-status">Exact</span></td></tr>`;
+        return `<tr><td><strong>${esc(row.name)}</strong><br><span class="table-sub">${external(`UNITID ${row.unitid}`, unitidUrl(row.unitid, rowIpeds.dataYear.replace("Fall ", "")))}</span></td><td>${formatInt(rowIpeds.totalEnrollment)}</td><td>${formatInt(rowIpeds.undergraduate)}</td><td>${formatInt(rowIpeds.graduate)}</td><td class="${diff >= 0 ? "difference-positive" : "difference-negative"}">${diff >= 0 ? "+" : ""}${formatInt(diff)}</td><td><span class="boundary-status">Exact</span></td></tr>`;
       }).join("")}</tbody></table>`;
     }
   }
@@ -264,7 +274,7 @@
     } else {
       table.innerHTML = `<table><thead><tr><th>IPEDS comparison institution</th><th>HERD reporting entity</th><th>NCSES ID</th><th>Total R&D</th><th>Boundary status</th></tr></thead><tbody>${peers.map(row => {
         const exact = row.herd.coverage === "present_exact_unitid";
-        return `<tr><td><strong>${esc(row.name)}</strong><br><span class="table-sub">UNITID ${row.unitid}</span></td><td>${esc(row.herd.reportedName || "Not resolved")}</td><td class="id-value">${esc(row.herd.ncsesId || "—")}</td><td>${exact ? formatMoney(row.herd.total) : "Not compared"}</td><td><span class="boundary-status ${exact ? "" : "conditional"}">${exact ? "Exact UNITID" : "Review boundary"}</span></td></tr>`;
+        return `<tr><td><strong>${esc(row.name)}</strong><br><span class="table-sub">${external(`UNITID ${row.unitid}`, unitidUrl(row.unitid))}</span></td><td>${esc(row.herd.reportedName || "Not resolved")}</td><td class="id-value">${row.herd.ncsesId ? external(row.herd.ncsesId, ncsesUrl(row.herd.ncsesId)) : "—"}</td><td>${exact ? formatMoney(row.herd.total) : "Not compared"}</td><td><span class="boundary-status ${exact ? "" : "conditional"}">${exact ? "Exact UNITID" : "Review boundary"}</span></td></tr>`;
       }).join("")}</tbody></table>`;
     }
   }

@@ -339,6 +339,9 @@ data = {
 }
 
 payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+(SITE / "data" / "atlas.json").write_text(
+    json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+)
 (DIST / "atlas-data.js").write_text(f"window.ATLAS_DATA={payload};\n", encoding="utf-8")
 (SITE / "analytical-peer-model.json").write_text(
     json.dumps({"method": data["method"], "ranking": ranked}, ensure_ascii=False, indent=2),

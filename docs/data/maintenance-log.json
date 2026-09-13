@@ -1,0 +1,29 @@
+{
+  "owner": "Nil Shah",
+  "owner_role": "Maintainer and monthly source-review owner",
+  "cadence": "Monthly",
+  "schedule": "First business week of each month",
+  "next_review": "October 2026",
+  "workflow_url": "https://github.com/nilkamal11/institution-atlas/actions",
+  "last_completed_review": {
+    "date": "2026-09-13",
+    "date_display": "13 Sep 2026",
+    "result": "Prototype values reconciled and source evidence reviewed"
+  },
+  "history": [
+    {
+      "date": "2026-09-13",
+      "type": "Build and source review",
+      "owner": "Nil Shah",
+      "result": "Passed",
+      "details": "University of Delaware identity, Fall 2022 and Fall 2023 IPEDS enrollment, FY2024 HERD values, peer coverage, retained vintages, and official evidence links reviewed."
+    },
+    {
+      "date": "2026-09-13",
+      "type": "Static publication revision",
+      "owner": "Nil Shah",
+      "result": "Passed",
+      "details": "All default values moved into delivered HTML; identifier and reconciliation evidence links added; unsupported controls marked unavailable."
+    }
+  ]
+}
