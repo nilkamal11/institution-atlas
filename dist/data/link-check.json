@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "checked_at": "2026-09-13T19:34:07.593100+00:00",
-  "total": 87,
-  "resolved_count": 87,
+  "checked_at": "2026-09-29T23:48:41.321481+00:00",
+  "total": 141,
+  "resolved_count": 141,
   "restricted_count": 0,
   "unverified_count": 0,
   "broken_count": 0,
@@ -13,6 +13,132 @@
       "status": 200,
       "result": "resolved",
       "final_url": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&ActiveAwards=True",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&ActiveAwards=True"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2523413.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2523413.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2535424.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2535424.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2544049.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2544049.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2552366.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2552366.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2554095.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2554095.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2554902.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2554902.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2604452.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2604452.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2607911.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2607911.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2608118.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2608118.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2608275.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2608275.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2608300.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2608300.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2608369.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2608369.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2609262.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2609262.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2609280.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2609280.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2609320.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2609320.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2613457.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2613457.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2614999.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2614999.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2621569.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2621569.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2622711.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2622711.json"
+    },
+    {
+      "url": "https://api.nsf.gov/services/v1/awards/2630146.json",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://api.nsf.gov/services/v1/awards/2630146.json"
     },
     {
       "url": "https://api.openalex.org/institutions?filter=ror:https://ror.org/01sbq1a82",
@@ -27,10 +153,202 @@
       "final_url": "https://apps.irs.gov/pub/epostcard/cor/516000297_202006_990_2021052518186864.pdf"
     },
     {
+      "url": "https://collegescorecard.ed.gov/data/",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/data/"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/files/InstitutionDataDocumentation.pdf",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/files/InstitutionDataDocumentation.pdf"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?104179-University-of-Arizona",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?104179-University-of-Arizona"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?129020-University-of-Connecticut",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?129020-University-of-Connecticut"
+    },
+    {
       "url": "https://collegescorecard.ed.gov/school/?130943-University-of-Delaware",
       "status": 200,
       "result": "resolved",
       "final_url": "https://collegescorecard.ed.gov/school/?130943-University-of-Delaware"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?131496-Georgetown-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?131496-Georgetown-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?139755-Georgia-Institute-of-Technology-Main-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?139755-Georgia-Institute-of-Technology-Main-Campus"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?147767-Northwestern-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?147767-Northwestern-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?151351-Indiana-University-Bloomington",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?151351-Indiana-University-Bloomington"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?153603-Iowa-State-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?153603-Iowa-State-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?163286-University-of-Maryland-College-Park",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?163286-University-of-Maryland-College-Park"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?164988-Boston-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?164988-Boston-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166629-University-of-Massachusetts-Amherst",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?166629-University-of-Massachusetts-Amherst"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?167358-Northeastern-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?167358-Northeastern-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?171100-Michigan-State-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?171100-Michigan-State-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?174066-University-of-Minnesota-Twin-Cities",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?174066-University-of-Minnesota-Twin-Cities"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?186380-Rutgers-University-New-Brunswick",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?186380-Rutgers-University-New-Brunswick"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?190415-Cornell-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?190415-Cornell-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?196097-Stony-Brook-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?196097-Stony-Brook-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?199120-University-of-North-Carolina-at-Chapel-Hill",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?199120-University-of-North-Carolina-at-Chapel-Hill"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?199193-North-Carolina-State-University-at-Raleigh",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?199193-North-Carolina-State-University-at-Raleigh"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?201645-Case-Western-Reserve-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?201645-Case-Western-Reserve-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?204796-Ohio-State-University-Main-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?204796-Ohio-State-University-Main-Campus"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?211440-Carnegie-Mellon-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?211440-Carnegie-Mellon-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?214777-Pennsylvania-State-University-Main-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?214777-Pennsylvania-State-University-Main-Campus"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?215293-University-of-Pittsburgh-Pittsburgh-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?215293-University-of-Pittsburgh-Pittsburgh-Campus"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?228723-Texas-A-M-University-College-Station",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?228723-Texas-A-M-University-College-Station"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?230764-University-of-Utah",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?230764-University-of-Utah"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?233921-Virginia-Polytechnic-Institute-and-State-University",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?233921-Virginia-Polytechnic-Institute-and-State-University"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?234076-University-of-Virginia-Main-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?234076-University-of-Virginia-Main-Campus"
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus"
     },
     {
       "url": "https://github.com/nilkamal11/institution-atlas/actions",
@@ -475,6 +793,12 @@
       "status": 200,
       "result": "resolved",
       "final_url": "https://reporter.nih.gov/"
+    },
+    {
+      "url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm"
     },
     {
       "url": "https://ror.org/00e0jd726",

@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0.0",
+  "retrieved_at": "2026-09-29",
+  "source": "U.S. National Science Foundation Awards API",
+  "focal_uei": "T72NHKM259N3",
+  "all_time_record_count": 2527,
+  "active_award_count": 249,
+  "active_estimated_total_amount": 250424764,
+  "active_funds_obligated_amount": 225151269,
+  "recent_period_start": "2022-01-01",
+  "recent_period_end": "2026-09-29",
+  "recent_award_count": 289,
+  "recent_estimated_total_amount": 215512439,
+  "recent_funds_obligated_amount": 188889220,
+  "year_summary": [
+    {
+      "year": "2022",
+      "award_count": 52,
+      "estimated_total_amount": 40083808,
+      "funds_obligated_amount": 40924683
+    },
+    {
+      "year": "2023",
+      "award_count": 65,
+      "estimated_total_amount": 33981163,
+      "funds_obligated_amount": 32751907
+    },
+    {
+      "year": "2024",
+      "award_count": 58,
+      "estimated_total_amount": 47055023,
+      "funds_obligated_amount": 48686900
+    },
+    {
+      "year": "2025",
+      "award_count": 59,
+      "estimated_total_amount": 44127257,
+      "funds_obligated_amount": 34389999
+    },
+    {
+      "year": "2026",
+      "award_count": 55,
+      "estimated_total_amount": 50265188,
+      "funds_obligated_amount": 32135731
+    }
+  ],
+  "active_directorates": [
+    {
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "award_count": 56,
+      "estimated_total_amount": 53781548
+    },
+    {
+      "directorate": "Directorate for Engineering",
+      "award_count": 46,
+      "estimated_total_amount": 22401028
+    },
+    {
+      "directorate": "Directorate for Geosciences",
+      "award_count": 45,
+      "estimated_total_amount": 44429295
+    },
+    {
+      "directorate": "Directorate for Computer and Information Science and Engineering",
+      "award_count": 41,
+      "estimated_total_amount": 46072214
+    },
+    {
+      "directorate": "Directorate for Biological Sciences",
+      "award_count": 21,
+      "estimated_total_amount": 18069149
+    },
+    {
+      "directorate": "Directorate for STEM Education",
+      "award_count": 17,
+      "estimated_total_amount": 26076464
+    },
+    {
+      "directorate": "Office Of The Director",
+      "award_count": 11,
+      "estimated_total_amount": 28979148
+    },
+    {
+      "directorate": "Directorate for Social, Behavioral and Economic Sciences",
+      "award_count": 10,
+      "estimated_total_amount": 4118638
+    },
+    {
+      "directorate": "Directorate for Technology, Innovation, and Partnerships",
+      "award_count": 2,
+      "estimated_total_amount": 6497280
+    }
+  ],
+  "recent_awards": [
+    {
+      "award_id": "2535424",
+      "title": "EPSCoR Graduate Fellowship Program (EGFP): University of Delaware",
+      "award_date": "08/28/2026",
+      "start_date": "03/15/2027",
+      "expiration_date": "02/28/2030",
+      "estimated_total_amount": 2385000,
+      "funds_obligated_amount": 2385000,
+      "directorate": "Directorate for STEM Education",
+      "division": "Division Of Graduate Education",
+      "program": "EGF-EPSCoR Graduate Fellowship",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2535424.json"
+    },
+    {
+      "award_id": "2608369",
+      "title": "Developing Local Capacity for Curriculum-Based Coaching in Elementary Mathematics",
+      "award_date": "08/25/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2029",
+      "estimated_total_amount": 670000,
+      "funds_obligated_amount": 670000,
+      "directorate": "Directorate for STEM Education",
+      "division": "Division of Research on Learning in Formal and Informal Settings (DRL)",
+      "program": "Discovery Research K-12",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2608369.json"
+    },
+    {
+      "award_id": "2523413",
+      "title": "Collaborative Research: Synthetic acetyl-CoA-responsive metabolons for enhanced biosynthesis in yeast",
+      "award_date": "08/18/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2029",
+      "estimated_total_amount": 281224,
+      "funds_obligated_amount": 281224,
+      "directorate": "Directorate for Engineering",
+      "division": "Division of Chemical, Bioengineering, Environmental, and Transport Systems",
+      "program": "Cellular & Biochem Engineering",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2523413.json"
+    },
+    {
+      "award_id": "2614999",
+      "title": "Collaborative Research: FEC: Spin Control via Topology, Symmetry and Dimensionality",
+      "award_date": "08/17/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2030",
+      "estimated_total_amount": 1394072,
+      "funds_obligated_amount": 1394072,
+      "directorate": "Office Of The Director",
+      "division": "OIA-Office of Integrative Activities",
+      "program": "EPSCoR RII: Focused EPSCoR Col",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2614999.json"
+    },
+    {
+      "award_id": "2552366",
+      "title": "Collaborative Research: CPS-FR: CSR: MAVERICKS: Mobility-Centric Autonomous System with Full-Stack Software/Hardware Co-Design for Real-Time High-Fidelity Situational Environments",
+      "award_date": "08/17/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2029",
+      "estimated_total_amount": 649903,
+      "funds_obligated_amount": 649903,
+      "directorate": "Directorate for Computer and Information Science and Engineering",
+      "division": "Division Of Computer and Network Systems",
+      "program": "CPS-Cyber-Physical Systems",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2552366.json"
+    },
+    {
+      "award_id": "2604452",
+      "title": "Collaborative Research: AI-Enhanced Problem-Posing Based Learning:Supporting Mathematics Teachers' in-the-Moment Instructional decision Making",
+      "award_date": "08/12/2026",
+      "start_date": "08/15/2026",
+      "expiration_date": "07/31/2029",
+      "estimated_total_amount": 381170,
+      "funds_obligated_amount": 381170,
+      "directorate": "Directorate for STEM Education",
+      "division": "Division of Research on Learning in Formal and Informal Settings (DRL)",
+      "program": "Discovery Research K-12",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2604452.json"
+    },
+    {
+      "award_id": "2622711",
+      "title": "Next Generation Satellite Lidar Sensing, Neural Compression, and Accelerated Neural Inference",
+      "award_date": "08/11/2026",
+      "start_date": "10/01/2026",
+      "expiration_date": "09/30/2029",
+      "estimated_total_amount": 536330,
+      "funds_obligated_amount": 536330,
+      "directorate": "Directorate for Engineering",
+      "division": "Division of Electrical, Communications and Cyber Systems",
+      "program": "CSCS: Circuits and Systems for",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2622711.json"
+    },
+    {
+      "award_id": "2613457",
+      "title": "Developing Core Probabilistic Reasoning for Data Science Using AI-Driven Modeling",
+      "award_date": "08/11/2026",
+      "start_date": "10/01/2026",
+      "expiration_date": "09/30/2029",
+      "estimated_total_amount": 400000,
+      "funds_obligated_amount": 400000,
+      "directorate": "Directorate for STEM Education",
+      "division": "Division Of Undergraduate Education",
+      "program": "IUSE",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2613457.json"
+    },
+    {
+      "award_id": "2608118",
+      "title": "Collaborative Research: WoU-MMA: IceCube Data Analysis in the U.S. 2026-2029",
+      "award_date": "08/11/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2027",
+      "estimated_total_amount": 109926,
+      "funds_obligated_amount": 109926,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "Particle Astrophysics/Cosmic P",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2608118.json"
+    },
+    {
+      "award_id": "2544049",
+      "title": "CAREER: Advancing a Participatory Framework for Decentralized Stormwater Management",
+      "award_date": "08/11/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2031",
+      "estimated_total_amount": 524630,
+      "funds_obligated_amount": 524630,
+      "directorate": "Directorate for Engineering",
+      "division": "Division of Civil, Mechanical, and Manufacturing Innovation",
+      "program": "ISP-Infrastructre Systms & Ppl",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2544049.json"
+    },
+    {
+      "award_id": "2609320",
+      "title": "Collaborative Research: Beyond Standard Model Searches Using Neutrino Telescopes",
+      "award_date": "08/10/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2027",
+      "estimated_total_amount": 420000,
+      "funds_obligated_amount": 420000,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "Particle Astrophysics/Cosmic P, OFFICE OF MULTIDISCIPLINARY AC",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2609320.json"
+    },
+    {
+      "award_id": "2609262",
+      "title": "Collaborative Research: WoU-MMA: Operations and Development of the Askaryan Radio Array for the Next Generation of Radio Neutrino Detection",
+      "award_date": "08/10/2026",
+      "start_date": "08/15/2026",
+      "expiration_date": "07/31/2027",
+      "estimated_total_amount": 70000,
+      "funds_obligated_amount": 70000,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "Particle Astrophysics/Cosmic P",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2609262.json"
+    },
+    {
+      "award_id": "2607911",
+      "title": "Collaborative Research: WoU-MMA: RNO-G Data Analysis in the U.S. 2026-2029",
+      "award_date": "08/10/2026",
+      "start_date": "08/15/2026",
+      "expiration_date": "07/31/2027",
+      "estimated_total_amount": 79894,
+      "funds_obligated_amount": 79894,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "Particle Astrophysics/Cosmic P",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2607911.json"
+    },
+    {
+      "award_id": "2554902",
+      "title": "Preparation of Highly Substituted Axially Chiral Compounds Using Reductive Couplings",
+      "award_date": "08/07/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2029",
+      "estimated_total_amount": 700000,
+      "funds_obligated_amount": 700000,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Chemistry",
+      "program": "Chemical Catalysis, OFFICE OF MULTIDISCIPLINARY AC",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2554902.json"
+    },
+    {
+      "award_id": "2609280",
+      "title": "WoU-MMA: Cosmic-Ray Physics with IceCube 2026 - 2029",
+      "award_date": "08/06/2026",
+      "start_date": "08/01/2026",
+      "expiration_date": "07/31/2027",
+      "estimated_total_amount": 800000,
+      "funds_obligated_amount": 800000,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "Particle Astrophysics/Cosmic P",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2609280.json"
+    },
+    {
+      "award_id": "2608275",
+      "title": "Open Quantum System Treatment of Ultralight Dark Matter Detection",
+      "award_date": "08/06/2026",
+      "start_date": "08/15/2026",
+      "expiration_date": "07/31/2029",
+      "estimated_total_amount": 404540,
+      "funds_obligated_amount": 404540,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "AMO Theory/Atomic, Molecular &",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2608275.json"
+    },
+    {
+      "award_id": "2608300",
+      "title": "Development of High-Precision Atomic Methods and New Physics Searches",
+      "award_date": "08/05/2026",
+      "start_date": "08/01/2026",
+      "expiration_date": "07/31/2029",
+      "estimated_total_amount": 413090,
+      "funds_obligated_amount": 413090,
+      "directorate": "Directorate for Mathematical and Physical Sciences",
+      "division": "Division Of Physics",
+      "program": "AMO Theory/Atomic, Molecular &",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2608300.json"
+    },
+    {
+      "award_id": "2630146",
+      "title": "Conference: SYncying NSF Ecosystems for Realizing Generative SynergY (SYNERGY) in Electrifying Biomanufacturing",
+      "award_date": "08/03/2026",
+      "start_date": "08/01/2026",
+      "expiration_date": "07/31/2028",
+      "estimated_total_amount": 200000,
+      "funds_obligated_amount": 200000,
+      "directorate": "Directorate for Biological Sciences",
+      "division": "Division of Molecular and Cellular Biosciences",
+      "program": "SSA-Special Studies & Analysis",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2630146.json"
+    },
+    {
+      "award_id": "2621569",
+      "title": "Making Decisions about Collaboration with Humans and AI Systems",
+      "award_date": "07/31/2026",
+      "start_date": "09/01/2026",
+      "expiration_date": "08/31/2029",
+      "estimated_total_amount": 399556,
+      "funds_obligated_amount": 399556,
+      "directorate": "Directorate for Social, Behavioral and Economic Sciences",
+      "division": "Division of Behavioral and Cognitive Sciences",
+      "program": "Cross-Directorate  Activities",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2621569.json"
+    },
+    {
+      "award_id": "2554095",
+      "title": "Stretchable self-powered sensors through printable piezoelectrets",
+      "award_date": "07/29/2026",
+      "start_date": "10/15/2026",
+      "expiration_date": "09/30/2029",
+      "estimated_total_amount": 268817,
+      "funds_obligated_amount": 268817,
+      "directorate": "Directorate for Engineering",
+      "division": "Division of Electrical, Communications and Cyber Systems",
+      "program": "EPMQD: Electronic, Photonic, M",
+      "transaction_type": "Standard Grant",
+      "active": true,
+      "official_record_url": "https://api.nsf.gov/services/v1/awards/2554095.json"
+    }
+  ],
+  "query_urls": {
+    "all": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3",
+    "active": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&ActiveAwards=True",
+    "recent": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&dateStart=01/01/2022&dateEnd=09/29/2026",
+    "documentation": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm"
+  }
+}

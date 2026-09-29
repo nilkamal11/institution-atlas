@@ -20,6 +20,7 @@
   const external = (label, url, className = "inline-evidence") => `<a class="${esc(className)}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} <span aria-hidden="true">↗</span></a>`;
   const unitidUrl = (unitid, year = "2023") => `https://nces.ed.gov/ipeds/reported-data/html/${encodeURIComponent(unitid)}?surveyNumber=15&viewMode=print&year=${encodeURIComponent(year)}`;
   const ncsesUrl = id => `https://ncsesdata.nsf.gov/profiles/site?method=view&tin=${encodeURIComponent(id)}`;
+  const scorecardUrl = row => `https://collegescorecard.ed.gov/school/?${encodeURIComponent(row.unitid)}-${encodeURIComponent(row.name.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, ""))}`;
   const identifierUrl = row => {
     if (["UNITID", "OPEID8"].includes(row.identifier_type)) return unitidUrl("130943");
     if (row.identifier_type === "NCSES_INST_ID") return ncsesUrl(row.identifier_value);
@@ -163,6 +164,8 @@
 
   const formatInt = value => value == null ? "—" : Math.round(value).toLocaleString("en-US");
   const formatMoney = value => value == null ? "—" : `$${(value / 1000).toLocaleString("en-US", {maximumFractionDigits: 1})}M`;
+  const formatCurrency = value => value == null ? "—" : `$${Math.round(value).toLocaleString("en-US")}`;
+  const formatPct = value => value == null ? "—" : `${(value * 100).toFixed(1)}%`;
   const median = values => {
     const sorted = values.filter(value => Number.isFinite(value)).sort((a, b) => a - b);
     if (!sorted.length) return null;
@@ -231,6 +234,43 @@
     }
   }
 
+  function renderScorecard() {
+    if (document.body.dataset.page !== "scorecard") return;
+    const lookup = Object.fromEntries(data.scorecard.records.map(row => [row.unitid, row]));
+    const focal = lookup[data.institution.unitid];
+    const peers = activePeerIds().map(id => lookup[id]).filter(Boolean);
+    const mode = activeMode();
+    $("#scorecard-peer-note").textContent = peers.length ? `${mode.label} · ${peers.length} institutions · ${data.scorecard.institution_year} institution file` : mode.provenance;
+    $("#scorecard-coverage-pill").textContent = `${peers.length}/${activePeerIds().length || 0} present`;
+
+    const renderBars = (target, series, formatter) => {
+      if (!peers.length) {
+        target.innerHTML = `<div class="empty-state">No comparison values are available for this peer mode.</div>`;
+        return;
+      }
+      const maximum = Math.max(...series.flatMap(row => [row.focal || 0, row.peer || 0]), 1);
+      target.innerHTML = `<div class="bar-legend"><span>University of Delaware</span><span>Peer median</span></div>${series.map(row => `<div class="chart-row"><div class="chart-label">${esc(row.label)}</div><div class="bar-pair"><div class="bar-line"><div class="bar-fill" style="width:${((row.focal || 0) / maximum) * 100}%"></div><span class="bar-value">${formatter(row.focal)}</span></div><div class="bar-line"><div class="bar-fill peer" style="width:${((row.peer || 0) / maximum) * 100}%"></div><span class="bar-value">${formatter(row.peer)}</span></div></div></div>`).join("")}`;
+    };
+
+    renderBars($("#scorecard-price-comparison"), [
+      {label: "Average net price", focal: focal.average_net_price, peer: median(peers.map(row => row.average_net_price))},
+      {label: "Median debt · completers", focal: focal.median_debt_completers, peer: median(peers.map(row => row.median_debt_completers))},
+    ], formatCurrency);
+    renderBars($("#scorecard-outcome-comparison"), [
+      {label: "Completion within 150%", focal: focal.completion_rate_150, peer: median(peers.map(row => row.completion_rate_150))},
+      {label: "Full-time retention", focal: focal.retention_rate_full_time, peer: median(peers.map(row => row.retention_rate_full_time))},
+      {label: "Pell Grant rate", focal: focal.pell_grant_rate, peer: median(peers.map(row => row.pell_grant_rate))},
+      {label: "Federal loan rate", focal: focal.federal_loan_rate, peer: median(peers.map(row => row.federal_loan_rate))},
+    ], formatPct);
+
+    const table = $("#scorecard-table");
+    if (!peers.length) {
+      table.innerHTML = `<div class="empty-state">Select Submitted DFR, Analytical, or Custom peers to view Scorecard records.</div>`;
+    } else {
+      table.innerHTML = `<table><thead><tr><th>Institution</th><th>Average net price</th><th>Completion within 150%</th><th>Full-time retention</th><th>Pell Grant rate</th><th>Federal loan rate</th></tr></thead><tbody>${peers.map(row => `<tr><td><strong>${esc(row.name)}</strong><br><span class="table-sub">${external(`UNITID ${row.unitid}`, scorecardUrl(row))}</span></td><td>${formatCurrency(row.average_net_price)}</td><td>${formatPct(row.completion_rate_150)}</td><td>${formatPct(row.retention_rate_full_time)}</td><td>${formatPct(row.pell_grant_rate)}</td><td>${formatPct(row.federal_loan_rate)}</td></tr>`).join("")}</tbody></table>`;
+    }
+  }
+
   function renderHerd() {
     if (document.body.dataset.page !== "herd") return;
     const focal = data.records[data.institution.unitid];
@@ -289,6 +329,19 @@
         const current = ipedsRecord(row);
         [["total_enrollment",current.totalEnrollment],["undergraduate_enrollment",current.undergraduate],["graduate_enrollment",current.graduate],["full_time_enrollment",current.fullTime]].forEach(([variable,value]) => add({institution:row.name,unitid:row.unitid,boundary_id:state.boundary,peer_provenance:mode.label,data_year:current.dataYear.replace("Fall ", ""),release_vintage:current.releaseVintage,variable,value:value ?? "",unit:"students",reporting_period:current.dataYear,suppression_status:value == null ? "missing" : "reported",boundary_status:"exact"}));
       });
+    } else if (page === "scorecard") {
+      const lookup = Object.fromEntries(data.scorecard.records.map(row => [row.unitid, row]));
+      [data.institution.unitid, ...activePeerIds()].map(id => lookup[id]).filter(Boolean).forEach(row => {
+        [
+          ["average_net_price", row.average_net_price, "dollars", String(data.scorecard.institution_year)],
+          ["completion_rate_150", row.completion_rate_150, "proportion", String(data.scorecard.institution_year)],
+          ["retention_rate_full_time", row.retention_rate_full_time, "proportion", String(data.scorecard.institution_year)],
+          ["pell_grant_rate", row.pell_grant_rate, "proportion", String(data.scorecard.institution_year)],
+          ["federal_loan_rate", row.federal_loan_rate, "proportion", String(data.scorecard.institution_year)],
+          ["median_debt_completers", row.median_debt_completers, "dollars", String(data.scorecard.outcomes_cohort_file_year)],
+          ["median_earnings_10_year", row.median_earnings_10_year, "dollars", String(data.scorecard.outcomes_cohort_file_year)],
+        ].forEach(([variable, value, unit, year]) => add({institution:row.name,unitid:row.unitid,boundary_id:state.boundary,peer_provenance:mode.label,data_year:year,release_vintage:`SCORECARD_API_${data.scorecard.retrieved_at}`,variable,value:value ?? "",unit,reporting_period:`College Scorecard file year ${year}`,suppression_status:value == null ? "missing_or_suppressed" : "reported",boundary_status:"exact_unitid"}));
+      });
     } else {
       [data.records[data.institution.unitid], ...peerRecords()].forEach(row => {
         const exact = row.unitid === data.institution.unitid || row.herd.coverage === "present_exact_unitid";
@@ -308,6 +361,7 @@
   function renderPage() {
     renderIdentity();
     renderIpeds();
+    renderScorecard();
     renderHerd();
   }
 
@@ -319,4 +373,5 @@
   $$('[data-download="identity"]').forEach(button => button.addEventListener("click", downloadRows));
   $$('[data-download="ipeds"]').forEach(button => button.addEventListener("click", () => downloadPageData("ipeds")));
   $$('[data-download="herd"]').forEach(button => button.addEventListener("click", () => downloadPageData("herd")));
+  $$('[data-download="scorecard"]').forEach(button => button.addEventListener("click", () => downloadPageData("scorecard")));
 })();

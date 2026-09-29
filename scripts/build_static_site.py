@@ -25,17 +25,24 @@ def load_csv(name):
 atlas = load_json("atlas.json")
 contracts = load_json("source-contracts.json")
 maintenance = load_json("maintenance-log.json")
+scorecard = load_json("scorecard.json")
+nsf_awards = load_json("nsf-awards.json")
 reconciliation = load_csv("reconciliation.csv")
 vintage_diff = load_csv("vintage-diff.csv")
 atlas["identifiers"] = load_csv("DELAWARE_IDENTITY_REGISTRY.csv")
 atlas["aliases"] = load_csv("DELAWARE_ALIAS_REGISTRY.csv")
 atlas["relatedOrganizations"] = load_csv("DELAWARE_RELATED_ORGANIZATIONS.csv")
 atlas["sourceCoverage"] = load_csv("SOURCE_COVERAGE_MATRIX.csv")
+atlas["scorecard"] = scorecard
+atlas["nsfAwards"] = nsf_awards
 identifiers = [row for row in atlas["identifiers"] if row["status"] == "confirmed"]
 focal = atlas["records"][atlas["institution"]["unitid"]]
 default_mode = atlas["peerModes"]["DFR_SUBMITTED"]
 default_peers = [atlas["records"][unitid] for unitid in default_mode["unitids"]]
 contract_by_id = {row["source_id"]: row for row in contracts}
+scorecard_by_unitid = {row["unitid"]: row for row in scorecard["records"]}
+scorecard_focal = scorecard_by_unitid[atlas["institution"]["unitid"]]
+scorecard_peers = [scorecard_by_unitid[unitid] for unitid in default_mode["unitids"] if unitid in scorecard_by_unitid]
 
 
 def esc(value):
@@ -48,6 +55,18 @@ def fmt_int(value):
 
 def fmt_money(value):
     return "—" if value is None else f"${value / 1000:,.1f}M"
+
+
+def fmt_currency(value):
+    return "—" if value is None else f"${round(value):,}"
+
+
+def fmt_dollars_millions(value):
+    return "—" if value is None else f"${value / 1_000_000:,.1f}M"
+
+
+def fmt_pct(value):
+    return "—" if value is None else f"{value * 100:.1f}%"
 
 
 def link(label, url, class_name=""):
@@ -66,6 +85,15 @@ def unitid_url(unitid, year="2023"):
 
 def ncses_url(ncses_id):
     return f"https://ncsesdata.nsf.gov/profiles/site?method=view&tin={ncses_id}"
+
+
+def scorecard_url(unitid, name=""):
+    slug = "-".join("".join(character if character.isalnum() else " " for character in name).split())
+    return f"https://collegescorecard.ed.gov/school/?{unitid}-{slug}" if slug else f"https://collegescorecard.ed.gov/school/?{unitid}"
+
+
+def nsf_award_url(award_id):
+    return f"https://api.nsf.gov/services/v1/awards/{award_id}.json"
 
 
 def page_head(title, description):
@@ -94,8 +122,10 @@ def navigation(active):
     items = [
         ("identity", "index.html", "01", "Identity & peers"),
         ("ipeds", "ipeds.html", "02", "IPEDS core"),
-        ("herd", "herd.html", "03", "Research · HERD"),
-        ("maintenance", "maintenance.html", "04", "Maintenance"),
+        ("scorecard", "scorecard.html", "03", "College Scorecard"),
+        ("herd", "herd.html", "04", "Research · HERD"),
+        ("nsf", "nsf-awards.html", "05", "NSF awards"),
+        ("maintenance", "maintenance.html", "06", "Maintenance"),
     ]
     links = []
     for key, href, number, label in items:
@@ -105,10 +135,15 @@ def navigation(active):
 
 
 def controls(page):
-    peer_options = "".join(
-        f'<option value="{esc(key)}"{" selected" if key == "DFR_SUBMITTED" else ""}>{esc(value["label"])}</option>'
-        for key, value in atlas["peerModes"].items()
-    )
+    if page == "nsf":
+        peer_options = '<option selected>Not available for this source</option>'
+        peer_control = f'<label class="control-locked">Peer group<select id="peer-control" disabled>{peer_options}</select><span class="control-status">UEI crosswalk not loaded for peers</span></label>'
+    else:
+        peer_options = "".join(
+            f'<option value="{esc(key)}"{" selected" if key == "DFR_SUBMITTED" else ""}>{esc(value["label"])}</option>'
+            for key, value in atlas["peerModes"].items()
+        )
+        peer_control = f'<label>Peer group<select id="peer-control">{peer_options}</select></label>'
     boundary_options = '''<option value="CORE" selected>Core campus</option>
       <option value="CORE_FFRDC" disabled>Core + FFRDC — unavailable</option>
       <option value="CORE_AFFIL" disabled>Core + affiliates — not reviewed</option>
@@ -120,13 +155,19 @@ def controls(page):
     elif page == "herd":
         year = '<select id="year-control" disabled><option>FY2024</option></select><span class="control-status">Only loaded year</span>'
         vintage = '<select id="vintage-control" disabled><option>NCSES_HERD_FY2024</option></select><span class="control-status">Only loaded release</span>'
+    elif page == "scorecard":
+        year = f'<select id="year-control" disabled><option>{esc(scorecard["institution_year"])} institution file</option></select><span class="control-status">Selected common year</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(scorecard["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "nsf":
+        year = f'<select id="year-control" disabled><option>2022–{esc(nsf_awards["recent_period_end"][:4])}</option></select><span class="control-status">Recent award-date window</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(nsf_awards["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
     else:
         year = '<select id="year-control" disabled><option>Source-specific</option></select><span class="control-status">Not applicable</span>'
         vintage = '<select id="vintage-control" disabled><option>Latest verified</option></select><span class="control-status">Not applicable</span>'
     return f'''<section class="control-rail" aria-label="Persistent atlas controls">
   <label class="control-locked">Institution<select id="institution-control" disabled><option>{esc(atlas["institution"]["name"])}</option></select><span class="control-status">Fixed pilot</span></label>
   <label class="control-limited">Reporting boundary<select id="boundary-control" aria-describedby="boundary-control-note">{boundary_options}</select><span id="boundary-control-note" class="control-status">Core is the only reviewed boundary</span></label>
-  <label>Peer group<select id="peer-control">{peer_options}</select></label>
+  {peer_control}
   <label class="control-locked">Data year{year}</label>
   <label class="control-locked">Release vintage{vintage}</label>
 </section>'''
@@ -190,11 +231,11 @@ def metric_card(label, value, note, tone=""):
     return f'<article class="metric-card {tone}"><span>{esc(label)}</span><strong>{esc(value)}</strong><small>{esc(note)}</small></article>'
 
 
-def comparison_svg(series, value_formatter, title):
+def comparison_svg(series, value_formatter, title, title_id="chart-title"):
     max_value = max(max(row[1] or 0, row[2] or 0) for row in series) or 1
     width, left, plot = 920, 190, 650
     height = 58 * len(series) + 48
-    elements = [f'<svg class="static-chart" viewBox="0 0 {width} {height}" role="img" aria-labelledby="chart-title"><title id="chart-title">{esc(title)}</title>', '<g class="svg-legend"><rect x="190" y="10" width="12" height="12" rx="2"/><text x="208" y="21">University of Delaware</text><rect class="peer" x="390" y="10" width="12" height="12" rx="2"/><text x="408" y="21">Peer median</text></g>']
+    elements = [f'<svg class="static-chart" viewBox="0 0 {width} {height}" role="img" aria-labelledby="{esc(title_id)}"><title id="{esc(title_id)}">{esc(title)}</title>', '<g class="svg-legend"><rect x="190" y="10" width="12" height="12" rx="2"/><text x="208" y="21">University of Delaware</text><rect class="peer" x="390" y="10" width="12" height="12" rx="2"/><text x="408" y="21">Peer median</text></g>']
     for index, (label, focal_value, peer_value) in enumerate(series):
         y = 44 + index * 58
         focal_width = (focal_value or 0) / max_value * plot
@@ -206,7 +247,7 @@ def comparison_svg(series, value_formatter, title):
     return "".join(elements)
 
 
-def single_series_svg(series, value_formatter, title):
+def single_series_svg(series, value_formatter, title, label_header="Funding source"):
     max_value = max((row[1] or 0) for row in series) or 1
     width, left, plot = 920, 190, 650
     height = 42 * len(series) + 30
@@ -217,7 +258,7 @@ def single_series_svg(series, value_formatter, title):
         elements.append(f'<text class="svg-label" x="0" y="{y + 18}">{esc(label)}</text><rect class="svg-track" x="{left}" y="{y}" width="{plot}" height="22" rx="4"/><rect class="svg-bar" x="{left}" y="{y}" width="{bar_width:.2f}" height="22" rx="4"/><text class="svg-value" x="{left + 8}" y="{y + 16}">{esc(value_formatter(value))}</text>')
     elements.append("</svg>")
     table_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value_formatter(value))}</td></tr>' for label, value in series)
-    elements.append(f'<div class="table-wrap chart-table"><table><thead><tr><th>Funding source</th><th>University of Delaware</th></tr></thead><tbody>{table_rows}</tbody></table></div>')
+    elements.append(f'<div class="table-wrap chart-table"><table><thead><tr><th>{esc(label_header)}</th><th>University of Delaware</th></tr></thead><tbody>{table_rows}</tbody></table></div>')
     return "".join(elements)
 
 
@@ -283,6 +324,44 @@ def ipeds_page():
 </main>{footer()}<dialog id="method-dialog" class="method-dialog"><form method="dialog"><button aria-label="Close methodology">×</button></form><div id="method-content"></div></dialog>{scripts()}</body></html>'''
 
 
+def scorecard_peer_table(peers):
+    rows = []
+    for row in peers:
+        rows.append(f'''<tr><td><strong>{esc(row["name"])}</strong><br><span class="table-sub">{link("UNITID " + row["unitid"], scorecard_url(row["unitid"], row["name"]), "inline-evidence")}</span></td><td>{fmt_currency(row["average_net_price"])}</td><td>{fmt_pct(row["completion_rate_150"])}</td><td>{fmt_pct(row["retention_rate_full_time"])}</td><td>{fmt_pct(row["pell_grant_rate"])}</td><td>{fmt_pct(row["federal_loan_rate"])}</td></tr>''')
+    return '<table><thead><tr><th>Institution</th><th>Average net price</th><th>Completion within 150%</th><th>Full-time retention</th><th>Pell Grant rate</th><th>Federal loan rate</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>"
+
+
+def scorecard_page():
+    price_series = [
+        ("Average net price", scorecard_focal["average_net_price"], median(row["average_net_price"] for row in scorecard_peers if row["average_net_price"] is not None)),
+        ("Median debt · completers", scorecard_focal["median_debt_completers"], median(row["median_debt_completers"] for row in scorecard_peers if row["median_debt_completers"] is not None)),
+    ]
+    outcome_series = [
+        ("Completion within 150%", scorecard_focal["completion_rate_150"], median(row["completion_rate_150"] for row in scorecard_peers if row["completion_rate_150"] is not None)),
+        ("Full-time retention", scorecard_focal["retention_rate_full_time"], median(row["retention_rate_full_time"] for row in scorecard_peers if row["retention_rate_full_time"] is not None)),
+        ("Pell Grant rate", scorecard_focal["pell_grant_rate"], median(row["pell_grant_rate"] for row in scorecard_peers if row["pell_grant_rate"] is not None)),
+        ("Federal loan rate", scorecard_focal["federal_loan_rate"], median(row["federal_loan_rate"] for row in scorecard_peers if row["federal_loan_rate"] is not None)),
+    ]
+    metric_html = "".join([
+        metric_card("Average net price", fmt_currency(scorecard_focal["average_net_price"]), f'{scorecard["institution_year"]} institution file'),
+        metric_card("Completion within 150%", fmt_pct(scorecard_focal["completion_rate_150"]), "Four-year institution cohort"),
+        metric_card("Full-time retention", fmt_pct(scorecard_focal["retention_rate_full_time"]), "First-time students", "teal"),
+        metric_card("Median earnings", fmt_currency(scorecard_focal["median_earnings_10_year"]), f'10 years after entry · {scorecard["outcomes_cohort_file_year"]} file', "teal"),
+    ])
+    profile = scorecard["official_profile_url"]
+    return f'''{page_head("College Scorecard | Institution Atlas", "University of Delaware cost, aid, access, completion, retention, debt, and earnings from College Scorecard.")}
+<body data-page="scorecard">{site_header()}{navigation("scorecard")}{controls("scorecard")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header scorecard-header"><div><p class="eyebrow">U.S. Department of Education · College Scorecard</p><h1>College Scorecard</h1><p>Costs, aid, access, and outcomes for {link("UNITID 130943", profile, "header-link")} and its submitted DFR comparison group.</p></div><div class="source-actions">{link("Official institution profile", profile, "official-button")}{link("Data downloads", scorecard["data_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>College Scorecard</strong></div><div><span>Institution year</span><strong>{esc(scorecard["institution_year"])}</strong></div><div><span>Snapshot</span><strong>{esc(scorecard["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Dollars and rates</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#scorecard-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section id="scorecard-metrics" class="metric-grid">{metric_html}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Price and borrowing</p><h2>Institution and active peer median</h2><p id="scorecard-peer-note" class="provenance">{esc(default_mode["label"])} · {len(scorecard_peers)} institutions · {esc(scorecard["institution_year"])} institution file</p></div><button class="quiet-button" data-download="scorecard">Download comparison data</button></div><div id="scorecard-price-comparison" class="comparison-chart">{comparison_svg(price_series, fmt_currency, "College Scorecard price and debt measures for University of Delaware and its submitted DFR peer median", "scorecard-price-title")}</div><div class="chart-footer"><span>Net price year: {esc(scorecard["institution_year"])}</span><span>Debt cohort file: {esc(scorecard["outcomes_cohort_file_year"])}</span></div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Access and outcomes</p><h2>Rates and peer medians</h2></div></div><div id="scorecard-outcome-comparison" class="comparison-chart">{comparison_svg(outcome_series, fmt_pct, "College Scorecard rates for University of Delaware and its submitted DFR peer median", "scorecard-outcome-title")}</div><div class="chart-footer"><span>Rates shown as percentages</span><span>Institution year: {esc(scorecard["institution_year"])}</span></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Focal details</p><h2>{link("OPEID6 001431", profile, "inline-evidence")}</h2></div><p>Published in-state tuition is <strong>{fmt_currency(scorecard_focal["in_state_tuition"])}</strong>; out-of-state tuition is <strong>{fmt_currency(scorecard_focal["out_of_state_tuition"])}</strong>; the admission rate is <strong>{fmt_pct(scorecard_focal["admission_rate"])}</strong>; and the federal loan rate is <strong>{fmt_pct(scorecard_focal["federal_loan_rate"])}</strong>. Earnings and debt cover federally aided cohorts defined by College Scorecard and use a different cohort year from the {esc(scorecard["institution_year"])} institution measures.</p></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Peer coverage</p><h2>Scorecard institution records</h2></div><span id="scorecard-coverage-pill" class="review-pill">{len(scorecard_peers)}/{len(default_peers)} present</span></div><div id="scorecard-table" class="table-wrap">{scorecard_peer_table(scorecard_peers)}</div></section></div>
+</main>{footer()}<dialog id="method-dialog" class="method-dialog"><form method="dialog"><button aria-label="Close methodology">×</button></form><div id="method-content"></div></dialog>{scripts()}</body></html>'''
+
+
 def herd_peer_table(peers):
     rows = []
     for row in peers:
@@ -321,6 +400,35 @@ def herd_page():
 </main>{footer()}<dialog id="method-dialog" class="method-dialog"><form method="dialog"><button aria-label="Close methodology">×</button></form><div id="method-content"></div></dialog>{scripts()}</body></html>'''
 
 
+def nsf_awards_table():
+    rows = []
+    for row in nsf_awards["recent_awards"]:
+        rows.append(f'''<tr><td>{link(row["award_id"], row["official_record_url"], "inline-evidence")}</td><td><strong>{esc(row["title"])}</strong><br><span class="table-sub">{esc(row["program"] or "Program not reported")}</span></td><td>{esc(row["award_date"])}</td><td>{fmt_currency(row["estimated_total_amount"])}</td><td>{esc(row["directorate"] or "Not reported")}</td><td><span class="boundary-status{' conditional' if not row['active'] else ''}">{'Active' if row['active'] else 'Not active'}</span></td></tr>''')
+    return '<table><thead><tr><th>Award</th><th>Title and program</th><th>Award date</th><th>Estimated total</th><th>NSF organization</th><th>Status at snapshot</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>"
+
+
+def nsf_page():
+    year_series = [(row["year"], row["award_count"]) for row in nsf_awards["year_summary"]]
+    directorate_rows = "".join(f'<tr><th>{esc(row["directorate"])}</th><td>{fmt_int(row["award_count"])}</td><td>{fmt_dollars_millions(row["estimated_total_amount"])}</td></tr>' for row in nsf_awards["active_directorates"])
+    metric_html = "".join([
+        metric_card("All-time matching records", fmt_int(nsf_awards["all_time_record_count"]), "Exact UEI query · API history"),
+        metric_card("Active award records", fmt_int(nsf_awards["active_award_count"]), f'As retrieved {nsf_awards["retrieved_at"]}'),
+        metric_card("Active estimated total", fmt_dollars_millions(nsf_awards["active_estimated_total_amount"]), "Sum across active award records", "teal"),
+        metric_card("Recent award records", fmt_int(nsf_awards["recent_award_count"]), f'{nsf_awards["recent_period_start"][:4]}–{nsf_awards["recent_period_end"][:4]} award dates', "teal"),
+    ])
+    return f'''{page_head("NSF awards | Institution Atlas", "University of Delaware National Science Foundation award records joined by exact UEI.")}
+<body data-page="nsf">{site_header()}{navigation("nsf")}{controls("nsf")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header nsf-header"><div><p class="eyebrow">U.S. National Science Foundation · Awards API</p><h1>NSF awards</h1><p>Award records returned for the University of Delaware’s exact federal identifier, {link("UEI " + nsf_awards["focal_uei"], nsf_awards["query_urls"]["all"], "header-link")}.</p></div><div class="source-actions">{link("Exact UEI query", nsf_awards["query_urls"]["all"], "official-button")}{link("API documentation", nsf_awards["query_urls"]["documentation"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>NSF Awards API</strong></div><div><span>Recent window</span><strong>{esc(nsf_awards["recent_period_start"])} to {esc(nsf_awards["recent_period_end"])}</strong></div><div><span>Snapshot</span><strong>{esc(nsf_awards["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Award records and dollars</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#nsf-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section id="nsf-metrics" class="metric-grid">{metric_html}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Initial award dates</p><h2>Recent award records by year</h2><p class="provenance">Exact UEI · {esc(nsf_awards["recent_period_start"])} through {esc(nsf_awards["recent_period_end"])}</p></div>{local_link("Download JSON", "data/nsf-awards.json", "record-link")}</div><div class="source-bars">{single_series_svg(year_series, fmt_int, "University of Delaware NSF award records by initial award year", "Award year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Active portfolio</p><h2>Records by NSF directorate</h2><p class="provenance">Status and amounts as returned in the {esc(nsf_awards["retrieved_at"])} snapshot.</p></div></div><div class="table-wrap"><table><thead><tr><th>Directorate</th><th>Active records</th><th>Estimated total</th></tr></thead><tbody>{directorate_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Measure boundary</p><h2>{link("UEI " + nsf_awards["focal_uei"], nsf_awards["query_urls"]["active"], "inline-evidence")}</h2></div><p>Counts describe NSF award records matched to the University’s UEI. Estimated total and obligated amounts are award-record fields. They are not HERD expenditures, annual spending, or a fiscal-year flow. Multi-year awards remain one award record.</p></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Most recent records</p><h2>Twenty latest awards in the review window</h2></div><span class="review-pill">{len(nsf_awards["recent_awards"])} displayed of {fmt_int(nsf_awards["recent_award_count"])}</span></div><div class="table-wrap">{nsf_awards_table()}</div></section></div>
+</main>{footer()}</body></html>'''
+
+
 def evidence_page():
     identity_rows = "".join(f'<tr id="evidence-{esc(row["identifier_type"].lower())}"><th>{esc(row["identifier_type"].replace("_", " "))}</th><td>{identifier_link(row)}</td><td>{link(row["source"], row["source_url"])}</td><td>{esc(row["note"])}</td><td>{esc(row["verified_date"])}</td></tr>' for row in identifiers)
     ipeds_rows = []
@@ -332,12 +440,35 @@ def evidence_page():
             ipeds_rows.append(cells)
         else:
             herd_rows.append(cells)
+    scorecard_fields = [
+        ("Undergraduate enrollment", f'{scorecard["institution_year"]}.student.size', fmt_int(scorecard_focal["undergraduate_enrollment"])),
+        ("In-state tuition", f'{scorecard["institution_year"]}.cost.tuition.in_state', fmt_currency(scorecard_focal["in_state_tuition"])),
+        ("Out-of-state tuition", f'{scorecard["institution_year"]}.cost.tuition.out_of_state', fmt_currency(scorecard_focal["out_of_state_tuition"])),
+        ("Average net price", f'{scorecard["institution_year"]}.cost.avg_net_price.overall', fmt_currency(scorecard_focal["average_net_price"])),
+        ("Pell Grant rate", f'{scorecard["institution_year"]}.aid.pell_grant_rate', fmt_pct(scorecard_focal["pell_grant_rate"])),
+        ("Federal loan rate", f'{scorecard["institution_year"]}.aid.federal_loan_rate', fmt_pct(scorecard_focal["federal_loan_rate"])),
+        ("Completion within 150%", f'{scorecard["institution_year"]}.completion.rate_suppressed.four_year', fmt_pct(scorecard_focal["completion_rate_150"])),
+        ("Full-time retention", f'{scorecard["institution_year"]}.student.retention_rate.four_year.full_time', fmt_pct(scorecard_focal["retention_rate_full_time"])),
+        ("Admission rate", f'{scorecard["institution_year"]}.admissions.admission_rate.overall', fmt_pct(scorecard_focal["admission_rate"])),
+        ("Median earnings · 10 years", f'{scorecard["outcomes_cohort_file_year"]}.earnings.10_yrs_after_entry.median', fmt_currency(scorecard_focal["median_earnings_10_year"])),
+        ("Median debt · completers", f'{scorecard["outcomes_cohort_file_year"]}.aid.median_debt.completers.overall', fmt_currency(scorecard_focal["median_debt_completers"])),
+    ]
+    scorecard_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>id=130943 · {esc(field)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, field, value in scorecard_fields)
+    nsf_fields = [
+        ("All-time matching records", "query=ueiNumber; metadata.totalCount", fmt_int(nsf_awards["all_time_record_count"])),
+        ("Active award records", "query=ueiNumber+ActiveAwards; metadata.totalCount", fmt_int(nsf_awards["active_award_count"])),
+        ("Active estimated total", "sum(active award.estimatedTotalAmt)", fmt_dollars_millions(nsf_awards["active_estimated_total_amount"])),
+        ("Recent award records", "query=ueiNumber+dateStart+dateEnd; metadata.totalCount", fmt_int(nsf_awards["recent_award_count"])),
+    ]
+    nsf_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>UEI={esc(nsf_awards["focal_uei"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in nsf_fields)
     return f'''{page_head("Evidence | Institution Atlas", "Identifier and value reconciliation evidence for the University of Delaware Institution Atlas.")}
 <body data-page="evidence">{site_header()}{navigation("")}
 <main id="main" class="page-shell evidence-page"><section class="source-header"><div><p class="eyebrow">Evidence register</p><h1>How each identifier and value was checked</h1><p>Official records, exact releases, and source-row locators used in the delivered pages.</p></div></section>
   <section class="panel data-table-panel" id="identity-evidence"><div class="panel-heading"><div><p class="section-kicker">Identity</p><h2>Identifier evidence</h2></div></div><div class="table-wrap"><table><thead><tr><th>Identifier</th><th>Value</th><th>Official evidence</th><th>Note</th><th>Checked</th></tr></thead><tbody>{identity_rows}</tbody></table></div></section>
   <section class="panel data-table-panel" id="ipeds-reconciliation"><div class="panel-heading"><div><p class="section-kicker">IPEDS Fall Enrollment</p><h2>Reconciliation record</h2><p class="provenance">Every displayed value below matched the exact public-use-file row.</p></div></div><div class="citation-grid"><article><span>Browser-facing records</span>{link("Fall 2022 reported data", unitid_url("130943", "2022"))}<br>{link("Fall 2023 reported data", unitid_url("130943", "2023"))}</article><article><span>Exact bulk releases</span>{link("EF2022A.zip", "https://nces.ed.gov/ipeds/datacenter/data/EF2022A.zip")}<br>{link("EF2023A.zip", "https://nces.ed.gov/ipeds/datacenter/data/EF2023A.zip")}</article><article><span>Institution key</span>{link("UNITID 130943", unitid_url("130943", "2023"))}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact source-row locator</th><th>Result</th></tr></thead><tbody>{"".join(ipeds_rows)}</tbody></table></div></section>
   <section class="panel data-table-panel" id="herd-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NCSES HERD FY2024</p><h2>Reconciliation record</h2><p class="provenance">Values were checked against the FY2024 public-use file at the NCSES reporting-entity grain.</p></div></div><div class="citation-grid"><article><span>Browser-facing profile</span>{link("U. Delaware · U3284001", ncses_url("U3284001"))}</article><article><span>Exact bulk release</span>{link("higher_education_r_and_d_2024.zip", contract_by_id["NCSES_HERD"]["data_access_url"])}</article><article><span>Join rule</span><code>ncses_inst_id=U3284001 + questionnaire_no + row + column</code></article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact source-row locator</th><th>Result</th></tr></thead><tbody>{"".join(herd_rows)}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="scorecard-reconciliation"><div class="panel-heading"><div><p class="section-kicker">College Scorecard</p><h2>Reconciliation record</h2><p class="provenance">Displayed values match the official API response stored on {esc(scorecard["retrieved_at"])}. Each metric retains its API field and file year.</p></div></div><div class="citation-grid"><article><span>Institution profile</span>{link("University of Delaware · UNITID 130943", scorecard["official_profile_url"])}</article><article><span>Documentation and data</span>{link("Institution documentation", scorecard["documentation_url"])}<br>{link("Official data downloads", scorecard["data_url"])}</article><article><span>Published snapshot</span>{local_link("scorecard.json", "data/scorecard.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{scorecard_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="nsf-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NSF Awards API</p><h2>Reconciliation record</h2><p class="provenance">Counts and aggregates were rebuilt from exact-UEI API results retrieved {esc(nsf_awards["retrieved_at"])}.</p></div></div><div class="citation-grid"><article><span>Exact source query</span>{link("UEI " + nsf_awards["focal_uei"], nsf_awards["query_urls"]["all"])}</article><article><span>API documentation</span>{link("NSF Awards API", nsf_awards["query_urls"]["documentation"])}</article><article><span>Published snapshot</span>{local_link("nsf-awards.json", "data/nsf-awards.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{nsf_rows}</tbody></table></div></section>
 </main>{footer()}</body></html>'''
 
 
@@ -351,14 +482,16 @@ def maintenance_page():
   <section class="maintenance-cards"><article><span>Review owner</span><strong>{esc(maintenance["owner"])}</strong><p>{esc(maintenance["owner_role"])}</p></article><article><span>Cadence</span><strong>{esc(maintenance["cadence"])}</strong><p>{esc(maintenance["schedule"])}</p></article><article><span>Last completed</span><strong>{esc(latest["date_display"])}</strong><p>{esc(latest["result"])}</p></article><article><span>Next review</span><strong>{esc(maintenance["next_review"])}</strong><p>Review automated link results and source changes.</p></article></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Visible history</p><h2>Maintenance log</h2></div>{link("GitHub workflow", maintenance["workflow_url"], "record-link")}</div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Review type</th><th>Owner</th><th>Result</th><th>Details</th></tr></thead><tbody>{log_rows}</tbody></table></div></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Assigned contracts</p><h2>Source review ownership</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Owner</th><th>Cadence</th><th>Last verified</th><th>Official links</th></tr></thead><tbody>{source_rows}</tbody></table></div></section>
-  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")}</p></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")} · {local_link("College Scorecard JSON", "data/scorecard.json")} · {local_link("NSF awards JSON", "data/nsf-awards.json")}</p></section>
 </main>{footer()}</body></html>'''
 
 
 pages = {
     "index.html": identity_page(),
     "ipeds.html": ipeds_page(),
+    "scorecard.html": scorecard_page(),
     "herd.html": herd_page(),
+    "nsf-awards.html": nsf_page(),
     "evidence.html": evidence_page(),
     "maintenance.html": maintenance_page(),
 }
@@ -384,6 +517,8 @@ for output in OUTPUTS:
         ("DELAWARE_IDENTITY_REGISTRY.csv", "identity-registry.csv"),
         ("reconciliation.csv", "reconciliation.csv"),
         ("vintage-diff.csv", "vintage-diff.csv"),
+        ("scorecard.json", "scorecard.json"),
+        ("nsf-awards.json", "nsf-awards.json"),
     ]:
         shutil.copy2(DATA / source_name, export_dir / export_name)
     if (DATA / "link-check.json").exists():

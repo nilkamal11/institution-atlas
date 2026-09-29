@@ -155,6 +155,8 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.25
 .source-header p:not(.eyebrow) { max-width: 760px; margin: .7rem 0 0; color: #d2e2ed; font-size: 1rem; line-height: 1.55; }
 .source-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .5rem; }
 .herd-header { background: linear-gradient(125deg, #082b35 0%, #0a4f5d 68%, #087d78 100%); }
+.scorecard-header { background: linear-gradient(125deg, #17294d 0%, #284f87 68%, #3b719e 100%); }
+.nsf-header { background: linear-gradient(125deg, #182d49 0%, #274e72 62%, #8a5429 100%); }
 .official-button { flex: 0 0 auto; padding: .7rem .9rem; color: #fff; border: 1px solid rgba(255,255,255,.45); border-radius: .55rem; text-decoration: none; font-weight: 750; }
 .official-button:hover, .official-button:focus-visible { background: rgba(255,255,255,.1); }
 .provenance-bar { display: grid; grid-template-columns: repeat(5, 1fr); margin-bottom: 1rem; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: .75rem; }

@@ -6,11 +6,18 @@
   "next_review": "October 2026",
   "workflow_url": "https://github.com/nilkamal11/institution-atlas/actions",
   "last_completed_review": {
-    "date": "2026-09-13",
-    "date_display": "13 Sep 2026",
-    "result": "Prototype values reconciled and source evidence reviewed"
+    "date": "2026-09-29",
+    "date_display": "29 Sep 2026",
+    "result": "College Scorecard and NSF Awards source pages added from verified API snapshots"
   },
   "history": [
+    {
+      "date": "2026-09-29",
+      "type": "Source-page expansion",
+      "owner": "Nil Shah",
+      "result": "Passed",
+      "details": "Added College Scorecard institution and peer records for 2024 plus NSF award records joined by exact UEI. Published fields, cohort years, query locators, and dated API snapshots remain visible."
+    },
     {
       "date": "2026-09-13",
       "type": "Build and source review",
