@@ -1,0 +1,118 @@
+{
+  "source_id": "NCSES_SED",
+  "institution": "University of Delaware",
+  "ncses_id": "U3284001",
+  "release_year": 2025,
+  "retrieved_at": "2026-09-30",
+  "profile_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
+  "download_url": "https://ncsesdata.nsf.gov/profiles/site?method=download&tin=U3284001",
+  "technical_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes",
+  "release_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=releaseNotes",
+  "report_url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=s1",
+  "year_summary": [
+    {
+      "year": 2025,
+      "value": 273
+    },
+    {
+      "year": 2024,
+      "value": 271
+    },
+    {
+      "year": 2023,
+      "value": 254
+    },
+    {
+      "year": 2022,
+      "value": 236
+    },
+    {
+      "year": 2021,
+      "value": 206
+    },
+    {
+      "year": 2020,
+      "value": 211
+    },
+    {
+      "year": 2019,
+      "value": 235
+    },
+    {
+      "year": 2018,
+      "value": 231
+    },
+    {
+      "year": 2017,
+      "value": 232
+    },
+    {
+      "year": 2016,
+      "value": 269
+    }
+  ],
+  "latest": {
+    "all_fields": 273,
+    "science_and_engineering": 243,
+    "non_science_and_engineering": 30
+  },
+  "field_summary": [
+    {
+      "field": "Agricultural sciences and natural resources",
+      "doctorates": 8
+    },
+    {
+      "field": "Biological and biomedical sciences",
+      "doctorates": 43
+    },
+    {
+      "field": "Computer and information sciences",
+      "doctorates": 17
+    },
+    {
+      "field": "Engineering",
+      "doctorates": 82
+    },
+    {
+      "field": "Geosciences, atmospheric, and ocean sciences",
+      "doctorates": 10
+    },
+    {
+      "field": "Health sciences",
+      "doctorates": 11
+    },
+    {
+      "field": "Mathematics and statistics",
+      "doctorates": 4
+    },
+    {
+      "field": "Physical sciences",
+      "doctorates": 26
+    },
+    {
+      "field": "Psychology",
+      "doctorates": 13
+    },
+    {
+      "field": "Social sciences",
+      "doctorates": 29
+    },
+    {
+      "field": "Non-science and engineering",
+      "doctorates": 30
+    }
+  ],
+  "ranking": {
+    "year": 2025,
+    "rank": 75,
+    "percentile": 84.0,
+    "institutions_ranked": 460
+  },
+  "source_locators": {
+    "all_fields": "U3284001.s1.xlsx · row 4 · column 2025",
+    "science_and_engineering": "U3284001.s1.xlsx · row 5 · column 2025",
+    "non_science_and_engineering": "U3284001.s1.xlsx · row 61 · column 2025"
+  },
+  "boundary_note": "SED counts research doctorate recipients on confirmed graduation lists submitted by U. Delaware for the academic year. They are completions, not current enrollment or alumni employment records.",
+  "comparability_note": "Beginning in 2021, SED adopted a modified 2020 CIP-based field taxonomy. Field-level values before and after that change require care; the all-fields series remains visible with the source note."
+}

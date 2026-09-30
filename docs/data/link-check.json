@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "checked_at": "2026-09-30T10:56:44.849946+00:00",
-  "total": 189,
-  "resolved_count": 189,
-  "restricted_count": 0,
+  "checked_at": "2026-09-30T11:48:13.639708+00:00",
+  "total": 227,
+  "resolved_count": 198,
+  "restricted_count": 29,
   "unverified_count": 0,
   "broken_count": 0,
   "broken": [],
@@ -175,6 +175,204 @@
       "status": 200,
       "result": "resolved",
       "final_url": "https://apps.irs.gov/pub/epostcard/cor/516000297_202006_990_2021052518186864.pdf"
+    },
+    {
+      "url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/"
+    },
+    {
+      "url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/2025-institutional-classification/",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/2025-institutional-classification/"
+    },
+    {
+      "url": "https://carnegieclassifications.acenet.edu/data-center/",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://carnegieclassifications.acenet.edu/data-center/"
+    },
+    {
+      "url": "https://carnegieclassifications.acenet.edu/institution/university-of-delaware/",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://carnegieclassifications.acenet.edu/institution/university-of-delaware/"
+    },
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.spons=University%20of%20Delaware&pageSize=1000&countTotal=true&format=json",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.spons=University+of+Delaware&pageSize=1000&countTotal=true&format=json",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/data-api/api",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/search?term=University%20of%20Delaware",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT01323322",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT03064139",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT03726047",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04168684",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04454645",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04820335",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04904068",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05099328",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05384990",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05887622",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05901493",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05956886",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06093906",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06145009",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06229691",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06250283",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06268041",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06304519",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06493422",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06745466",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT06949501",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT07536217",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT07666165",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT07720427",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT07759219",
+      "status": 403,
+      "result": "restricted",
+      "error": "Forbidden"
     },
     {
       "url": "https://collegescorecard.ed.gov/data/",
@@ -631,6 +829,36 @@
       "status": 200,
       "result": "resolved",
       "final_url": "https://ncses.nsf.gov/surveys/higher-education-research-development/2024"
+    },
+    {
+      "url": "https://ncsesdata.nsf.gov/profiles/site?method=download&tin=U3284001",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://ncsesdata.nsf.gov/profiles/site?method=download&tin=U3284001"
+    },
+    {
+      "url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=f1",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=f1"
+    },
+    {
+      "url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g4",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g4"
+    },
+    {
+      "url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=s1",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=s1"
+    },
+    {
+      "url": "https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes",
+      "status": 200,
+      "result": "resolved",
+      "final_url": "https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes"
     },
     {
       "url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U0450001",

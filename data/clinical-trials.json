@@ -1,0 +1,531 @@
+{
+  "source_id": "CLINICALTRIALS",
+  "institution": "University of Delaware",
+  "retrieved_at": "2026-09-30",
+  "query_url": "https://clinicaltrials.gov/api/v2/studies?query.spons=University+of+Delaware&pageSize=1000&countTotal=true&format=json",
+  "documentation_url": "https://clinicaltrials.gov/data-api/api",
+  "search_url": "https://clinicaltrials.gov/search?term=University%20of%20Delaware",
+  "api_returned_count": 181,
+  "exact_name_record_count": 178,
+  "lead_sponsor_count": 128,
+  "collaborator_count": 50,
+  "active_record_count": 29,
+  "status_summary": [
+    {
+      "status": "COMPLETED",
+      "studies": 117
+    },
+    {
+      "status": "RECRUITING",
+      "studies": 22
+    },
+    {
+      "status": "UNKNOWN",
+      "studies": 19
+    },
+    {
+      "status": "TERMINATED",
+      "studies": 9
+    },
+    {
+      "status": "ACTIVE_NOT_RECRUITING",
+      "studies": 5
+    },
+    {
+      "status": "NOT_YET_RECRUITING",
+      "studies": 2
+    },
+    {
+      "status": "WITHDRAWN",
+      "studies": 2
+    },
+    {
+      "status": "SUSPENDED",
+      "studies": 2
+    }
+  ],
+  "study_type_summary": [
+    {
+      "study_type": "INTERVENTIONAL",
+      "studies": 167
+    },
+    {
+      "study_type": "OBSERVATIONAL",
+      "studies": 11
+    }
+  ],
+  "start_year_summary": [
+    {
+      "year": 2002,
+      "studies": 2
+    },
+    {
+      "year": 2004,
+      "studies": 3
+    },
+    {
+      "year": 2005,
+      "studies": 2
+    },
+    {
+      "year": 2006,
+      "studies": 2
+    },
+    {
+      "year": 2007,
+      "studies": 4
+    },
+    {
+      "year": 2008,
+      "studies": 1
+    },
+    {
+      "year": 2009,
+      "studies": 2
+    },
+    {
+      "year": 2010,
+      "studies": 5
+    },
+    {
+      "year": 2011,
+      "studies": 1
+    },
+    {
+      "year": 2012,
+      "studies": 2
+    },
+    {
+      "year": 2013,
+      "studies": 4
+    },
+    {
+      "year": 2014,
+      "studies": 6
+    },
+    {
+      "year": 2015,
+      "studies": 2
+    },
+    {
+      "year": 2016,
+      "studies": 9
+    },
+    {
+      "year": 2017,
+      "studies": 13
+    },
+    {
+      "year": 2018,
+      "studies": 16
+    },
+    {
+      "year": 2019,
+      "studies": 15
+    },
+    {
+      "year": 2020,
+      "studies": 13
+    },
+    {
+      "year": 2021,
+      "studies": 15
+    },
+    {
+      "year": 2022,
+      "studies": 19
+    },
+    {
+      "year": 2023,
+      "studies": 13
+    },
+    {
+      "year": 2024,
+      "studies": 17
+    },
+    {
+      "year": 2025,
+      "studies": 8
+    },
+    {
+      "year": 2026,
+      "studies": 4
+    }
+  ],
+  "recent_studies": [
+    {
+      "nct_id": "NCT01323322",
+      "title": "Healthy Aging in Neighborhoods of Diversity Across the Life Span (HANDLS)",
+      "role": "Collaborator",
+      "lead_sponsor": "National Institute on Aging (NIA)",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "study_type": "OBSERVATIONAL",
+      "phases": [],
+      "start_date": "2009-07-01",
+      "completion_date": null,
+      "last_update_posted": "2026-09-28",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT01323322"
+    },
+    {
+      "nct_id": "NCT06093906",
+      "title": "Positive Processes and Transition to Health (PATH)",
+      "role": "Collaborator",
+      "lead_sponsor": "Case Western Reserve University",
+      "overall_status": "RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2023-09-12",
+      "completion_date": "2027-07-31",
+      "last_update_posted": "2026-08-19",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06093906"
+    },
+    {
+      "nct_id": "NCT07759219",
+      "title": "Stimulation for Amputation Pain Management",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "NOT_YET_RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2026-09-01",
+      "completion_date": "2028-08",
+      "last_update_posted": "2026-08-12",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT07759219"
+    },
+    {
+      "nct_id": "NCT05956886",
+      "title": "Sleep Chatbot Intervention for Emerging Black/African American Adults",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2023-09-04",
+      "completion_date": "2025-02-05",
+      "last_update_posted": "2026-07-31",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT05956886"
+    },
+    {
+      "nct_id": "NCT07720427",
+      "title": "COMPARING EFFECTS OF NINTENDO EXERGAMING TO A NO INTERVENTION CONTROL GROUP",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2023-05-02",
+      "completion_date": "2024-03-26",
+      "last_update_posted": "2026-07-22",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT07720427"
+    },
+    {
+      "nct_id": "NCT03064139",
+      "title": "Improving Walking Quality and Quantity in Osteoarthritis (IWALQQ-OA)",
+      "role": "Collaborator",
+      "lead_sponsor": "Boston University Charles River Campus",
+      "overall_status": "TERMINATED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2019-03-07",
+      "completion_date": "2021-03-18",
+      "last_update_posted": "2026-07-20",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT03064139"
+    },
+    {
+      "nct_id": "NCT06493422",
+      "title": "Online Interplay Between Deciding and Acting With Mild Cognitive Impairment",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2025-01-28",
+      "completion_date": "2026-06-30",
+      "last_update_posted": "2026-07-06",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06493422"
+    },
+    {
+      "nct_id": "NCT06745466",
+      "title": "Disentangling the Effects of Daily Stress, Sleep, and Sex Hormones on Accelerated Vascular Aging in Midlife Women",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "PHASE4"
+      ],
+      "start_date": "2024-11-15",
+      "completion_date": "2027-10",
+      "last_update_posted": "2026-07-02",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06745466"
+    },
+    {
+      "nct_id": "NCT06145009",
+      "title": "Time Restricted Eating, Eating Behaviors, and Cardiometabolic Risk in Emerging Adult Women",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2023-10-30",
+      "completion_date": "2025-10-10",
+      "last_update_posted": "2026-06-30",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06145009"
+    },
+    {
+      "nct_id": "NCT07666165",
+      "title": "Functional Neuroimaging and Motor Recovery After Stroke",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2022-01-25",
+      "completion_date": "2022-12-22",
+      "last_update_posted": "2026-06-24",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT07666165"
+    },
+    {
+      "nct_id": "NCT05384990",
+      "title": "Sensorimotor Control During Postural Transitions in CP",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2024-04-01",
+      "completion_date": "2026-12-30",
+      "last_update_posted": "2026-06-11",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT05384990"
+    },
+    {
+      "nct_id": "NCT07536217",
+      "title": "Developmental Pilot of Support Groups for Caregivers of Children With DLD",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2026-02-20",
+      "completion_date": "2026-05-28",
+      "last_update_posted": "2026-06-03",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT07536217"
+    },
+    {
+      "nct_id": "NCT05901493",
+      "title": "Category Learning Retention in Adults With and Without Developmental Language Disorder",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2022-10-23",
+      "completion_date": "2027-07-31",
+      "last_update_posted": "2026-05-29",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT05901493"
+    },
+    {
+      "nct_id": "NCT03726047",
+      "title": "Exercise and Motor Learning After Stroke (Study #3)",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2019-12-01",
+      "completion_date": "2027-02",
+      "last_update_posted": "2026-05-20",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT03726047"
+    },
+    {
+      "nct_id": "NCT06250283",
+      "title": "Resveratrol for the Prevention of Bone Loss in Postmenopausal Women",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2024-02-02",
+      "completion_date": "2026-01-30",
+      "last_update_posted": "2026-05-13",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06250283"
+    },
+    {
+      "nct_id": "NCT05099328",
+      "title": "Recasting or Book Reading by Parents or Clinicians",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2021-09-28",
+      "completion_date": "2026-04-20",
+      "last_update_posted": "2026-05-12",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT05099328"
+    },
+    {
+      "nct_id": "NCT06229691",
+      "title": "Muscle Fatigability and Trip-specific Fall Risk in Adults With Knee Osteoarthritis",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2024-05-14",
+      "completion_date": "2025-08-27",
+      "last_update_posted": "2026-05-06",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06229691"
+    },
+    {
+      "nct_id": "NCT04904068",
+      "title": "Functional Neuroimaging in Parkinson's Disease",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "OBSERVATIONAL",
+      "phases": [],
+      "start_date": "2020-09-15",
+      "completion_date": "2023-08-31",
+      "last_update_posted": "2026-05-06",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT04904068"
+    },
+    {
+      "nct_id": "NCT05887622",
+      "title": "The Potassium Supplementation Study",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "ACTIVE_NOT_RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2022-01-24",
+      "completion_date": "2026-12-31",
+      "last_update_posted": "2026-05-05",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT05887622"
+    },
+    {
+      "nct_id": "NCT04454645",
+      "title": "Intervening With Opioid-Dependent MothersMothers and Infants",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2020-05-01",
+      "completion_date": "2026-03-31",
+      "last_update_posted": "2026-05-05",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT04454645"
+    },
+    {
+      "nct_id": "NCT04168684",
+      "title": "Intervening Early: Key Adolescent Outcomes",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2019-08-02",
+      "completion_date": "2026-03-31",
+      "last_update_posted": "2026-05-05",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT04168684"
+    },
+    {
+      "nct_id": "NCT06304519",
+      "title": "Identifying the Optimal Dynamic Ankle-Foot Orthosis Bending Stiffness for Individuals Post-Stroke",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2023-03-01",
+      "completion_date": "2026-03-30",
+      "last_update_posted": "2026-05-04",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06304519"
+    },
+    {
+      "nct_id": "NCT06268041",
+      "title": "HIT-Stroke Trial 2",
+      "role": "Collaborator",
+      "lead_sponsor": "University of Cincinnati",
+      "overall_status": "RECRUITING",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2024-02-09",
+      "completion_date": "2028-04",
+      "last_update_posted": "2026-05-01",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06268041"
+    },
+    {
+      "nct_id": "NCT04820335",
+      "title": "Promoting Independence With Compensatory Cognitive Rehabilitation",
+      "role": "Lead sponsor",
+      "lead_sponsor": "University of Delaware",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2022-02-01",
+      "completion_date": "2025-09-15",
+      "last_update_posted": "2026-05-01",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT04820335"
+    },
+    {
+      "nct_id": "NCT06949501",
+      "title": "The Effectiveness of Virtual Patient Simulation Versus Peer Simulation in Providing Sexual Counseling During Pregnancy",
+      "role": "Collaborator",
+      "lead_sponsor": "Ankara University",
+      "overall_status": "COMPLETED",
+      "study_type": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "start_date": "2025-04-28",
+      "completion_date": "2025-06-27",
+      "last_update_posted": "2026-04-30",
+      "official_record_url": "https://clinicaltrials.gov/study/NCT06949501"
+    }
+  ],
+  "source_locator": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name or collaborators[].name equals University of Delaware, case-insensitive",
+  "boundary_note": "ClinicalTrials.gov does not supply a stable institution identifier for sponsors or collaborators. This page keeps only records whose lead-sponsor or collaborator name exactly matches University of Delaware after case normalization. It does not infer affiliates, health systems, sites, or investigator affiliations.",
+  "measure_note": "Counts describe registered study records and sponsor roles at the retrieval date. They do not measure unique trials funded by the university, participants, publications, or research spending."
+}

@@ -29,6 +29,9 @@ jobs:
       - name: Refresh NIH, USAspending, and OpenAlex snapshots
         if: github.event_name != 'push'
         run: python scripts/refresh_nih_usaspending_openalex.py --record-review
+      - name: Refresh NCSES profiles, ClinicalTrials.gov, and Carnegie
+        if: github.event_name != 'push'
+        run: python scripts/refresh_ncses_clinical_carnegie.py --record-review
       - name: Build complete static pages
         run: python scripts/build_static_site.py
       - name: Validate no-JavaScript publication
@@ -43,6 +46,6 @@ jobs:
         run: |
           git config user.name "institution-atlas-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/link-check.json data/scorecard.json data/nsf-awards.json data/nih-reporter.json data/usaspending.json data/openalex.json data/maintenance-log.json data/source-contracts.json data/SOURCE_COVERAGE_MATRIX.csv docs dist
+          git add data/link-check.json data/scorecard.json data/nsf-awards.json data/nih-reporter.json data/usaspending.json data/openalex.json data/ncses-gss.json data/ncses-sed.json data/ncses-facilities.json data/clinical-trials.json data/carnegie.json data/maintenance-log.json data/source-contracts.json data/SOURCE_COVERAGE_MATRIX.csv docs dist
           git diff --cached --quiet || git commit -m "Record monthly atlas source review"
           git push

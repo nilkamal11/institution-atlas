@@ -10,10 +10,15 @@ The site is generated from structured data in this repository. The build writes 
 - **IPEDS core** shows Fall 2023 and Fall 2022 enrollment, an accessible chart and table, peer records, and a visible “What changed?” comparison.
 - **College Scorecard** shows 2024 cost, aid, admissions, retention, and completion measures; separately dated debt and earnings cohorts; and all 30 submitted DFR peers.
 - **Research · HERD** shows FY2024 R&D expenditures, funding sources, personnel, peer comparisons, and boundary review status.
+- **Graduate students and postdocs** shows Fall 2024 GSS full-time and part-time graduate students, postdoctorates, support types, broad fields, and the published institutional rank.
+- **Earned doctorates** shows academic year 2025 research doctorate counts, ten-year trends, broad fields, and the published institutional rank.
+- **Research space** shows FY2023 science and engineering research space, the biennial trend, survey fields, and the published institutional rank.
 - **NSF awards** shows exact-UEI award coverage, active records, recent award-year trends, directorate coverage, and linked award records.
 - **NIH projects** shows FY2022–FY2026 funded application records, annual award amounts, administering institutes, and linked RePORTER application records.
 - **Federal awards** shows USAspending transaction obligations by federal fiscal year, prime-award counts, awarding agencies, and linked grant and contract records.
 - **Publications and works** shows 2021–2025 OpenAlex work counts, open-access status, work types, and primary-topic fields for the exact institution record.
+- **Clinical trials** shows ClinicalTrials.gov records with an exact University of Delaware lead-sponsor or collaborator name, current registry status, study type, and linked NCT records.
+- **Classifications** shows the official 2025 Carnegie Institutional, Research Activity, and Student Access and Earnings classifications plus program mix and classification history.
 - **Evidence** links every confirmed identifier and each reconciliation badge to the official evidence, exact bulk release, and source-row locator.
 - **Maintenance** names Nil Shah as the monthly review owner and publishes the review cadence, history, source assignments, and link-check record.
 
@@ -29,6 +34,11 @@ The source data is in [`data`](data). Stable copies are published under `/data/`
 - [`data/nih-reporter.json`](data/nih-reporter.json) contains the dated exact-organization NIH RePORTER application snapshot and fiscal-year aggregates.
 - [`data/usaspending.json`](data/usaspending.json) contains exact-UEI USAspending obligation trends, award counts, agencies, and selected prime-award records.
 - [`data/openalex.json`](data/openalex.json) contains exact-institution OpenAlex work counts grouped by year, access status, type, domain, and field.
+- [`data/ncses-gss.json`](data/ncses-gss.json) contains the current official-profile GSS counts, fields, support categories, trends, rank, and workbook locators.
+- [`data/ncses-sed.json`](data/ncses-sed.json) contains the current official-profile earned-doctorate trends, fields, rank, and workbook locators.
+- [`data/ncses-facilities.json`](data/ncses-facilities.json) contains the current official-profile research-space trends, fields, rank, and workbook locator.
+- [`data/clinical-trials.json`](data/clinical-trials.json) contains exact normalized sponsor-name study records and linked NCT identifiers from ClinicalTrials.gov.
+- [`data/carnegie.json`](data/carnegie.json) contains the official 2025 Carnegie labels and supporting classification metadata for UNITID 130943.
 - [`data/reconciliation.csv`](data/reconciliation.csv) records each displayed University of Delaware value and its source-row locator.
 - [`data/vintage-diff.csv`](data/vintage-diff.csv) records changes between retained IPEDS vintages.
 - [`data/source-contracts.json`](data/source-contracts.json) records source grain, universe, boundary, period, release, missing-value rules, ownership, and review cadence.
@@ -42,6 +52,7 @@ The scripts use the Python standard library. From the repository root:
 ```powershell
 python scripts\refresh_scorecard_nsf.py
 python scripts\refresh_nih_usaspending_openalex.py
+python scripts\refresh_ncses_clinical_carnegie.py
 python scripts\build_static_site.py
 python scripts\validate_static_site.py
 python scripts\validate_release.py
@@ -54,7 +65,7 @@ Preview the same files served by GitHub Pages:
 python -m http.server 8770 --directory docs
 ```
 
-The scheduled GitHub Action runs monthly, refreshes College Scorecard, NSF Awards, NIH RePORTER, USAspending, and OpenAlex, rebuilds the site, checks official links, and publishes a new maintenance record when source data changes.
+The scheduled GitHub Action runs monthly, refreshes College Scorecard, NSF Awards, NIH RePORTER, USAspending, OpenAlex, NCSES GSS, SED, Facilities, ClinicalTrials.gov, and Carnegie, rebuilds the site, checks official links, and publishes a new maintenance record when source data changes.
 
 ## Official source entry points
 
@@ -71,5 +82,8 @@ The scheduled GitHub Action runs monthly, refreshes College Scorecard, NSF Award
 - [USAspending API documentation](https://api.usaspending.gov/docs/endpoints)
 - [OpenAlex institution record](https://openalex.org/I86501945)
 - [OpenAlex API documentation](https://docs.openalex.org/)
+- [NCSES Academic Institution Profile technical notes](https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes)
+- [ClinicalTrials.gov API](https://clinicaltrials.gov/data-api/api)
+- [Carnegie University of Delaware record](https://carnegieclassifications.acenet.edu/institution/university-of-delaware/)
 
 The browser-facing IPEDS report is paired with its exact bulk release and row locator because the general institution-profile route can redirect repeatedly for automated clients.

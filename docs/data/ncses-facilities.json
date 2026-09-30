@@ -1,0 +1,98 @@
+{
+  "source_id": "NCSES_FACILITIES",
+  "institution": "University of Delaware",
+  "ncses_id": "U3284001",
+  "release_year": 2023,
+  "retrieved_at": "2026-09-30",
+  "profile_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
+  "download_url": "https://ncsesdata.nsf.gov/profiles/site?method=download&tin=U3284001",
+  "technical_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes",
+  "release_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=releaseNotes",
+  "report_url": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=f1",
+  "year_summary": [
+    {
+      "year": 2023,
+      "value": 853
+    },
+    {
+      "year": 2021,
+      "value": 478
+    },
+    {
+      "year": 2019,
+      "value": 526
+    },
+    {
+      "year": 2017,
+      "value": 552
+    },
+    {
+      "year": 2015,
+      "value": 391
+    }
+  ],
+  "latest": {
+    "research_space_nasf_thousands": 853
+  },
+  "field_summary": [
+    {
+      "field": "Agricultural sciences",
+      "nasf_thousands": 212
+    },
+    {
+      "field": "Biological and biomedical sciences",
+      "nasf_thousands": 27
+    },
+    {
+      "field": "Computer and information sciences",
+      "nasf_thousands": 10
+    },
+    {
+      "field": "Engineering",
+      "nasf_thousands": 232
+    },
+    {
+      "field": "Geosciences, atmospheric sciences, and ocean sciences",
+      "nasf_thousands": 78
+    },
+    {
+      "field": "Health sciences",
+      "nasf_thousands": 68
+    },
+    {
+      "field": "Mathematics and statistics",
+      "nasf_thousands": 6
+    },
+    {
+      "field": "Natural resources and conservation",
+      "nasf_thousands": 14
+    },
+    {
+      "field": "Physical sciences",
+      "nasf_thousands": 122
+    },
+    {
+      "field": "Psychology",
+      "nasf_thousands": 27
+    },
+    {
+      "field": "Social sciences",
+      "nasf_thousands": 30
+    },
+    {
+      "field": "Other",
+      "nasf_thousands": 27
+    }
+  ],
+  "ranking": {
+    "year": 2023,
+    "rank": 83,
+    "percentile": 86.5,
+    "institutions_ranked": 602
+  },
+  "source_locators": {
+    "research_space": "U3284001.f1.xlsx · row 5 · column 2023"
+  },
+  "boundary_note": "Research space is net assignable square feet in buildings where science and engineering research occurs. It is a capacity measure, not building gross square footage, expenditures, or the whole campus footprint.",
+  "comparability_note": "Facilities is biennial. Blank years do not indicate zero, and the field categories reflect the survey rather than the university's named departments."
+}

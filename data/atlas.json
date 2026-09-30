@@ -3443,10 +3443,10 @@
       "current_ud_coverage": "confirmed",
       "join_key": "UNITID",
       "boundary_assessment": "Display metadata only",
-      "prototype_decision": "include_identity_metadata",
-      "reason": "Official page reports UnitID 130943 and 2025 classifications; do not use labels in peer-distance calculations",
+      "prototype_decision": "include_classifications_page",
+      "reason": "Official UNITID 130943 record supplies 2025 institutional, research, and access-and-earnings classifications; labels remain display metadata.",
       "official_url": "https://carnegieclassifications.acenet.edu/institution/university-of-delaware/",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "NCSES_GSS",
@@ -3454,10 +3454,10 @@
       "current_ud_coverage": "confirmed",
       "join_key": "NCSES institution and UNITID crosswalk",
       "boundary_assessment": "CORE",
-      "prototype_decision": "confirmed_defer",
-      "reason": "University appears in NCSES Academic Institution Profiles; source is outside the three-page prototype",
+      "prototype_decision": "include_gss_page",
+      "reason": "Official profile workbook supplies Fall 2024 enrollment, support, postdoc, and ranking tables.",
       "official_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "NCSES_SED",
@@ -3465,10 +3465,10 @@
       "current_ud_coverage": "confirmed",
       "join_key": "NCSES institution",
       "boundary_assessment": "CORE",
-      "prototype_decision": "confirmed_defer",
-      "reason": "University appears in NCSES Academic Institution Profiles; source is outside the three-page prototype",
+      "prototype_decision": "include_doctorates_page",
+      "reason": "Official profile workbook supplies academic year 2025 research-doctorate totals, fields, trends, and ranking.",
       "official_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "NCSES_FACILITIES",
@@ -3476,10 +3476,10 @@
       "current_ud_coverage": "confirmed",
       "join_key": "NCSES institution",
       "boundary_assessment": "CORE",
-      "prototype_decision": "confirmed_defer",
-      "reason": "University profile contains the biennial facilities series; source is outside the three-page prototype",
+      "prototype_decision": "include_facilities_page",
+      "reason": "Official profile workbook supplies FY2023 biennial research-space totals, fields, trends, and ranking.",
       "official_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "SCORECARD_INSTITUTION",
@@ -3553,10 +3553,10 @@
       "current_ud_coverage": "confirmed_name_coverage",
       "join_key": "Sponsor and collaborator names",
       "boundary_assessment": "String-matched CORE only",
-      "prototype_decision": "conditional_defer",
-      "reason": "Sponsor query returned 181 studies and a sample with University of Delaware as lead sponsor; no stable institution identifier is present",
+      "prototype_decision": "include_trials_page",
+      "reason": "Sponsor query returned 181 records; 178 retained after exact normalized lead-sponsor or collaborator name matching.",
       "official_url": "https://clinicaltrials.gov/api/v2/studies?query.spons=University%20of%20Delaware&pageSize=1&countTotal=true",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "AACT",

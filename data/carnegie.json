@@ -1,0 +1,100 @@
+{
+  "source_id": "CARNEGIE_2025",
+  "institution": "University of Delaware",
+  "unitid": "130943",
+  "retrieved_at": "2026-09-30",
+  "official_record_url": "https://carnegieclassifications.acenet.edu/institution/university-of-delaware/",
+  "data_center_url": "https://carnegieclassifications.acenet.edu/data-center/",
+  "institutional_methodology_url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/2025-institutional-classification/",
+  "research_methodology_url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/2025-research-activity-designations/",
+  "access_earnings_methodology_url": "https://carnegieclassifications.acenet.edu/carnegie-classification/classification-methodology/2025-student-access-and-earnings-classification/",
+  "classifications": {
+    "institutional_2025": "Mixed Undergraduate/Graduate-Doctorate Large",
+    "research_2025": "Research 1: Very High Research Spending and Doctorate Production",
+    "student_access_and_earnings_2025": "Lower Access, Higher Earnings",
+    "basic_2021": "Doctoral Universities: Very High Research Activity",
+    "community_engagement": "Classified",
+    "land_grant": "Yes",
+    "control": "Public",
+    "campus_setting": "Primarily residential",
+    "highest_degree": "Doctorate"
+  },
+  "enrollment_2025": 25916,
+  "award_counts_2025": {
+    "associate": 281,
+    "bachelor": 4305,
+    "master": 1008,
+    "doctorate": 317
+  },
+  "program_mix": [
+    {
+      "program": "Business, Management, Marketing, And Related Support Services",
+      "share": 0.201243863
+    },
+    {
+      "program": "Health Professions And Related Programs",
+      "share": 0.102258593
+    },
+    {
+      "program": "Social Sciences",
+      "share": 0.095646481
+    },
+    {
+      "program": "Engineering",
+      "share": 0.083011457
+    },
+    {
+      "program": "Biological And Biomedical Sciences",
+      "share": 0.066775777
+    },
+    {
+      "program": "All other programs",
+      "share": 0.45106383
+    }
+  ],
+  "classification_history": [
+    {
+      "year": "1973",
+      "classification": "Doctoral-Granting Universities I"
+    },
+    {
+      "year": "1976",
+      "classification": "Doctoral-Granting Universities I"
+    },
+    {
+      "year": "1987",
+      "classification": "Research Universities  II"
+    },
+    {
+      "year": "1994",
+      "classification": "Research Universities  II"
+    },
+    {
+      "year": "2000",
+      "classification": "Doctoral/Research Universities--Extensive"
+    },
+    {
+      "year": "2005",
+      "classification": "RU/VH: Research Universities (very high research activity)"
+    },
+    {
+      "year": "2010",
+      "classification": "RU/VH: Research Universities (very high research activity)"
+    },
+    {
+      "year": "2015",
+      "classification": "Doctoral Universities: Highest Research Activity"
+    },
+    {
+      "year": "2018",
+      "classification": "Doctoral Universities: Very High Research Activity"
+    },
+    {
+      "year": "2021",
+      "classification": "Doctoral Universities: Very High Research Activity"
+    }
+  ],
+  "source_locator": "ace_carnegie_institution_data.data.post_meta on the official institution record",
+  "boundary_note": "Carnegie classifications are descriptive metadata attached to IPEDS UNITID 130943. They are shown as published and do not enter the atlas peer-distance calculations.",
+  "period_note": "Generally, the Carnegie Classifications and institutional information provided on this page reflect the average of available data from 2020-21, 2021-22, and 2022-23 as reported to the National Center for Education Statistics (NCES) Integrated Postsecondary Education Data System (IPEDS). For more information on how specific dimensions were calculated, please see the Institutional Classification methodology page."
+}

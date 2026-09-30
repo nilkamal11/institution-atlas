@@ -30,6 +30,11 @@ nsf_awards = load_json("nsf-awards.json")
 nih_reporter = load_json("nih-reporter.json")
 usaspending = load_json("usaspending.json")
 openalex = load_json("openalex.json")
+ncses_gss = load_json("ncses-gss.json")
+ncses_sed = load_json("ncses-sed.json")
+ncses_facilities = load_json("ncses-facilities.json")
+clinical_trials = load_json("clinical-trials.json")
+carnegie = load_json("carnegie.json")
 reconciliation = load_csv("reconciliation.csv")
 vintage_diff = load_csv("vintage-diff.csv")
 atlas["identifiers"] = load_csv("DELAWARE_IDENTITY_REGISTRY.csv")
@@ -78,6 +83,10 @@ def fmt_dollars_compact(value):
 
 def fmt_pct(value):
     return "—" if value is None else f"{value * 100:.1f}%"
+
+
+def fmt_nasf(value):
+    return "—" if value is None else f"{round(value):,}k NASF"
 
 
 def link(label, url, class_name=""):
@@ -135,11 +144,16 @@ def navigation(active):
         ("ipeds", "ipeds.html", "02", "IPEDS core"),
         ("scorecard", "scorecard.html", "03", "College Scorecard"),
         ("herd", "herd.html", "04", "Research · HERD"),
-        ("nsf", "nsf-awards.html", "05", "NSF awards"),
-        ("nih", "nih-reporter.html", "06", "NIH projects"),
-        ("usaspending", "usaspending.html", "07", "Federal awards"),
-        ("openalex", "openalex.html", "08", "Publications"),
-        ("maintenance", "maintenance.html", "09", "Maintenance"),
+        ("gss", "ncses-gss.html", "05", "Graduate students"),
+        ("sed", "ncses-doctorates.html", "06", "Doctorates"),
+        ("facilities", "ncses-facilities.html", "07", "Research space"),
+        ("nsf", "nsf-awards.html", "08", "NSF awards"),
+        ("nih", "nih-reporter.html", "09", "NIH projects"),
+        ("usaspending", "usaspending.html", "10", "Federal awards"),
+        ("openalex", "openalex.html", "11", "Publications"),
+        ("trials", "clinical-trials.html", "12", "Clinical trials"),
+        ("carnegie", "carnegie.html", "13", "Classifications"),
+        ("maintenance", "maintenance.html", "14", "Maintenance"),
     ]
     links = []
     for key, href, number, label in items:
@@ -154,6 +168,11 @@ def controls(page):
         "nih": "NIH organization crosswalk not loaded for peers",
         "usaspending": "Recipient UEI crosswalk not loaded for peers",
         "openalex": "Peer institution boundaries not reviewed",
+        "gss": "NCSES profile crosswalk not loaded for peers",
+        "sed": "NCSES profile crosswalk not loaded for peers",
+        "facilities": "NCSES profile crosswalk not loaded for peers",
+        "trials": "Stable institution identifiers are unavailable",
+        "carnegie": "Classification labels are not peer metrics",
     }
     if page in peer_lock_reasons:
         peer_options = '<option selected>Not available for this source</option>'
@@ -190,6 +209,21 @@ def controls(page):
     elif page == "openalex":
         year = f'<select id="year-control" disabled><option>{esc(openalex["window_start"][:4])}–{esc(openalex["window_end"][:4])}</option></select><span class="control-status">Publication years</span>'
         vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(openalex["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "gss":
+        year = f'<select id="year-control" disabled><option>Fall {esc(ncses_gss["release_year"])}</option></select><span class="control-status">Latest profile year</span>'
+        vintage = f'<select id="vintage-control" disabled><option>NCSES GSS {esc(ncses_gss["release_year"])}</option></select><span class="control-status">Official profile workbook</span>'
+    elif page == "sed":
+        year = f'<select id="year-control" disabled><option>Academic year {esc(ncses_sed["release_year"])}</option></select><span class="control-status">Latest profile year</span>'
+        vintage = f'<select id="vintage-control" disabled><option>NCSES SED {esc(ncses_sed["release_year"])}</option></select><span class="control-status">Official profile workbook</span>'
+    elif page == "facilities":
+        year = f'<select id="year-control" disabled><option>FY{esc(ncses_facilities["release_year"])}</option></select><span class="control-status">Latest biennial year</span>'
+        vintage = f'<select id="vintage-control" disabled><option>NCSES Facilities {esc(ncses_facilities["release_year"])}</option></select><span class="control-status">Official profile workbook</span>'
+    elif page == "trials":
+        year = '<select id="year-control" disabled><option>Study-specific dates</option></select><span class="control-status">Registry records</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(clinical_trials["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "carnegie":
+        year = '<select id="year-control" disabled><option>2025 classifications</option></select><span class="control-status">Edition-specific</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Record checked {esc(carnegie["retrieved_at"])}</option></select><span class="control-status">Official record</span>'
     else:
         year = '<select id="year-control" disabled><option>Source-specific</option></select><span class="control-status">Not applicable</span>'
         vintage = '<select id="vintage-control" disabled><option>Latest verified</option></select><span class="control-status">Not applicable</span>'
@@ -557,6 +591,128 @@ def openalex_page():
 </main>{footer()}</body></html>'''
 
 
+def gss_page():
+    latest = ncses_gss["latest"]
+    rank = ncses_gss["ranking"]
+    trend = [(row["year"], row["value"]) for row in reversed(ncses_gss["full_time_year_summary"][:7])]
+    field_rows = "".join(f'<tr><th>{esc(row["field"])}</th><td>{fmt_int(row["full_time_students"])}</td></tr>' for row in sorted(ncses_gss["field_summary"], key=lambda row: row["full_time_students"], reverse=True))
+    support_rows = "".join(f'<tr><th>{esc(row["support_type"])}</th><td>{fmt_int(row["full_time_students"])}</td></tr>' for row in ncses_gss["support_summary"])
+    metrics = "".join([
+        metric_card("Full-time graduate students", fmt_int(latest["full_time_graduate_students"]), "Science, engineering, and health · Fall 2024"),
+        metric_card("Part-time graduate students", fmt_int(latest["part_time_graduate_students"]), "Science, engineering, and health · Fall 2024"),
+        metric_card("Postdoctorates", fmt_int(latest["postdoctorates"]), "Science, engineering, and health · Fall 2024", "teal"),
+        metric_card("National rank", f'{rank["rank"]} of {rank["institutions_ranked"]}', f'{rank["percentile"]:.1f} percentile · full-time graduate students', "teal"),
+    ])
+    return f'''{page_head("Graduate students and postdocs | Institution Atlas", "University of Delaware GSS graduate-student, support, and postdoctoral counts.")}
+<body data-page="gss">{site_header()}{navigation("gss")}{controls("gss")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header gss-header"><div><p class="eyebrow">NCSES · Survey of Graduate Students and Postdoctorates</p><h1>Graduate students and postdocs</h1><p>Fall 2024 science, engineering, and health counts reported under {link("NCSES ID " + ncses_gss["ncses_id"], ncses_gss["profile_url"], "header-link")}.</p></div><div class="source-actions">{link("Academic Institution Profile", ncses_gss["profile_url"], "official-button")}{link("Download all profile tables", ncses_gss["download_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>NCSES GSS</strong></div><div><span>Period</span><strong>Fall 2024</strong></div><div><span>Vintage</span><strong>2024 profile tables</strong></div><div><span>Unit</span><strong>People</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#gss-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section class="metric-grid">{metrics}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Fall snapshots</p><h2>Full-time graduate students</h2><p class="provenance">Science, engineering, and health fields; 2018–2024 shown.</p></div>{local_link("Download JSON", "data/ncses-gss.json", "record-link")}</div><div class="source-bars">{single_series_svg(trend, fmt_int, "University of Delaware full-time GSS graduate students by fall year", "Fall year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Field distribution</p><h2>Full-time students by broad field</h2></div></div><div class="table-wrap"><table><thead><tr><th>GSS field</th><th>Fall 2024 students</th></tr></thead><tbody>{field_rows}</tbody></table></div></article></section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Primary support</p><h2>Full-time students by support type</h2><p class="provenance">Categories sum to the 2,442 full-time total.</p></div></div><div class="table-wrap"><table><thead><tr><th>Support type</th><th>Students</th></tr></thead><tbody>{support_rows}</tbody></table></div></article>
+  <article class="panel definition-card"><p class="section-kicker">Federal support</p><h2>Separate denominators</h2><dl><div><dt>Graduate students</dt><dd>{fmt_int(latest["federally_supported_full_time_graduate_students"])}</dd></div><div><dt>Postdoctorates</dt><dd>{fmt_int(latest["federally_supported_postdoctorates"])}</dd></div></dl><p>Federal-source counts apply to full-time graduate students and postdoctorates in the surveyed fields. They do not cover every graduate student or employee.</p></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Source boundary</p><h2>{link("U. Delaware · " + ncses_gss["ncses_id"], ncses_gss["report_urls"]["g4"], "inline-evidence")}</h2></div><p>{esc(ncses_gss["boundary_note"])} {esc(ncses_gss["comparability_note"])}</p></section></div>
+</main>{footer()}</body></html>'''
+
+
+def sed_page():
+    latest = ncses_sed["latest"]
+    rank = ncses_sed["ranking"]
+    trend = [(row["year"], row["value"]) for row in reversed(ncses_sed["year_summary"])]
+    field_rows = "".join(f'<tr><th>{esc(row["field"])}</th><td>{fmt_int(row["doctorates"])}</td><td>{fmt_pct(row["doctorates"] / latest["all_fields"] if row["doctorates"] is not None else None)}</td></tr>' for row in sorted(ncses_sed["field_summary"], key=lambda row: row["doctorates"] or -1, reverse=True))
+    prior = ncses_sed["year_summary"][1]["value"]
+    metrics = "".join([
+        metric_card("Research doctorates", fmt_int(latest["all_fields"]), "Academic year 2025"),
+        metric_card("Science and engineering", fmt_int(latest["science_and_engineering"]), f'{latest["science_and_engineering"] / latest["all_fields"]:.1%} of all fields'),
+        metric_card("Change from 2024", f'{latest["all_fields"] - prior:+,}', f'{prior:,} to {latest["all_fields"]:,}', "teal"),
+        metric_card("National rank", f'{rank["rank"]} of {rank["institutions_ranked"]}', f'{rank["percentile"]:.1f} percentile · research doctorates', "teal"),
+    ])
+    return f'''{page_head("Earned doctorates | Institution Atlas", "University of Delaware Survey of Earned Doctorates trends and field counts.")}
+<body data-page="sed">{site_header()}{navigation("sed")}{controls("sed")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header sed-header"><div><p class="eyebrow">NCSES · Survey of Earned Doctorates</p><h1>Earned doctorates</h1><p>Research doctorate recipients on confirmed University of Delaware graduation lists under {link("NCSES ID " + ncses_sed["ncses_id"], ncses_sed["profile_url"], "header-link")}.</p></div><div class="source-actions">{link("Official SED table", ncses_sed["report_url"], "official-button")}{link("Download all profile tables", ncses_sed["download_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>NCSES SED</strong></div><div><span>Period</span><strong>Academic year 2025</strong></div><div><span>Vintage</span><strong>2025 profile table</strong></div><div><span>Unit</span><strong>Research doctorate recipients</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#sed-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section class="metric-grid">{metrics}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Academic years</p><h2>Research doctorates awarded</h2></div>{local_link("Download JSON", "data/ncses-sed.json", "record-link")}</div><div class="source-bars">{single_series_svg(trend, fmt_int, "University of Delaware research doctorates by academic year", "Academic year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">2025 fields</p><h2>Research doctorates by broad field</h2></div></div><div class="table-wrap"><table><thead><tr><th>SED field</th><th>Doctorates</th><th>Share of total</th></tr></thead><tbody>{field_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Measure boundary</p><h2>{link("Academic year 2025 · U3284001", ncses_sed["report_url"], "inline-evidence")}</h2></div><p>{esc(ncses_sed["boundary_note"])} {esc(ncses_sed["comparability_note"])}</p></section></div>
+</main>{footer()}</body></html>'''
+
+
+def facilities_page():
+    latest = ncses_facilities["latest"]["research_space_nasf_thousands"]
+    rank = ncses_facilities["ranking"]
+    trend = [(row["year"], row["value"]) for row in reversed(ncses_facilities["year_summary"])]
+    fields = sorted(ncses_facilities["field_summary"], key=lambda row: row["nasf_thousands"], reverse=True)
+    field_rows = "".join(f'<tr><th>{esc(row["field"])}</th><td>{fmt_nasf(row["nasf_thousands"])}</td><td>{fmt_pct(row["nasf_thousands"] / latest)}</td></tr>' for row in fields)
+    prior = ncses_facilities["year_summary"][1]["value"]
+    metrics = "".join([
+        metric_card("Research space", fmt_nasf(latest), "853,000 net assignable square feet · FY2023"),
+        metric_card("Change from FY2021", fmt_nasf(latest - prior), f'{(latest - prior) / prior:.1%} increase'),
+        metric_card("Largest field", fields[0]["field"], fmt_nasf(fields[0]["nasf_thousands"]), "teal"),
+        metric_card("National rank", f'{rank["rank"]} of {rank["institutions_ranked"]}', f'{rank["percentile"]:.1f} percentile · research space', "teal"),
+    ])
+    return f'''{page_head("Research facilities | Institution Atlas", "University of Delaware science and engineering research space from the NCSES Facilities Survey.")}
+<body data-page="facilities">{site_header()}{navigation("facilities")}{controls("facilities")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header facilities-header"><div><p class="eyebrow">NCSES · Science and Engineering Research Facilities</p><h1>Research space</h1><p>Net assignable square feet used for science and engineering research under {link("NCSES ID " + ncses_facilities["ncses_id"], ncses_facilities["profile_url"], "header-link")}.</p></div><div class="source-actions">{link("Official facilities table", ncses_facilities["report_url"], "official-button")}{link("Download all profile tables", ncses_facilities["download_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>NCSES Facilities</strong></div><div><span>Period</span><strong>FY2023</strong></div><div><span>Vintage</span><strong>2023 biennial survey</strong></div><div><span>Unit</span><strong>Thousands of NASF</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#facilities-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section class="metric-grid">{metrics}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Biennial survey years</p><h2>Science and engineering research space</h2></div>{local_link("Download JSON", "data/ncses-facilities.json", "record-link")}</div><div class="source-bars">{single_series_svg(trend, fmt_nasf, "University of Delaware science and engineering research space by survey year", "Survey year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">FY2023 fields</p><h2>Research space by survey field</h2></div></div><div class="table-wrap"><table><thead><tr><th>Facilities field</th><th>Research space</th><th>Share</th></tr></thead><tbody>{field_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Measure boundary</p><h2>{link("FY2023 · U3284001", ncses_facilities["report_url"], "inline-evidence")}</h2></div><p>{esc(ncses_facilities["boundary_note"])} {esc(ncses_facilities["comparability_note"])}</p></section></div>
+</main>{footer()}</body></html>'''
+
+
+def clinical_trials_page():
+    statuses = [(row["status"].replace("_", " ").title(), row["studies"]) for row in clinical_trials["status_summary"]]
+    type_rows = "".join(f'<tr><th>{esc(row["study_type"].replace("_", " ").title())}</th><td>{fmt_int(row["studies"])}</td></tr>' for row in clinical_trials["study_type_summary"])
+    study_rows = "".join(f'<tr><td>{link(row["nct_id"], row["official_record_url"], "inline-evidence")}</td><td><strong>{esc(row["title"] or "Title not reported")}</strong><br><span class="table-sub">Lead sponsor: {esc(row["lead_sponsor"] or "Not reported")}</span></td><td>{esc(row["role"])}</td><td>{esc((row["overall_status"] or "Not reported").replace("_", " ").title())}</td><td>{esc(row["start_date"] or "Not reported")}</td><td>{esc(row["last_update_posted"] or "Not reported")}</td></tr>' for row in clinical_trials["recent_studies"])
+    metrics = "".join([
+        metric_card("Exact-name study records", fmt_int(clinical_trials["exact_name_record_count"]), f'{clinical_trials["api_returned_count"]:,} sponsor-search results reviewed'),
+        metric_card("Lead sponsor", fmt_int(clinical_trials["lead_sponsor_count"]), "Exact University of Delaware name"),
+        metric_card("Collaborator", fmt_int(clinical_trials["collaborator_count"]), "Exact University of Delaware name", "teal"),
+        metric_card("Active records", fmt_int(clinical_trials["active_record_count"]), "Recruiting or active registry statuses", "teal"),
+    ])
+    return f'''{page_head("Clinical trials | Institution Atlas", "ClinicalTrials.gov records with an exact University of Delaware sponsor or collaborator name.")}
+<body data-page="trials">{site_header()}{navigation("trials")}{controls("trials")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header trials-header"><div><p class="eyebrow">National Library of Medicine · ClinicalTrials.gov</p><h1>Clinical trials</h1><p>Registered studies with an exact <strong>University of Delaware</strong> lead-sponsor or collaborator name.</p></div><div class="source-actions">{link("Official search", clinical_trials["search_url"], "official-button")}{link("Exact API query", clinical_trials["query_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>ClinicalTrials.gov</strong></div><div><span>Period</span><strong>Study-specific</strong></div><div><span>Snapshot</span><strong>{esc(clinical_trials["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Registered study records</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#trials-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section class="metric-grid">{metrics}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Registry status</p><h2>Exact-name records by current status</h2></div>{local_link("Download JSON", "data/clinical-trials.json", "record-link")}</div><div class="source-bars">{single_series_svg(statuses, fmt_int, "ClinicalTrials.gov records with exact University of Delaware sponsor names by status", "Registry status")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Study design</p><h2>Records by study type</h2></div></div><div class="table-wrap"><table><thead><tr><th>Study type</th><th>Records</th></tr></thead><tbody>{type_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">String-match boundary</p><h2>{link("University of Delaware sponsor query", clinical_trials["query_url"], "inline-evidence")}</h2></div><p>{esc(clinical_trials["boundary_note"])} {esc(clinical_trials["measure_note"])}</p></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Recently updated</p><h2>Twenty-five latest exact-name records</h2></div><span class="review-pill">{len(clinical_trials["recent_studies"])} displayed of {fmt_int(clinical_trials["exact_name_record_count"])}</span></div><div class="table-wrap"><table><thead><tr><th>NCT ID</th><th>Study</th><th>Delaware role</th><th>Status</th><th>Start</th><th>Last updated</th></tr></thead><tbody>{study_rows}</tbody></table></div></section></div>
+</main>{footer()}</body></html>'''
+
+
+def carnegie_page():
+    classes = carnegie["classifications"]
+    program_series = [(row["program"], row["share"]) for row in carnegie["program_mix"]]
+    award_rows = "".join(f'<tr><th>{esc(label.title())}</th><td>{fmt_int(value)}</td></tr>' for label, value in carnegie["award_counts_2025"].items())
+    history_rows = "".join(f'<tr><th>{esc(row["year"])}</th><td>{esc(row["classification"])}</td></tr>' for row in reversed(carnegie["classification_history"]))
+    metrics = "".join([
+        metric_card("Institutional classification", classes["institutional_2025"], "2025 Institutional Classification", "textual"),
+        metric_card("Research designation", "Research 1", "Very High Research Spending and Doctorate Production"),
+        metric_card("Access and earnings", classes["student_access_and_earnings_2025"], "2025 Student Access and Earnings", "textual"),
+        metric_card("Enrollment", fmt_int(carnegie["enrollment_2025"]), "Value on the 2025 classification record", "teal"),
+    ])
+    return f'''{page_head("Carnegie Classifications | Institution Atlas", "The University of Delaware's published 2025 Carnegie classifications and supporting metadata.")}
+<body data-page="carnegie">{site_header()}{navigation("carnegie")}{controls("carnegie")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header carnegie-header"><div><p class="eyebrow">Carnegie Classification of Institutions of Higher Education</p><h1>Classifications</h1><p>The published 2025 classifications for {link("University of Delaware · UNITID 130943", carnegie["official_record_url"], "header-link")}.</p></div><div class="source-actions">{link("Official institution record", carnegie["official_record_url"], "official-button")}{link("Classification data center", carnegie["data_center_url"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>Carnegie Classifications</strong></div><div><span>Edition</span><strong>2025</strong></div><div><span>Record checked</span><strong>{esc(carnegie["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Classification labels</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#carnegie-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section class="metric-grid">{metrics}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Academic program mix</p><h2>Undergraduate awards by program area</h2><p class="provenance">Shares displayed on the official 2025 record.</p></div>{local_link("Download JSON", "data/carnegie.json", "record-link")}</div><div class="source-bars">{single_series_svg(program_series, fmt_pct, "University of Delaware academic program mix on the Carnegie 2025 record", "Program area")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Award levels</p><h2>Counts on the 2025 record</h2></div></div><div class="table-wrap"><table><thead><tr><th>Award level</th><th>Awards</th></tr></thead><tbody>{award_rows}</tbody></table></div><div class="definition-card compact-card"><dl><div><dt>Control</dt><dd>{esc(classes["control"])}</dd></div><div><dt>Setting</dt><dd>{esc(classes["campus_setting"])}</dd></div><div><dt>Land grant</dt><dd>{esc(classes["land_grant"])}</dd></div><div><dt>Community engagement</dt><dd>{esc(classes["community_engagement"])}</dd></div></dl></div></article></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Historical labels</p><h2>Basic Classification history</h2><p class="provenance">Labels reflect each edition's own methodology and should not be treated as one unchanged scale.</p></div></div><div class="table-wrap"><table><thead><tr><th>Edition</th><th>Published classification</th></tr></thead><tbody>{history_rows}</tbody></table></div></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Use in this atlas</p><h2>{link("UNITID " + carnegie["unitid"], carnegie["official_record_url"], "inline-evidence")}</h2></div><p>{esc(carnegie["boundary_note"])} The institutional, research-activity, and student-access-and-earnings systems have separate methods and input periods.</p></section></div>
+</main>{footer()}</body></html>'''
+
+
 def evidence_page():
     identity_rows = "".join(f'<tr id="evidence-{esc(row["identifier_type"].lower())}"><th>{esc(row["identifier_type"].replace("_", " "))}</th><td>{identifier_link(row)}</td><td>{link(row["source"], row["source_url"])}</td><td>{esc(row["note"])}</td><td>{esc(row["verified_date"])}</td></tr>' for row in identifiers)
     ipeds_rows = []
@@ -610,6 +766,35 @@ def evidence_page():
         ("Primary-topic classified works", "group_by=primary_topic.domain.id; sum(count)", fmt_int(openalex["topic_classified_works"])),
     ]
     openalex_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>institution={esc(openalex["openalex_id"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in openalex_fields)
+    gss_fields = [
+        ("Full-time graduate students", ncses_gss["source_locators"]["full_time"], fmt_int(ncses_gss["latest"]["full_time_graduate_students"])),
+        ("Part-time graduate students", ncses_gss["source_locators"]["part_time"], fmt_int(ncses_gss["latest"]["part_time_graduate_students"])),
+        ("Postdoctorates", ncses_gss["source_locators"]["postdoctorates"], fmt_int(ncses_gss["latest"]["postdoctorates"])),
+        ("Federally supported full-time graduate students", ncses_gss["source_locators"]["federal_support"], fmt_int(ncses_gss["latest"]["federally_supported_full_time_graduate_students"])),
+        ("Federally supported postdoctorates", ncses_gss["source_locators"]["federal_postdocs"], fmt_int(ncses_gss["latest"]["federally_supported_postdoctorates"])),
+    ]
+    gss_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>{esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in gss_fields)
+    sed_fields = [
+        ("All research doctorates", ncses_sed["source_locators"]["all_fields"], fmt_int(ncses_sed["latest"]["all_fields"])),
+        ("Science and engineering", ncses_sed["source_locators"]["science_and_engineering"], fmt_int(ncses_sed["latest"]["science_and_engineering"])),
+        ("Non-science and engineering", ncses_sed["source_locators"]["non_science_and_engineering"], fmt_int(ncses_sed["latest"]["non_science_and_engineering"])),
+    ]
+    sed_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>{esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in sed_fields)
+    facilities_rows = f'<tr><th>Science and engineering research space</th><td>{fmt_nasf(ncses_facilities["latest"]["research_space_nasf_thousands"])}</td><td><code>{esc(ncses_facilities["source_locators"]["research_space"])}</code></td><td><span class="confirm-badge">Matched</span></td></tr>'
+    trials_fields = [
+        ("Sponsor-query records", "API totalCount", fmt_int(clinical_trials["api_returned_count"])),
+        ("Exact-name retained records", clinical_trials["source_locator"], fmt_int(clinical_trials["exact_name_record_count"])),
+        ("Exact lead-sponsor records", "leadSponsor.name exact normalized match", fmt_int(clinical_trials["lead_sponsor_count"])),
+        ("Exact collaborator records", "collaborators[].name exact normalized match", fmt_int(clinical_trials["collaborator_count"])),
+    ]
+    trials_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>{esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in trials_fields)
+    carnegie_fields = [
+        ("Institutional Classification", "post_meta.ic2025", carnegie["classifications"]["institutional_2025"]),
+        ("Research Activity Designation", "post_meta.research2025", carnegie["classifications"]["research_2025"]),
+        ("Student Access and Earnings", "post_meta.saec2025", carnegie["classifications"]["student_access_and_earnings_2025"]),
+        ("IPEDS UNITID", "post_meta.unitid", carnegie["unitid"]),
+    ]
+    carnegie_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>{esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in carnegie_fields)
     return f'''{page_head("Evidence | Institution Atlas", "Identifier and value reconciliation evidence for the University of Delaware Institution Atlas.")}
 <body data-page="evidence">{site_header()}{navigation("")}
 <main id="main" class="page-shell evidence-page"><section class="source-header"><div><p class="eyebrow">Evidence register</p><h1>How each identifier and value was checked</h1><p>Official records, exact releases, and source-row locators used in the delivered pages.</p></div></section>
@@ -621,6 +806,11 @@ def evidence_page():
   <section class="panel data-table-panel" id="nih-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NIH RePORTER</p><h2>Reconciliation record</h2><p class="provenance">All retained application records matched the exact organization name, IPF, and UEI in the {esc(nih_reporter["retrieved_at"])} API snapshot.</p></div></div><div class="citation-grid"><article><span>Search results</span>{link("Organization IPF " + nih_reporter["org_ipf_code"], nih_reporter["query_urls"]["search_results"])}</article><article><span>API documentation</span>{link("NIH RePORTER API", nih_reporter["query_urls"]["documentation"])}</article><article><span>Published snapshot</span>{local_link("nih-reporter.json", "data/nih-reporter.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{nih_rows}</tbody></table></div></section>
   <section class="panel data-table-panel" id="usaspending-reconciliation"><div class="panel-heading"><div><p class="section-kicker">USAspending</p><h2>Reconciliation record</h2><p class="provenance">Transaction aggregates and prime-award counts use direct recipient UEI {esc(usaspending["uei"])} in the {esc(usaspending["retrieved_at"])} snapshot.</p></div></div><div class="citation-grid"><article><span>Recipient profile</span>{link("University of Delaware · " + usaspending["uei"], usaspending["query_urls"]["recipient_profile"])}</article><article><span>API documentation</span>{link("USAspending endpoints", usaspending["query_urls"]["api_documentation"])}</article><article><span>Published snapshot</span>{local_link("usaspending.json", "data/usaspending.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{usa_rows}</tbody></table></div></section>
   <section class="panel data-table-panel" id="openalex-reconciliation"><div class="panel-heading"><div><p class="section-kicker">OpenAlex</p><h2>Reconciliation record</h2><p class="provenance">Grouped counts use the exact institution record {esc(openalex["openalex_id"])} and exclude child and related organizations.</p></div></div><div class="citation-grid"><article><span>Institution record</span>{link(openalex["openalex_id"] + " · ROR 01sbq1a82", openalex["query_urls"]["institution"])}</article><article><span>Exact grouped query</span>{link("Publication-year query", openalex["query_urls"]["works_api"])}</article><article><span>Published snapshot</span>{local_link("openalex.json", "data/openalex.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{openalex_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="gss-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NCSES GSS 2024</p><h2>Reconciliation record</h2><p class="provenance">Displayed counts were rebuilt from the official U3284001 workbook archive retrieved {esc(ncses_gss["retrieved_at"])}.</p></div></div><div class="citation-grid"><article><span>Institution profile</span>{link("U. Delaware · U3284001", ncses_gss["profile_url"])}</article><article><span>Official workbook archive</span>{link("All U3284001 tables", ncses_gss["download_url"])}</article><article><span>Published snapshot</span>{local_link("ncses-gss.json", "data/ncses-gss.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Workbook locator</th><th>Result</th></tr></thead><tbody>{gss_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="sed-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NCSES SED 2025</p><h2>Reconciliation record</h2><p class="provenance">Displayed counts were rebuilt from the official U3284001 earned-doctorates workbook.</p></div></div><div class="citation-grid"><article><span>Official report</span>{link("Earned doctorates table", ncses_sed["report_url"])}</article><article><span>Technical notes</span>{link("NCSES profile notes", ncses_sed["technical_notes_url"])}</article><article><span>Published snapshot</span>{local_link("ncses-sed.json", "data/ncses-sed.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Workbook locator</th><th>Result</th></tr></thead><tbody>{sed_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="facilities-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NCSES Facilities 2023</p><h2>Reconciliation record</h2><p class="provenance">The displayed total is the FY2023 all-research-space row in the official U3284001 workbook.</p></div></div><div class="citation-grid"><article><span>Official report</span>{link("Research-space table", ncses_facilities["report_url"])}</article><article><span>Technical notes</span>{link("NCSES profile notes", ncses_facilities["technical_notes_url"])}</article><article><span>Published snapshot</span>{local_link("ncses-facilities.json", "data/ncses-facilities.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Workbook locator</th><th>Result</th></tr></thead><tbody>{facilities_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="trials-reconciliation"><div class="panel-heading"><div><p class="section-kicker">ClinicalTrials.gov</p><h2>Reconciliation record</h2><p class="provenance">The broad sponsor query was filtered to exact normalized lead-sponsor or collaborator names in the {esc(clinical_trials["retrieved_at"])} snapshot.</p></div></div><div class="citation-grid"><article><span>Exact API query</span>{link("University of Delaware sponsor search", clinical_trials["query_url"])}</article><article><span>API documentation</span>{link("ClinicalTrials.gov API", clinical_trials["documentation_url"])}</article><article><span>Published snapshot</span>{local_link("clinical-trials.json", "data/clinical-trials.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>API locator</th><th>Result</th></tr></thead><tbody>{trials_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="carnegie-reconciliation"><div class="panel-heading"><div><p class="section-kicker">Carnegie Classifications 2025</p><h2>Reconciliation record</h2><p class="provenance">Classification labels and UNITID were read from the official University of Delaware record.</p></div></div><div class="citation-grid"><article><span>Institution record</span>{link("University of Delaware · UNITID 130943", carnegie["official_record_url"])}</article><article><span>Methodology</span>{link("2025 classifications", carnegie["institutional_methodology_url"])}</article><article><span>Published snapshot</span>{local_link("carnegie.json", "data/carnegie.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Official-record locator</th><th>Result</th></tr></thead><tbody>{carnegie_rows}</tbody></table></div></section>
 </main>{footer()}</body></html>'''
 
 
@@ -634,7 +824,7 @@ def maintenance_page():
   <section class="maintenance-cards"><article><span>Review owner</span><strong>{esc(maintenance["owner"])}</strong><p>{esc(maintenance["owner_role"])}</p></article><article><span>Cadence</span><strong>{esc(maintenance["cadence"])}</strong><p>{esc(maintenance["schedule"])}</p></article><article><span>Last completed</span><strong>{esc(latest["date_display"])}</strong><p>{esc(latest["result"])}</p></article><article><span>Next review</span><strong>{esc(maintenance["next_review"])}</strong><p>Review automated link results and source changes.</p></article></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Visible history</p><h2>Maintenance log</h2></div>{link("GitHub workflow", maintenance["workflow_url"], "record-link")}</div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Review type</th><th>Owner</th><th>Result</th><th>Details</th></tr></thead><tbody>{log_rows}</tbody></table></div></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Assigned contracts</p><h2>Source review ownership</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Owner</th><th>Cadence</th><th>Last verified</th><th>Official links</th></tr></thead><tbody>{source_rows}</tbody></table></div></section>
-  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")} · {local_link("College Scorecard JSON", "data/scorecard.json")} · {local_link("NSF awards JSON", "data/nsf-awards.json")} · {local_link("NIH RePORTER JSON", "data/nih-reporter.json")} · {local_link("USAspending JSON", "data/usaspending.json")} · {local_link("OpenAlex JSON", "data/openalex.json")}</p></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")} · {local_link("College Scorecard JSON", "data/scorecard.json")} · {local_link("NSF awards JSON", "data/nsf-awards.json")} · {local_link("NIH RePORTER JSON", "data/nih-reporter.json")} · {local_link("USAspending JSON", "data/usaspending.json")} · {local_link("OpenAlex JSON", "data/openalex.json")} · {local_link("NCSES GSS JSON", "data/ncses-gss.json")} · {local_link("NCSES SED JSON", "data/ncses-sed.json")} · {local_link("NCSES Facilities JSON", "data/ncses-facilities.json")} · {local_link("ClinicalTrials.gov JSON", "data/clinical-trials.json")} · {local_link("Carnegie JSON", "data/carnegie.json")}</p></section>
 </main>{footer()}</body></html>'''
 
 
@@ -643,10 +833,15 @@ pages = {
     "ipeds.html": ipeds_page(),
     "scorecard.html": scorecard_page(),
     "herd.html": herd_page(),
+    "ncses-gss.html": gss_page(),
+    "ncses-doctorates.html": sed_page(),
+    "ncses-facilities.html": facilities_page(),
     "nsf-awards.html": nsf_page(),
     "nih-reporter.html": nih_page(),
     "usaspending.html": usaspending_page(),
     "openalex.html": openalex_page(),
+    "clinical-trials.html": clinical_trials_page(),
+    "carnegie.html": carnegie_page(),
     "evidence.html": evidence_page(),
     "maintenance.html": maintenance_page(),
 }
@@ -677,6 +872,11 @@ for output in OUTPUTS:
         ("nih-reporter.json", "nih-reporter.json"),
         ("usaspending.json", "usaspending.json"),
         ("openalex.json", "openalex.json"),
+        ("ncses-gss.json", "ncses-gss.json"),
+        ("ncses-sed.json", "ncses-sed.json"),
+        ("ncses-facilities.json", "ncses-facilities.json"),
+        ("clinical-trials.json", "clinical-trials.json"),
+        ("carnegie.json", "carnegie.json"),
     ]:
         shutil.copy2(DATA / source_name, export_dir / export_name)
     if (DATA / "link-check.json").exists():

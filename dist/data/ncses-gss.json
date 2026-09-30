@@ -1,0 +1,227 @@
+{
+  "source_id": "NCSES_GSS",
+  "institution": "University of Delaware",
+  "ncses_id": "U3284001",
+  "release_year": 2024,
+  "retrieved_at": "2026-09-30",
+  "profile_url": "https://ncsesdata.nsf.gov/profiles/site?method=view&tin=U3284001",
+  "download_url": "https://ncsesdata.nsf.gov/profiles/site?method=download&tin=U3284001",
+  "technical_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=technicalNotes",
+  "release_notes_url": "https://ncsesdata.nsf.gov/profiles/site?method=releaseNotes",
+  "report_urls": {
+    "g1": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g1",
+    "g2": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g2",
+    "g3": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g3",
+    "g4": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g4",
+    "g5": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g5",
+    "g6": "https://ncsesdata.nsf.gov/profiles/site?method=report&tin=U3284001&id=g6"
+  },
+  "full_time_year_summary": [
+    {
+      "year": 2024,
+      "value": 2442
+    },
+    {
+      "year": 2023,
+      "value": 2446
+    },
+    {
+      "year": 2022,
+      "value": 2404
+    },
+    {
+      "year": 2021,
+      "value": 2246
+    },
+    {
+      "year": 2020,
+      "value": 2081
+    },
+    {
+      "year": 2019,
+      "value": 2109
+    },
+    {
+      "year": 2018,
+      "value": 2131
+    },
+    {
+      "year": 2017,
+      "value": 2129
+    },
+    {
+      "year": 2016,
+      "value": 2011
+    },
+    {
+      "year": 2015,
+      "value": 2100
+    }
+  ],
+  "part_time_year_summary": [
+    {
+      "year": 2024,
+      "value": 217
+    },
+    {
+      "year": 2023,
+      "value": 250
+    },
+    {
+      "year": 2022,
+      "value": 220
+    },
+    {
+      "year": 2021,
+      "value": 255
+    },
+    {
+      "year": 2020,
+      "value": 162
+    },
+    {
+      "year": 2019,
+      "value": 206
+    },
+    {
+      "year": 2018,
+      "value": 193
+    },
+    {
+      "year": 2017,
+      "value": 137
+    },
+    {
+      "year": 2016,
+      "value": 125
+    },
+    {
+      "year": 2015,
+      "value": 158
+    }
+  ],
+  "postdoc_year_summary": [
+    {
+      "year": 2024,
+      "value": 162
+    },
+    {
+      "year": 2023,
+      "value": 153
+    },
+    {
+      "year": 2022,
+      "value": 154
+    },
+    {
+      "year": 2021,
+      "value": 163
+    },
+    {
+      "year": 2020,
+      "value": 158
+    },
+    {
+      "year": 2019,
+      "value": 158
+    },
+    {
+      "year": 2018,
+      "value": 160
+    },
+    {
+      "year": 2017,
+      "value": 144
+    },
+    {
+      "year": 2016,
+      "value": 137
+    },
+    {
+      "year": 2015,
+      "value": 132
+    }
+  ],
+  "latest": {
+    "full_time_graduate_students": 2442,
+    "part_time_graduate_students": 217,
+    "postdoctorates": 162,
+    "federally_supported_full_time_graduate_students": 516,
+    "federally_supported_postdoctorates": 84
+  },
+  "field_summary": [
+    {
+      "field": "Agricultural and veterinary sciences",
+      "full_time_students": 78
+    },
+    {
+      "field": "Biological and biomedical sciences",
+      "full_time_students": 363
+    },
+    {
+      "field": "Computer and information sciences",
+      "full_time_students": 293
+    },
+    {
+      "field": "Geosciences, atmospheric, and ocean sciences",
+      "full_time_students": 80
+    },
+    {
+      "field": "Mathematics and statistics",
+      "full_time_students": 94
+    },
+    {
+      "field": "Physical sciences",
+      "full_time_students": 386
+    },
+    {
+      "field": "Psychology",
+      "full_time_students": 95
+    },
+    {
+      "field": "Social sciences",
+      "full_time_students": 227
+    },
+    {
+      "field": "Engineering",
+      "full_time_students": 612
+    },
+    {
+      "field": "Health",
+      "full_time_students": 80
+    }
+  ],
+  "support_summary": [
+    {
+      "support_type": "Fellowships",
+      "full_time_students": 157
+    },
+    {
+      "support_type": "Research assistantships",
+      "full_time_students": 1013
+    },
+    {
+      "support_type": "Teaching assistantships",
+      "full_time_students": 519
+    },
+    {
+      "support_type": "Other types of support",
+      "full_time_students": 753
+    }
+  ],
+  "ranking": {
+    "year": 2024,
+    "rank": 72,
+    "percentile": 88.8,
+    "institutions_ranked": 631
+  },
+  "source_locators": {
+    "full_time": "U3284001.g4.xlsx · row 4 · column 2024",
+    "part_time": "U3284001.g2.xlsx · rows 15 and 39 · column 2024",
+    "postdoctorates": "U3284001.g5.xlsx · rows 4 and 28 · column 2024",
+    "federal_support": "U3284001.g3.xlsx · row 4 · column 2024",
+    "federal_postdocs": "U3284001.g6.xlsx · row 4 · column 2024"
+  },
+  "boundary_note": "Counts cover the organizational units included by U. Delaware in the GSS. They describe graduate students and postdoctorates in science, engineering, and health fields, not all graduate enrollment and not named academic departments.",
+  "comparability_note": "The 2017 GSS redesign changed the field taxonomy. The page emphasizes 2018 forward for trend interpretation while retaining the official ten-year table in the export."
+}
