@@ -11,6 +11,9 @@ The site is generated from structured data in this repository. The build writes 
 - **College Scorecard** shows 2024 cost, aid, admissions, retention, and completion measures; separately dated debt and earnings cohorts; and all 30 submitted DFR peers.
 - **Research · HERD** shows FY2024 R&D expenditures, funding sources, personnel, peer comparisons, and boundary review status.
 - **NSF awards** shows exact-UEI award coverage, active records, recent award-year trends, directorate coverage, and linked award records.
+- **NIH projects** shows FY2022–FY2026 funded application records, annual award amounts, administering institutes, and linked RePORTER application records.
+- **Federal awards** shows USAspending transaction obligations by federal fiscal year, prime-award counts, awarding agencies, and linked grant and contract records.
+- **Publications and works** shows 2021–2025 OpenAlex work counts, open-access status, work types, and primary-topic fields for the exact institution record.
 - **Evidence** links every confirmed identifier and each reconciliation badge to the official evidence, exact bulk release, and source-row locator.
 - **Maintenance** names Nil Shah as the monthly review owner and publishes the review cadence, history, source assignments, and link-check record.
 
@@ -23,6 +26,9 @@ The source data is in [`data`](data). Stable copies are published under `/data/`
 - [`data/atlas.json`](data/atlas.json) contains the institution, peer, IPEDS, HERD, Scorecard, and NSF records used by the site.
 - [`data/scorecard.json`](data/scorecard.json) contains the dated College Scorecard API snapshot for Delaware and its 30 submitted DFR peers.
 - [`data/nsf-awards.json`](data/nsf-awards.json) contains the dated exact-UEI NSF Awards snapshot, aggregates, and recent award records.
+- [`data/nih-reporter.json`](data/nih-reporter.json) contains the dated exact-organization NIH RePORTER application snapshot and fiscal-year aggregates.
+- [`data/usaspending.json`](data/usaspending.json) contains exact-UEI USAspending obligation trends, award counts, agencies, and selected prime-award records.
+- [`data/openalex.json`](data/openalex.json) contains exact-institution OpenAlex work counts grouped by year, access status, type, domain, and field.
 - [`data/reconciliation.csv`](data/reconciliation.csv) records each displayed University of Delaware value and its source-row locator.
 - [`data/vintage-diff.csv`](data/vintage-diff.csv) records changes between retained IPEDS vintages.
 - [`data/source-contracts.json`](data/source-contracts.json) records source grain, universe, boundary, period, release, missing-value rules, ownership, and review cadence.
@@ -35,6 +41,7 @@ The scripts use the Python standard library. From the repository root:
 
 ```powershell
 python scripts\refresh_scorecard_nsf.py
+python scripts\refresh_nih_usaspending_openalex.py
 python scripts\build_static_site.py
 python scripts\validate_static_site.py
 python scripts\validate_release.py
@@ -47,7 +54,7 @@ Preview the same files served by GitHub Pages:
 python -m http.server 8770 --directory docs
 ```
 
-The scheduled GitHub Action runs monthly, refreshes College Scorecard and NSF Awards, selects the latest common nonmissing Scorecard years, rebuilds the site, checks official links, and publishes a new maintenance record when the source data changes.
+The scheduled GitHub Action runs monthly, refreshes College Scorecard, NSF Awards, NIH RePORTER, USAspending, and OpenAlex, rebuilds the site, checks official links, and publishes a new maintenance record when source data changes.
 
 ## Official source entry points
 
@@ -59,5 +66,10 @@ The scheduled GitHub Action runs monthly, refreshes College Scorecard and NSF Aw
 - [College Scorecard data and documentation](https://collegescorecard.ed.gov/data/)
 - [NSF Awards exact-UEI query](https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3)
 - [NSF Awards API documentation](https://resources.research.gov/common/webapi/awardapisearch-v1.htm)
+- [NIH RePORTER API](https://api.reporter.nih.gov/)
+- [USAspending recipient profile](https://www.usaspending.gov/recipient/88f4772d-e0bd-42e6-ed20-c3144d3bace8-R/latest)
+- [USAspending API documentation](https://api.usaspending.gov/docs/endpoints)
+- [OpenAlex institution record](https://openalex.org/I86501945)
+- [OpenAlex API documentation](https://docs.openalex.org/)
 
 The browser-facing IPEDS report is paired with its exact bulk release and row locator because the general institution-profile route can redirect repeatedly for automated clients.

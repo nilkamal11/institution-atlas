@@ -159,7 +159,9 @@
     "redistribution_permitted": "public selected fields with attribution",
     "grain": "institution by data-file year by metric; several outcomes use federally aided entry or completion cohorts",
     "universe": "Title IV participating institutions represented in College Scorecard",
-    "boundaries_supported": ["CORE"],
+    "boundaries_supported": [
+      "CORE"
+    ],
     "boundary_notes": "University of Delaware maps to UNITID 130943, OPEID8 00143100, and OPEID6 001431. OPEID6-based outcomes may pool branches; the API reports one branch for Delaware.",
     "reporting_period_type": "metric-specific institution year and outcome cohort",
     "reporting_period_definition": "The page uses 2024 institution metrics and the latest nonmissing 2020 file-year earnings and debt measures. The source field and year remain attached to every displayed value.",
@@ -167,7 +169,11 @@
     "typical_lag": "varies by contributing source and outcome cohort",
     "revision_policy": "retain dated API snapshots and compare field values before replacing a published snapshot",
     "vintage_identifier": "SCORECARD_API_2026-09-29",
-    "identifiers_present": ["UNITID", "OPEID6", "OPEID8"],
+    "identifiers_present": [
+      "UNITID",
+      "OPEID6",
+      "OPEID8"
+    ],
     "join_path": "UNITID to institution_key UD_CORE; OPEID6 retained for pooled-outcome interpretation",
     "suppression_rules": "Null and PrivacySuppressed values remain unavailable and are excluded from peer medians.",
     "missing_value_encoding": "Preserve null and PrivacySuppressed separately from numeric zero.",
@@ -190,7 +196,9 @@
     "redistribution_permitted": "public selected fields with attribution",
     "grain": "one NSF award record by award identifier",
     "universe": "NSF award records returned for the exact recipient UEI",
-    "boundaries_supported": ["CORE"],
+    "boundaries_supported": [
+      "CORE"
+    ],
     "boundary_notes": "The page uses recipient UEI T72NHKM259N3. It does not roll up related ROR organizations or awards to other recipients.",
     "reporting_period_type": "award date and current API status",
     "reporting_period_definition": "Recent trends use initial award dates from 2022-01-01 through 2026-09-29. Active status is the API value at retrieval.",
@@ -198,7 +206,10 @@
     "typical_lag": "not fixed; award and amendment records update as NSF processes them",
     "revision_policy": "retain dated snapshots; award amounts and active status may change through amendments",
     "vintage_identifier": "NSF_AWARDS_2026-09-29",
-    "identifiers_present": ["award_id", "UEI"],
+    "identifiers_present": [
+      "award_id",
+      "UEI"
+    ],
     "join_path": "ueiNumber T72NHKM259N3 to institution_key UD_CORE",
     "suppression_rules": "No suppression was observed in selected public award fields.",
     "missing_value_encoding": "Blank API fields remain blank; missing amounts are not converted to zero in record displays.",
@@ -208,6 +219,122 @@
     "owner": "Nil Shah",
     "check_cadence": "monthly",
     "last_verified_date": "2026-09-29",
+    "last_verified_by": "Nil Shah"
+  },
+  {
+    "source_id": "NIH_REPORTER",
+    "display_name": "NIH RePORTER projects",
+    "publisher": "National Institutes of Health",
+    "documentation_url": "https://api.reporter.nih.gov/",
+    "data_access_url": "https://reporter.nih.gov/advanced-search",
+    "access_method": "public API",
+    "license_and_reuse": "Public federal project records; retain application IDs, fiscal years, and official record links.",
+    "redistribution_permitted": "public selected fields with attribution",
+    "grain": "one funded application record by application ID and federal fiscal year",
+    "universe": "NIH RePORTER project records returned for the exact organization name UNIVERSITY OF DELAWARE",
+    "boundaries_supported": [
+      "CORE"
+    ],
+    "boundary_notes": "Every retained record is required to match organization IPF 2076701 and UEI T72NHKM259N3. Affiliated organizations with different RePORTER identities are excluded.",
+    "reporting_period_type": "federal fiscal year",
+    "reporting_period_definition": "The page summarizes FY2022 through FY2026 funded application records. Each annual application is a separate record; a core project can occur in multiple fiscal years.",
+    "release_cadence": "continuous administrative updates",
+    "typical_lag": "current-year records update as notices and project data are processed",
+    "revision_policy": "retain dated API snapshots and compare application IDs, fiscal years, amounts, and dates",
+    "vintage_identifier": "NIH_REPORTER_API_2026-09-30",
+    "identifiers_present": [
+      "appl_id",
+      "core_project_num",
+      "NIH_ORG_IPF_CODE",
+      "UEI",
+      "DUNS"
+    ],
+    "join_path": "exact org name to org_ipf_code 2076701 and UEI T72NHKM259N3, then to institution_key UD_CORE",
+    "suppression_rules": "No local suppression is applied to public project fields.",
+    "missing_value_encoding": "Null API values remain null and are excluded from amount sums.",
+    "imputation_flags": "No local imputation is applied.",
+    "known_gotchas": "Application records are not unique long-run projects. Award amount is the amount on that fiscal-year application record and should not be compared directly with HERD expenditures or USAspending obligations.",
+    "change_signal": "exact-organization API snapshot diff by application ID, fiscal year, amount, and notice date",
+    "owner": "Nil Shah",
+    "check_cadence": "monthly",
+    "last_verified_date": "2026-09-30",
+    "last_verified_by": "Nil Shah"
+  },
+  {
+    "source_id": "USASPENDING",
+    "display_name": "USAspending prime awards and obligations",
+    "publisher": "U.S. Department of the Treasury",
+    "documentation_url": "https://api.usaspending.gov/docs/endpoints",
+    "data_access_url": "https://www.usaspending.gov/recipient/88f4772d-e0bd-42e6-ed20-c3144d3bace8-R/latest",
+    "access_method": "public API",
+    "license_and_reuse": "Public federal spending records; retain recipient, award, time-period, and amount-field definitions.",
+    "redistribution_permitted": "public selected fields with attribution",
+    "grain": "federal obligation trend values are transaction aggregates; award counts and listed records are prime-award grain",
+    "universe": "prime awards and transactions returned for exact recipient UEI T72NHKM259N3",
+    "boundaries_supported": [
+      "CORE"
+    ],
+    "boundary_notes": "Direct-recipient UEI only. Subawards, parent rollups, and awards to related organizations are excluded.",
+    "reporting_period_type": "federal fiscal year for obligation trends; award period for award records",
+    "reporting_period_definition": "Obligation trends cover federal FY2022 through FY2026. Award counts identify prime awards with activity in the selected time window.",
+    "release_cadence": "continuous administrative updates",
+    "typical_lag": "agency reporting and correction schedules vary",
+    "revision_policy": "retain dated API snapshots and compare fiscal-year obligations, award counts, and award records",
+    "vintage_identifier": "USASPENDING_API_2026-09-30",
+    "identifiers_present": [
+      "UEI",
+      "DUNS",
+      "recipient_id",
+      "generated_internal_id",
+      "award_id"
+    ],
+    "join_path": "recipient UEI T72NHKM259N3 to institution_key UD_CORE",
+    "suppression_rules": "No local suppression is applied to public spending fields.",
+    "missing_value_encoding": "Null API fields remain null. Null outlays are not converted to zero.",
+    "imputation_flags": "No local imputation is applied.",
+    "known_gotchas": "Obligations and outlays differ. Transaction aggregates and award-level totals are different grains. Prime awards and subawards are separate universes. Current award amount can span years outside the selected transaction window.",
+    "change_signal": "exact-UEI API snapshot diff by fiscal-year obligations, award counts, and award identifiers",
+    "owner": "Nil Shah",
+    "check_cadence": "monthly",
+    "last_verified_date": "2026-09-30",
+    "last_verified_by": "Nil Shah"
+  },
+  {
+    "source_id": "OPENALEX",
+    "display_name": "OpenAlex research graph",
+    "publisher": "OurResearch",
+    "documentation_url": "https://docs.openalex.org/",
+    "data_access_url": "https://api.openalex.org/institutions/I86501945",
+    "access_method": "public API",
+    "license_and_reuse": "OpenAlex metadata is openly reusable under CC0; preserve OpenAlex and upstream identifiers.",
+    "redistribution_permitted": "yes with source attribution",
+    "grain": "one indexed work with an authorship linked to the exact OpenAlex institution record",
+    "universe": "works from 2021 through 2025 linked to OpenAlex institution I86501945",
+    "boundaries_supported": [
+      "CORE"
+    ],
+    "boundary_notes": "Exact OpenAlex institution only. Six ROR child organizations and one related organization are excluded until rollup rules are reviewed.",
+    "reporting_period_type": "calendar publication year",
+    "reporting_period_definition": "The page uses publication years 2021 through 2025 and a dated API snapshot retrieved 2026-09-30.",
+    "release_cadence": "continuously updated graph with periodic snapshots",
+    "typical_lag": "varies by upstream scholarly source and indexing workflow",
+    "revision_policy": "retain dated API snapshots; works, affiliations, open-access status, and classifications may change",
+    "vintage_identifier": "OPENALEX_API_2026-09-30",
+    "identifiers_present": [
+      "OpenAlex institution ID",
+      "ROR",
+      "OpenAlex work ID",
+      "DOI when present"
+    ],
+    "join_path": "ROR 01sbq1a82 to OpenAlex institution I86501945, then to institution_key UD_CORE",
+    "suppression_rules": "No suppression; absent classifications remain unclassified.",
+    "missing_value_encoding": "Missing topic, type, identifier, or open-access fields remain missing.",
+    "imputation_flags": "No local imputation is applied.",
+    "known_gotchas": "OpenAlex is a research graph, not an institutional reporting system. Work types include articles, preprints, datasets, and other objects. Affiliation and topic assignments can be revised, and exact-institution counts exclude child and related ROR organizations.",
+    "change_signal": "dated grouped API snapshot diff by publication year, type, open-access status, and primary topic",
+    "owner": "Nil Shah",
+    "check_cadence": "monthly",
+    "last_verified_date": "2026-09-30",
     "last_verified_by": "Nil Shah"
   }
 ]

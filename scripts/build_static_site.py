@@ -27,6 +27,9 @@ contracts = load_json("source-contracts.json")
 maintenance = load_json("maintenance-log.json")
 scorecard = load_json("scorecard.json")
 nsf_awards = load_json("nsf-awards.json")
+nih_reporter = load_json("nih-reporter.json")
+usaspending = load_json("usaspending.json")
+openalex = load_json("openalex.json")
 reconciliation = load_csv("reconciliation.csv")
 vintage_diff = load_csv("vintage-diff.csv")
 atlas["identifiers"] = load_csv("DELAWARE_IDENTITY_REGISTRY.csv")
@@ -63,6 +66,14 @@ def fmt_currency(value):
 
 def fmt_dollars_millions(value):
     return "—" if value is None else f"${value / 1_000_000:,.1f}M"
+
+
+def fmt_dollars_compact(value):
+    if value is None:
+        return "—"
+    if abs(value) >= 1_000_000_000:
+        return f"${value / 1_000_000_000:,.2f}B"
+    return fmt_dollars_millions(value)
 
 
 def fmt_pct(value):
@@ -125,7 +136,10 @@ def navigation(active):
         ("scorecard", "scorecard.html", "03", "College Scorecard"),
         ("herd", "herd.html", "04", "Research · HERD"),
         ("nsf", "nsf-awards.html", "05", "NSF awards"),
-        ("maintenance", "maintenance.html", "06", "Maintenance"),
+        ("nih", "nih-reporter.html", "06", "NIH projects"),
+        ("usaspending", "usaspending.html", "07", "Federal awards"),
+        ("openalex", "openalex.html", "08", "Publications"),
+        ("maintenance", "maintenance.html", "09", "Maintenance"),
     ]
     links = []
     for key, href, number, label in items:
@@ -135,9 +149,15 @@ def navigation(active):
 
 
 def controls(page):
-    if page == "nsf":
+    peer_lock_reasons = {
+        "nsf": "UEI crosswalk not loaded for peers",
+        "nih": "NIH organization crosswalk not loaded for peers",
+        "usaspending": "Recipient UEI crosswalk not loaded for peers",
+        "openalex": "Peer institution boundaries not reviewed",
+    }
+    if page in peer_lock_reasons:
         peer_options = '<option selected>Not available for this source</option>'
-        peer_control = f'<label class="control-locked">Peer group<select id="peer-control" disabled>{peer_options}</select><span class="control-status">UEI crosswalk not loaded for peers</span></label>'
+        peer_control = f'<label class="control-locked">Peer group<select id="peer-control" disabled>{peer_options}</select><span class="control-status">{esc(peer_lock_reasons[page])}</span></label>'
     else:
         peer_options = "".join(
             f'<option value="{esc(key)}"{" selected" if key == "DFR_SUBMITTED" else ""}>{esc(value["label"])}</option>'
@@ -161,6 +181,15 @@ def controls(page):
     elif page == "nsf":
         year = f'<select id="year-control" disabled><option>2022–{esc(nsf_awards["recent_period_end"][:4])}</option></select><span class="control-status">Recent award-date window</span>'
         vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(nsf_awards["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "nih":
+        year = f'<select id="year-control" disabled><option>FY{nih_reporter["fiscal_years"][0]}–FY{nih_reporter["fiscal_years"][-1]}</option></select><span class="control-status">Federal fiscal years</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(nih_reporter["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "usaspending":
+        year = f'<select id="year-control" disabled><option>FY{usaspending["fiscal_years"][0]}–FY{usaspending["fiscal_years"][-1]}</option></select><span class="control-status">Federal fiscal years</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(usaspending["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
+    elif page == "openalex":
+        year = f'<select id="year-control" disabled><option>{esc(openalex["window_start"][:4])}–{esc(openalex["window_end"][:4])}</option></select><span class="control-status">Publication years</span>'
+        vintage = f'<select id="vintage-control" disabled><option>Snapshot {esc(openalex["retrieved_at"])}</option></select><span class="control-status">API snapshot</span>'
     else:
         year = '<select id="year-control" disabled><option>Source-specific</option></select><span class="control-status">Not applicable</span>'
         vintage = '<select id="vintage-control" disabled><option>Latest verified</option></select><span class="control-status">Not applicable</span>'
@@ -429,6 +458,105 @@ def nsf_page():
 </main>{footer()}</body></html>'''
 
 
+def nih_records_table():
+    rows = []
+    for row in nih_reporter["recent_records"]:
+        investigators = ", ".join(row["principal_investigators"]) or "Not reported"
+        notice_date = (row["award_notice_date"] or "")[:10] or "Not reported"
+        rows.append(f'''<tr><td>{link(str(row["appl_id"]), row["official_record_url"], "inline-evidence")}</td><td><strong>{esc(row["project_title"] or "Title not reported")}</strong><br><span class="table-sub">{esc(row["project_num"] or row["core_project_num"] or "Project number not reported")}</span></td><td>FY{esc(row["fiscal_year"])}</td><td>{fmt_currency(row["award_amount"])}</td><td>{esc(row["admin_ic_code"] or "—")}</td><td>{esc(investigators)}</td><td>{esc(notice_date)}</td></tr>''')
+    return '<table><thead><tr><th>Application ID</th><th>Project</th><th>Fiscal year</th><th>Award amount</th><th>Admin IC</th><th>Principal investigator(s)</th><th>Notice date</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>"
+
+
+def nih_page():
+    current = nih_reporter["year_summary"][-1]
+    year_series = [(f'FY{row["fiscal_year"]}', row["application_records"]) for row in nih_reporter["year_summary"]]
+    admin_rows = "".join(
+        f'<tr><th>{esc(row["admin_ic"])}</th><td>{fmt_int(row["application_records"])}</td><td>{fmt_dollars_millions(row["award_amount"])}</td></tr>'
+        for row in nih_reporter["admin_ic_summary"][:10]
+    )
+    metric_html = "".join([
+        metric_card(f'FY{current["fiscal_year"]} application records', fmt_int(current["application_records"]), "One row per funded application ID"),
+        metric_card(f'FY{current["fiscal_year"]} award amount', fmt_dollars_millions(current["award_amount"]), "Sum of application-record award amounts"),
+        metric_card("Five-year application records", fmt_int(nih_reporter["record_count"]), f'FY{nih_reporter["fiscal_years"][0]}–FY{nih_reporter["fiscal_years"][-1]}', "teal"),
+        metric_card("Distinct core projects", fmt_int(nih_reporter["distinct_core_projects"]), "Core project numbers across the window", "teal"),
+    ])
+    return f'''{page_head("NIH RePORTER | Institution Atlas", "University of Delaware NIH RePORTER funded application records joined by exact organization identifiers.")}
+<body data-page="nih">{site_header()}{navigation("nih")}{controls("nih")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header nih-header"><div><p class="eyebrow">National Institutes of Health · RePORTER</p><h1>NIH projects</h1><p>Funded application records matched to organization IPF {link(nih_reporter["org_ipf_code"], nih_reporter["query_urls"]["search_results"], "header-link")} and verified against UEI {link(nih_reporter["uei"], nih_reporter["query_urls"]["search_results"], "header-link")}.</p></div><div class="source-actions">{link("Search results", nih_reporter["query_urls"]["search_results"], "official-button")}{link("API documentation", nih_reporter["query_urls"]["documentation"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>NIH RePORTER</strong></div><div><span>Period</span><strong>FY{nih_reporter["fiscal_years"][0]}–FY{nih_reporter["fiscal_years"][-1]}</strong></div><div><span>Snapshot</span><strong>{esc(nih_reporter["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Applications and dollars</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#nih-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section id="nih-metrics" class="metric-grid">{metric_html}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Funded applications</p><h2>Application records by federal fiscal year</h2><p class="provenance">Exact organization name, IPF, and UEI required on every retained record.</p></div>{local_link("Download JSON", "data/nih-reporter.json", "record-link")}</div><div class="source-bars">{single_series_svg(year_series, fmt_int, "University of Delaware NIH RePORTER application records by federal fiscal year", "Federal fiscal year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Administering institutes</p><h2>Ten largest by application-record amount</h2><p class="provenance">Summed across the selected fiscal-year application records.</p></div></div><div class="table-wrap"><table><thead><tr><th>Administering institute or center</th><th>Application records</th><th>Award amount</th></tr></thead><tbody>{admin_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Record grain</p><h2>{link("Organization IPF " + nih_reporter["org_ipf_code"], nih_reporter["query_urls"]["search_results"], "inline-evidence")}</h2></div><p>Each row is a funded application record for one federal fiscal year. The same core project can appear in several years. Award amount is the amount reported on that application record; it is not a unique-project lifetime total, a USAspending obligation flow, or HERD expenditure.</p></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Latest notices</p><h2>Twenty latest application records</h2></div><span class="review-pill">20 displayed of {fmt_int(nih_reporter["record_count"])}</span></div><div class="table-wrap">{nih_records_table()}</div></section></div>
+</main>{footer()}</body></html>'''
+
+
+def usaspending_awards_table():
+    rows = []
+    for row in usaspending["largest_prime_awards"]:
+        award_label = row["award_id"] or row["generated_internal_id"] or "Award record"
+        award_link = link(award_label, row["official_record_url"], "inline-evidence") if row["official_record_url"] else esc(award_label)
+        rows.append(f'''<tr><td>{award_link}<br><span class="table-sub">{esc(row["award_group"].title())}</span></td><td><strong>{esc(row["description"] or "Description not reported")}</strong></td><td>{fmt_dollars_millions(row["award_amount"])}</td><td>{esc(row["awarding_agency"] or "Not reported")}</td><td>{esc(row["start_date"] or "—")} to {esc(row["end_date"] or "—")}</td></tr>''')
+    return '<table><thead><tr><th>Prime award</th><th>Description</th><th>Current award amount</th><th>Awarding agency</th><th>Award period</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>"
+
+
+def usaspending_page():
+    current = usaspending["year_summary"][-1]
+    grant_total = next(row["obligations"] for row in usaspending["type_obligations"] if row["award_type"] == "Grants")
+    grant_share = grant_total / usaspending["five_year_obligations"]
+    year_series = [(f'FY{row["fiscal_year"]}', row["obligations"]) for row in usaspending["year_summary"]]
+    type_rows = "".join(f'<tr><th>{esc(row["award_type"])}</th><td>{fmt_dollars_millions(row["obligations"])}</td><td>{fmt_pct(row["obligations"] / usaspending["five_year_obligations"])}</td></tr>' for row in usaspending["type_obligations"])
+    agency_rows = "".join(f'<tr><th>{esc(row["name"])}</th><td>{esc(row["code"])}</td><td>{fmt_dollars_millions(row["amount"])}</td></tr>' for row in usaspending["awarding_agencies"][:10])
+    metric_html = "".join([
+        metric_card(f'FY{current["fiscal_year"]} obligations', fmt_dollars_millions(current["obligations"]), "Transaction-level federal obligations"),
+        metric_card("Five-year obligations", fmt_dollars_compact(usaspending["five_year_obligations"]), f'FY{usaspending["fiscal_years"][0]}–FY{usaspending["fiscal_years"][-1]}'),
+        metric_card("Prime award records", fmt_int(usaspending["prime_award_count"]), "Awards with activity in the selected window", "teal"),
+        metric_card("Grant share", fmt_pct(grant_share), "Share of five-year obligations", "teal"),
+    ])
+    return f'''{page_head("USAspending | Institution Atlas", "University of Delaware federal prime awards and obligation trends from USAspending.")}
+<body data-page="usaspending">{site_header()}{navigation("usaspending")}{controls("usaspending")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header usaspending-header"><div><p class="eyebrow">U.S. Department of the Treasury · USAspending</p><h1>Federal awards</h1><p>Prime awards and transaction-level obligations matched to direct recipient UEI {link(usaspending["uei"], usaspending["query_urls"]["recipient_profile"], "header-link")}.</p></div><div class="source-actions">{link("Recipient profile", usaspending["query_urls"]["recipient_profile"], "official-button")}{link("API documentation", usaspending["query_urls"]["api_documentation"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>USAspending</strong></div><div><span>Period</span><strong>FY{usaspending["fiscal_years"][0]}–FY{usaspending["fiscal_years"][-1]}</strong></div><div><span>Snapshot</span><strong>{esc(usaspending["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Obligations and awards</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#usaspending-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section id="usaspending-metrics" class="metric-grid">{metric_html}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Transaction flow</p><h2>Federal obligations by fiscal year</h2><p class="provenance">Direct recipient UEI · prime-award transactions.</p></div>{local_link("Download JSON", "data/usaspending.json", "record-link")}</div><div class="source-bars">{single_series_svg(year_series, fmt_dollars_millions, "University of Delaware federal obligations by fiscal year", "Federal fiscal year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Award types</p><h2>Five-year obligations by type</h2><p class="provenance">Shares use transaction-level obligations.</p></div></div><div class="table-wrap"><table><thead><tr><th>Award type</th><th>Obligations</th><th>Share</th></tr></thead><tbody>{type_rows}</tbody></table></div></article></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Awarding agencies</p><h2>Largest obligation totals in the selected window</h2></div></div><div class="table-wrap"><table><thead><tr><th>Awarding agency</th><th>Code</th><th>Obligations</th></tr></thead><tbody>{agency_rows}</tbody></table></div></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Grain boundary</p><h2>{link("Recipient UEI " + usaspending["uei"], usaspending["query_urls"]["recipient_profile"], "inline-evidence")}</h2></div><p>Annual values are sums of transaction obligations. The award count and list below are prime-award records with activity in the period. Current award amount can span several years. Outlays, subawards, parent-recipient rollups, and awards to related organizations are not included in the displayed totals.</p></section>
+  <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Largest records</p><h2>Twenty largest grants and contracts</h2></div><span class="review-pill">Current award amounts</span></div><div class="table-wrap">{usaspending_awards_table()}</div></section></div>
+</main>{footer()}</body></html>'''
+
+
+def openalex_page():
+    latest = next(row for row in openalex["year_summary"] if row["label"] == openalex["window_end"][:4])
+    oa_share = openalex["open_access_works"] / openalex["works_count"]
+    topic_share = openalex["topic_classified_works"] / openalex["works_count"]
+    year_series = [(row["label"], row["works"]) for row in openalex["year_summary"]]
+    domain_rows = "".join(f'<tr><th>{esc(row["label"])}</th><td>{fmt_int(row["works"])}</td><td>{fmt_pct(row["works"] / openalex["works_count"])}</td></tr>' for row in openalex["domain_summary"])
+    oa_rows = "".join(f'<tr><th>{esc(row["label"].title())}</th><td>{fmt_int(row["works"])}</td><td>{fmt_pct(row["works"] / openalex["works_count"])}</td></tr>' for row in openalex["open_access_summary"])
+    field_rows = "".join(f'<tr><th>{esc(row["label"])}</th><td>{fmt_int(row["works"])}</td><td>{fmt_pct(row["works"] / openalex["works_count"])}</td></tr>' for row in openalex["field_summary"])
+    metric_html = "".join([
+        metric_card("Works in selected years", fmt_int(openalex["works_count"]), f'{openalex["window_start"][:4]}–{openalex["window_end"][:4]} publication years'),
+        metric_card(f'{latest["label"]} works', fmt_int(latest["works"]), "Latest complete calendar year"),
+        metric_card("Open access", fmt_pct(oa_share), f'{fmt_int(openalex["open_access_works"])} works', "teal"),
+        metric_card("Primary-topic coverage", fmt_pct(topic_share), f'{fmt_int(openalex["topic_classified_works"])} works', "teal"),
+    ])
+    return f'''{page_head("OpenAlex | Institution Atlas", "University of Delaware scholarly works linked to the exact OpenAlex institution record.")}
+<body data-page="openalex">{site_header()}{navigation("openalex")}{controls("openalex")}
+<main id="main" class="page-shell"><div id="boundary-alert" class="boundary-alert" hidden></div>
+  <section class="source-header openalex-header"><div><p class="eyebrow">OurResearch · OpenAlex research graph</p><h1>Publications and works</h1><p>Indexed works with at least one authorship linked to {link(openalex["openalex_id"], openalex["query_urls"]["institution"], "header-link")}, matched through {link("ROR 01sbq1a82", openalex["query_urls"]["ror"], "header-link")}.</p></div><div class="source-actions">{link("Institution record", openalex["query_urls"]["institution"], "official-button")}{link("API documentation", openalex["query_urls"]["documentation"], "official-button")}</div></section>
+  <section class="provenance-bar"><div><span>Source</span><strong>OpenAlex</strong></div><div><span>Period</span><strong>{esc(openalex["window_start"][:4])}–{esc(openalex["window_end"][:4])}</strong></div><div><span>Snapshot</span><strong>{esc(openalex["retrieved_at"])}</strong></div><div><span>Unit</span><strong>Indexed works</strong></div><div><span>Verification</span><strong>{local_link("Reconciled", "evidence.html#openalex-reconciliation", "verified-text")}</strong></div></section>
+  <div class="requires-core"><section id="openalex-metrics" class="metric-grid">{metric_html}</section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Publication years</p><h2>Indexed works by year</h2><p class="provenance">Exact OpenAlex institution ID; publication year assigned by OpenAlex.</p></div>{local_link("Download JSON", "data/openalex.json", "record-link")}</div><div class="source-bars">{single_series_svg(year_series, fmt_int, "University of Delaware OpenAlex works by publication year", "Publication year")}</div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Primary topics</p><h2>Works by broad domain</h2><p class="provenance">One primary topic domain per classified work.</p></div></div><div class="table-wrap"><table><thead><tr><th>Domain</th><th>Works</th><th>Share of all works</th></tr></thead><tbody>{domain_rows}</tbody></table></div></article></section>
+  <section class="dashboard-grid equal-grid"><article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Access status</p><h2>Open-access categories</h2></div></div><div class="table-wrap"><table><thead><tr><th>Status</th><th>Works</th><th>Share</th></tr></thead><tbody>{oa_rows}</tbody></table></div></article>
+  <article class="panel panel-wide"><div class="panel-heading"><div><p class="section-kicker">Primary fields</p><h2>Twelve largest fields</h2></div></div><div class="table-wrap"><table><thead><tr><th>Field</th><th>Works</th><th>Share</th></tr></thead><tbody>{field_rows}</tbody></table></div></article></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Institution boundary</p><h2>{link(openalex["openalex_id"], openalex["query_urls"]["institution_api"], "inline-evidence")}</h2></div><p>{esc(openalex["boundary_note"])} These counts describe the indexed research graph and can change as works, affiliations, open-access status, and topic assignments are updated. Work types include articles, preprints, conference papers, datasets, and other objects.</p></section></div>
+</main>{footer()}</body></html>'''
+
+
 def evidence_page():
     identity_rows = "".join(f'<tr id="evidence-{esc(row["identifier_type"].lower())}"><th>{esc(row["identifier_type"].replace("_", " "))}</th><td>{identifier_link(row)}</td><td>{link(row["source"], row["source_url"])}</td><td>{esc(row["note"])}</td><td>{esc(row["verified_date"])}</td></tr>' for row in identifiers)
     ipeds_rows = []
@@ -461,6 +589,27 @@ def evidence_page():
         ("Recent award records", "query=ueiNumber+dateStart+dateEnd; metadata.totalCount", fmt_int(nsf_awards["recent_award_count"])),
     ]
     nsf_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>UEI={esc(nsf_awards["focal_uei"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in nsf_fields)
+    nih_current = nih_reporter["year_summary"][-1]
+    nih_fields = [
+        (f'FY{nih_current["fiscal_year"]} application records', "count(appl_id) where fiscal_year=current", fmt_int(nih_current["application_records"])),
+        (f'FY{nih_current["fiscal_year"]} award amount', "sum(award_amount) where fiscal_year=current", fmt_dollars_millions(nih_current["award_amount"])),
+        ("Five-year application records", "count(appl_id) across selected fiscal years", fmt_int(nih_reporter["record_count"])),
+        ("Distinct core projects", "count(distinct core_project_num)", fmt_int(nih_reporter["distinct_core_projects"])),
+    ]
+    nih_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>org_ipf_code={esc(nih_reporter["org_ipf_code"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in nih_fields)
+    usa_current = usaspending["year_summary"][-1]
+    usa_fields = [
+        (f'FY{usa_current["fiscal_year"]} obligations', "spending_over_time.aggregated_amount", fmt_dollars_millions(usa_current["obligations"])),
+        ("Five-year obligations", "sum(fiscal-year aggregated_amount)", fmt_dollars_compact(usaspending["five_year_obligations"])),
+        ("Prime award records", "sum(spending_by_award_count results)", fmt_int(usaspending["prime_award_count"])),
+    ]
+    usa_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>recipient_uei={esc(usaspending["uei"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in usa_fields)
+    openalex_fields = [
+        ("Works in selected years", "group_by=publication_year; meta.count", fmt_int(openalex["works_count"])),
+        ("Open-access works", "group_by=open_access.oa_status; sum(non-closed)", fmt_int(openalex["open_access_works"])),
+        ("Primary-topic classified works", "group_by=primary_topic.domain.id; sum(count)", fmt_int(openalex["topic_classified_works"])),
+    ]
+    openalex_rows = "".join(f'<tr><th>{esc(label)}</th><td>{esc(value)}</td><td><code>institution={esc(openalex["openalex_id"])} · {esc(locator)}</code></td><td><span class="confirm-badge">Matched</span></td></tr>' for label, locator, value in openalex_fields)
     return f'''{page_head("Evidence | Institution Atlas", "Identifier and value reconciliation evidence for the University of Delaware Institution Atlas.")}
 <body data-page="evidence">{site_header()}{navigation("")}
 <main id="main" class="page-shell evidence-page"><section class="source-header"><div><p class="eyebrow">Evidence register</p><h1>How each identifier and value was checked</h1><p>Official records, exact releases, and source-row locators used in the delivered pages.</p></div></section>
@@ -469,6 +618,9 @@ def evidence_page():
   <section class="panel data-table-panel" id="herd-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NCSES HERD FY2024</p><h2>Reconciliation record</h2><p class="provenance">Values were checked against the FY2024 public-use file at the NCSES reporting-entity grain.</p></div></div><div class="citation-grid"><article><span>Browser-facing profile</span>{link("U. Delaware · U3284001", ncses_url("U3284001"))}</article><article><span>Exact bulk release</span>{link("higher_education_r_and_d_2024.zip", contract_by_id["NCSES_HERD"]["data_access_url"])}</article><article><span>Join rule</span><code>ncses_inst_id=U3284001 + questionnaire_no + row + column</code></article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact source-row locator</th><th>Result</th></tr></thead><tbody>{"".join(herd_rows)}</tbody></table></div></section>
   <section class="panel data-table-panel" id="scorecard-reconciliation"><div class="panel-heading"><div><p class="section-kicker">College Scorecard</p><h2>Reconciliation record</h2><p class="provenance">Displayed values match the official API response stored on {esc(scorecard["retrieved_at"])}. Each metric retains its API field and file year.</p></div></div><div class="citation-grid"><article><span>Institution profile</span>{link("University of Delaware · UNITID 130943", scorecard["official_profile_url"])}</article><article><span>Documentation and data</span>{link("Institution documentation", scorecard["documentation_url"])}<br>{link("Official data downloads", scorecard["data_url"])}</article><article><span>Published snapshot</span>{local_link("scorecard.json", "data/scorecard.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{scorecard_rows}</tbody></table></div></section>
   <section class="panel data-table-panel" id="nsf-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NSF Awards API</p><h2>Reconciliation record</h2><p class="provenance">Counts and aggregates were rebuilt from exact-UEI API results retrieved {esc(nsf_awards["retrieved_at"])}.</p></div></div><div class="citation-grid"><article><span>Exact source query</span>{link("UEI " + nsf_awards["focal_uei"], nsf_awards["query_urls"]["all"])}</article><article><span>API documentation</span>{link("NSF Awards API", nsf_awards["query_urls"]["documentation"])}</article><article><span>Published snapshot</span>{local_link("nsf-awards.json", "data/nsf-awards.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{nsf_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="nih-reconciliation"><div class="panel-heading"><div><p class="section-kicker">NIH RePORTER</p><h2>Reconciliation record</h2><p class="provenance">All retained application records matched the exact organization name, IPF, and UEI in the {esc(nih_reporter["retrieved_at"])} API snapshot.</p></div></div><div class="citation-grid"><article><span>Search results</span>{link("Organization IPF " + nih_reporter["org_ipf_code"], nih_reporter["query_urls"]["search_results"])}</article><article><span>API documentation</span>{link("NIH RePORTER API", nih_reporter["query_urls"]["documentation"])}</article><article><span>Published snapshot</span>{local_link("nih-reporter.json", "data/nih-reporter.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{nih_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="usaspending-reconciliation"><div class="panel-heading"><div><p class="section-kicker">USAspending</p><h2>Reconciliation record</h2><p class="provenance">Transaction aggregates and prime-award counts use direct recipient UEI {esc(usaspending["uei"])} in the {esc(usaspending["retrieved_at"])} snapshot.</p></div></div><div class="citation-grid"><article><span>Recipient profile</span>{link("University of Delaware · " + usaspending["uei"], usaspending["query_urls"]["recipient_profile"])}</article><article><span>API documentation</span>{link("USAspending endpoints", usaspending["query_urls"]["api_documentation"])}</article><article><span>Published snapshot</span>{local_link("usaspending.json", "data/usaspending.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{usa_rows}</tbody></table></div></section>
+  <section class="panel data-table-panel" id="openalex-reconciliation"><div class="panel-heading"><div><p class="section-kicker">OpenAlex</p><h2>Reconciliation record</h2><p class="provenance">Grouped counts use the exact institution record {esc(openalex["openalex_id"])} and exclude child and related organizations.</p></div></div><div class="citation-grid"><article><span>Institution record</span>{link(openalex["openalex_id"] + " · ROR 01sbq1a82", openalex["query_urls"]["institution"])}</article><article><span>Exact grouped query</span>{link("Publication-year query", openalex["query_urls"]["works_api"])}</article><article><span>Published snapshot</span>{local_link("openalex.json", "data/openalex.json")}</article></div><div class="table-wrap"><table><thead><tr><th>Variable</th><th>Displayed value</th><th>Exact API locator</th><th>Result</th></tr></thead><tbody>{openalex_rows}</tbody></table></div></section>
 </main>{footer()}</body></html>'''
 
 
@@ -482,7 +634,7 @@ def maintenance_page():
   <section class="maintenance-cards"><article><span>Review owner</span><strong>{esc(maintenance["owner"])}</strong><p>{esc(maintenance["owner_role"])}</p></article><article><span>Cadence</span><strong>{esc(maintenance["cadence"])}</strong><p>{esc(maintenance["schedule"])}</p></article><article><span>Last completed</span><strong>{esc(latest["date_display"])}</strong><p>{esc(latest["result"])}</p></article><article><span>Next review</span><strong>{esc(maintenance["next_review"])}</strong><p>Review automated link results and source changes.</p></article></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Visible history</p><h2>Maintenance log</h2></div>{link("GitHub workflow", maintenance["workflow_url"], "record-link")}</div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Review type</th><th>Owner</th><th>Result</th><th>Details</th></tr></thead><tbody>{log_rows}</tbody></table></div></section>
   <section class="panel data-table-panel"><div class="panel-heading"><div><p class="section-kicker">Assigned contracts</p><h2>Source review ownership</h2></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Owner</th><th>Cadence</th><th>Last verified</th><th>Official links</th></tr></thead><tbody>{source_rows}</tbody></table></div></section>
-  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")} · {local_link("College Scorecard JSON", "data/scorecard.json")} · {local_link("NSF awards JSON", "data/nsf-awards.json")}</p></section>
+  <section class="panel definition-strip"><div><p class="section-kicker">Published records</p><h2>Machine-readable maintenance files</h2></div><p>{local_link("Maintenance log JSON", "data/maintenance-log.json")} · {local_link("Source contracts JSON", "data/source-contracts.json")} · {local_link("Reconciliation CSV", "data/reconciliation.csv")} · {local_link("IPEDS vintage diff CSV", "data/vintage-diff.csv")} · {local_link("College Scorecard JSON", "data/scorecard.json")} · {local_link("NSF awards JSON", "data/nsf-awards.json")} · {local_link("NIH RePORTER JSON", "data/nih-reporter.json")} · {local_link("USAspending JSON", "data/usaspending.json")} · {local_link("OpenAlex JSON", "data/openalex.json")}</p></section>
 </main>{footer()}</body></html>'''
 
 
@@ -492,6 +644,9 @@ pages = {
     "scorecard.html": scorecard_page(),
     "herd.html": herd_page(),
     "nsf-awards.html": nsf_page(),
+    "nih-reporter.html": nih_page(),
+    "usaspending.html": usaspending_page(),
+    "openalex.html": openalex_page(),
     "evidence.html": evidence_page(),
     "maintenance.html": maintenance_page(),
 }
@@ -519,6 +674,9 @@ for output in OUTPUTS:
         ("vintage-diff.csv", "vintage-diff.csv"),
         ("scorecard.json", "scorecard.json"),
         ("nsf-awards.json", "nsf-awards.json"),
+        ("nih-reporter.json", "nih-reporter.json"),
+        ("usaspending.json", "usaspending.json"),
+        ("openalex.json", "openalex.json"),
     ]:
         shutil.copy2(DATA / source_name, export_dir / export_name)
     if (DATA / "link-check.json").exists():

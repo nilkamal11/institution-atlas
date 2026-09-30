@@ -1,0 +1,231 @@
+{
+  "source_id": "OPENALEX",
+  "retrieved_at": "2026-09-30",
+  "institution_name": "University of Delaware",
+  "openalex_id": "I86501945",
+  "ror": "https://ror.org/01sbq1a82",
+  "record_grain": "one OpenAlex work with at least one authorship linked to the exact OpenAlex institution record",
+  "window_start": "2021-01-01",
+  "window_end": "2025-12-31",
+  "works_count": 19118,
+  "open_access_works": 12321,
+  "topic_classified_works": 18788,
+  "year_summary": [
+    {
+      "id": "2021",
+      "label": "2021",
+      "works": 3773
+    },
+    {
+      "id": "2022",
+      "label": "2022",
+      "works": 3951
+    },
+    {
+      "id": "2023",
+      "label": "2023",
+      "works": 3696
+    },
+    {
+      "id": "2024",
+      "label": "2024",
+      "works": 3685
+    },
+    {
+      "id": "2025",
+      "label": "2025",
+      "works": 4013
+    }
+  ],
+  "open_access_summary": [
+    {
+      "id": "closed",
+      "label": "closed",
+      "works": 6797
+    },
+    {
+      "id": "green",
+      "label": "green",
+      "works": 4298
+    },
+    {
+      "id": "gold",
+      "label": "gold",
+      "works": 3783
+    },
+    {
+      "id": "hybrid",
+      "label": "hybrid",
+      "works": 1887
+    },
+    {
+      "id": "bronze",
+      "label": "bronze",
+      "works": 1656
+    },
+    {
+      "id": "diamond",
+      "label": "diamond",
+      "works": 697
+    }
+  ],
+  "type_summary": [
+    {
+      "id": "https://api.openalex.org/types/article",
+      "label": "article",
+      "works": 12166
+    },
+    {
+      "id": "https://api.openalex.org/types/preprint",
+      "label": "preprint",
+      "works": 2199
+    },
+    {
+      "id": "https://api.openalex.org/types/conference-paper",
+      "label": "conference-paper",
+      "works": 1617
+    },
+    {
+      "id": "https://api.openalex.org/types/book-chapter",
+      "label": "book-chapter",
+      "works": 785
+    },
+    {
+      "id": "https://api.openalex.org/types/dataset",
+      "label": "dataset",
+      "works": 587
+    },
+    {
+      "id": "https://api.openalex.org/types/conference-abstract",
+      "label": "conference-abstract",
+      "works": 488
+    },
+    {
+      "id": "https://api.openalex.org/types/other",
+      "label": "other",
+      "works": 241
+    },
+    {
+      "id": "https://api.openalex.org/types/peer-review",
+      "label": "peer-review",
+      "works": 222
+    },
+    {
+      "id": "https://api.openalex.org/types/review",
+      "label": "review",
+      "works": 195
+    },
+    {
+      "id": "https://api.openalex.org/types/editorial",
+      "label": "editorial",
+      "works": 100
+    },
+    {
+      "id": "https://api.openalex.org/types/erratum",
+      "label": "erratum",
+      "works": 92
+    },
+    {
+      "id": "https://api.openalex.org/types/reference-entry",
+      "label": "reference-entry",
+      "works": 86
+    }
+  ],
+  "domain_summary": [
+    {
+      "id": "https://api.openalex.org/domains/3",
+      "label": "Physical Sciences",
+      "works": 9518
+    },
+    {
+      "id": "https://api.openalex.org/domains/2",
+      "label": "Social Sciences",
+      "works": 3952
+    },
+    {
+      "id": "https://api.openalex.org/domains/4",
+      "label": "Health Sciences",
+      "works": 2662
+    },
+    {
+      "id": "https://api.openalex.org/domains/1",
+      "label": "Life Sciences",
+      "works": 2656
+    }
+  ],
+  "field_summary": [
+    {
+      "id": "https://api.openalex.org/fields/22",
+      "label": "Engineering",
+      "works": 2484
+    },
+    {
+      "id": "https://api.openalex.org/fields/27",
+      "label": "Medicine",
+      "works": 2197
+    },
+    {
+      "id": "https://api.openalex.org/fields/33",
+      "label": "Social Sciences",
+      "works": 1850
+    },
+    {
+      "id": "https://api.openalex.org/fields/31",
+      "label": "Physics and Astronomy",
+      "works": 1569
+    },
+    {
+      "id": "https://api.openalex.org/fields/23",
+      "label": "Environmental Science",
+      "works": 1427
+    },
+    {
+      "id": "https://api.openalex.org/fields/13",
+      "label": "Biochemistry, Genetics and Molecular Biology",
+      "works": 1354
+    },
+    {
+      "id": "https://api.openalex.org/fields/17",
+      "label": "Computer Science",
+      "works": 1142
+    },
+    {
+      "id": "https://api.openalex.org/fields/19",
+      "label": "Earth and Planetary Sciences",
+      "works": 979
+    },
+    {
+      "id": "https://api.openalex.org/fields/32",
+      "label": "Psychology",
+      "works": 908
+    },
+    {
+      "id": "https://api.openalex.org/fields/25",
+      "label": "Materials Science",
+      "works": 864
+    },
+    {
+      "id": "https://api.openalex.org/fields/11",
+      "label": "Agricultural and Biological Sciences",
+      "works": 673
+    },
+    {
+      "id": "https://api.openalex.org/fields/28",
+      "label": "Neuroscience",
+      "works": 475
+    }
+  ],
+  "institution_profile": {
+    "works_count": 101330,
+    "cited_by_count": 7414957,
+    "updated_date": "2026-09-30T05:58:29"
+  },
+  "boundary_note": "Exact OpenAlex institution I86501945 only. ROR child and related organizations are not rolled into these counts.",
+  "query_urls": {
+    "institution": "https://api.openalex.org/institutions/I86501945",
+    "institution_api": "https://api.openalex.org/institutions/I86501945",
+    "works_api": "https://api.openalex.org/works?filter=authorships.institutions.id%3AI86501945%2Cfrom_publication_date%3A2021-01-01%2Cto_publication_date%3A2025-12-31&group_by=publication_year&per_page=200",
+    "documentation": "https://docs.openalex.org/",
+    "ror": "https://ror.org/01sbq1a82"
+  }
+}

@@ -3518,12 +3518,12 @@
       "source_id": "NIH_REPORTER",
       "source": "NIH RePORTER",
       "current_ud_coverage": "confirmed",
-      "join_key": "NIH ORG_IPF_CODE plus DUNS",
+      "join_key": "NIH ORG_IPF_CODE plus UEI plus DUNS",
       "boundary_assessment": "CORE for exact organization",
-      "prototype_decision": "confirmed_defer",
-      "reason": "Exact-name FY2025 query returned org IPF 2076701 and DUNS 059007500",
+      "prototype_decision": "include_nih_page",
+      "reason": "Exact-name FY2022-FY2026 query returned org IPF 2076701 UEI T72NHKM259N3 and DUNS 059007500 on all retained records",
       "official_url": "https://api.reporter.nih.gov/v2/projects/search",
-      "verified_date": "2026-09-13"
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "USASPENDING",
@@ -3531,21 +3531,21 @@
       "current_ud_coverage": "confirmed",
       "join_key": "UEI",
       "boundary_assessment": "CORE when direct recipient UEI is used",
-      "prototype_decision": "confirmed_defer",
-      "reason": "Current award record verifies recipient and parent UEI T72NHKM259N3; transactions and subawards remain separate grains",
-      "official_url": "https://www.usaspending.gov/award/CONT_AWD_12639526F0081_12K3_12639522D0030_12K3",
-      "verified_date": "2026-09-13"
+      "prototype_decision": "include_usaspending_page",
+      "reason": "Exact recipient record and FY2022-FY2026 transaction aggregates use UEI T72NHKM259N3; obligations award records outlays and subawards remain separate grains",
+      "official_url": "https://www.usaspending.gov/recipient/88f4772d-e0bd-42e6-ed20-c3144d3bace8-R/latest",
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "OPENALEX",
       "source": "OpenAlex research graph",
       "current_ud_coverage": "confirmed",
       "join_key": "ROR to OpenAlex institution ID",
-      "boundary_assessment": "Conditional on related-organization policy",
-      "prototype_decision": "conditional_defer",
-      "reason": "Exact ROR lookup returns I86501945; six ROR children and one related organization require reviewed rollup rules",
-      "official_url": "https://api.openalex.org/institutions?filter=ror:https://ror.org/01sbq1a82",
-      "verified_date": "2026-09-13"
+      "boundary_assessment": "Exact institution record with child organizations excluded",
+      "prototype_decision": "include_openalex_page",
+      "reason": "Exact ROR lookup returns I86501945; the page excludes six ROR children and one related organization pending reviewed rollup rules",
+      "official_url": "https://api.openalex.org/institutions/I86501945",
+      "verified_date": "2026-09-30"
     },
     {
       "source_id": "CLINICALTRIALS",

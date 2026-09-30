@@ -1,0 +1,551 @@
+{
+  "source_id": "USASPENDING",
+  "retrieved_at": "2026-09-30",
+  "recipient_name": "UNIVERSITY OF DELAWARE",
+  "uei": "T72NHKM259N3",
+  "duns": "059007500",
+  "recipient_id": "88f4772d-e0bd-42e6-ed20-c3144d3bace8-R",
+  "fiscal_years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "start_date": "2021-10-01",
+  "end_date": "2026-09-30",
+  "record_grain": "obligation trends are transaction aggregates; award counts and listed records are prime-award grain",
+  "year_summary": [
+    {
+      "fiscal_year": 2022,
+      "obligations": 201165275.95,
+      "contract_obligations": 14160670.41,
+      "direct_obligations": 7420905.0,
+      "grant_obligations": 179156010.28,
+      "loan_obligations": 0.0,
+      "other_obligations": 427690.26
+    },
+    {
+      "fiscal_year": 2023,
+      "obligations": 229979072.33,
+      "contract_obligations": 4009318.28,
+      "direct_obligations": 18045803.0,
+      "grant_obligations": 207037336.34,
+      "loan_obligations": 0.0,
+      "other_obligations": 886614.71
+    },
+    {
+      "fiscal_year": 2024,
+      "obligations": 267245870.64000002,
+      "contract_obligations": 5014756.37,
+      "direct_obligations": 22171874.0,
+      "grant_obligations": 239340011.31,
+      "loan_obligations": 0.0,
+      "other_obligations": 719228.96
+    },
+    {
+      "fiscal_year": 2025,
+      "obligations": 210787301.82999998,
+      "contract_obligations": 398496.0,
+      "direct_obligations": 24949409.0,
+      "grant_obligations": 184419055.85,
+      "loan_obligations": 0.0,
+      "other_obligations": 1020340.98
+    },
+    {
+      "fiscal_year": 2026,
+      "obligations": 176139919.78,
+      "contract_obligations": 1926885.1,
+      "direct_obligations": 13774982.0,
+      "grant_obligations": 160310479.33,
+      "loan_obligations": 0.0,
+      "other_obligations": 127573.35
+    }
+  ],
+  "five_year_obligations": 1085317440.53,
+  "type_obligations": [
+    {
+      "award_type": "Grants",
+      "obligations": 970262893.1100001
+    },
+    {
+      "award_type": "Direct payments",
+      "obligations": 86362973.0
+    },
+    {
+      "award_type": "Contracts",
+      "obligations": 25510126.160000004
+    },
+    {
+      "award_type": "Other",
+      "obligations": 3181448.2600000002
+    },
+    {
+      "award_type": "Loans",
+      "obligations": 0
+    }
+  ],
+  "award_counts": {
+    "contracts": 61,
+    "direct_payments": 28,
+    "grants": 1242,
+    "idvs": 0,
+    "loans": 9,
+    "other": 50
+  },
+  "prime_award_count": 1390,
+  "awarding_agencies": [
+    {
+      "id": 806,
+      "code": "HHS",
+      "name": "Department of Health and Human Services",
+      "agency_slug": "department-of-health-and-human-services",
+      "amount": 288341363.38,
+      "total_outlays": null
+    },
+    {
+      "id": 655,
+      "code": "NSF",
+      "name": "National Science Foundation",
+      "agency_slug": "national-science-foundation",
+      "amount": 222952802.0,
+      "total_outlays": null
+    },
+    {
+      "id": 183,
+      "code": "DOC",
+      "name": "Department of Commerce",
+      "agency_slug": "department-of-commerce",
+      "amount": 189170966.17,
+      "total_outlays": null
+    },
+    {
+      "id": 1173,
+      "code": "DOD",
+      "name": "Department of Defense",
+      "agency_slug": "department-of-defense",
+      "amount": 108425077.07,
+      "total_outlays": null
+    },
+    {
+      "id": 1068,
+      "code": "ED",
+      "name": "Department of Education",
+      "agency_slug": "department-of-education",
+      "amount": 104927658.7,
+      "total_outlays": null
+    },
+    {
+      "id": 95,
+      "code": "USDA",
+      "name": "Department of Agriculture",
+      "agency_slug": "department-of-agriculture",
+      "amount": 55325366.1,
+      "total_outlays": null
+    },
+    {
+      "id": 930,
+      "code": "DOE",
+      "name": "Department of Energy",
+      "agency_slug": "department-of-energy",
+      "amount": 49853268.64,
+      "total_outlays": null
+    },
+    {
+      "id": 862,
+      "code": "NASA",
+      "name": "National Aeronautics and Space Administration",
+      "agency_slug": "national-aeronautics-and-space-administration",
+      "amount": 23270000.08,
+      "total_outlays": null
+    },
+    {
+      "id": 731,
+      "code": "DOT",
+      "name": "Department of Transportation",
+      "agency_slug": "department-of-transportation",
+      "amount": 19730744.99,
+      "total_outlays": null
+    },
+    {
+      "id": 803,
+      "code": "SBA",
+      "name": "Small Business Administration",
+      "agency_slug": "small-business-administration",
+      "amount": 10247733.34,
+      "total_outlays": null
+    },
+    {
+      "id": 209,
+      "code": "DOI",
+      "name": "Department of the Interior",
+      "agency_slug": "department-of-the-interior",
+      "amount": 8525935.72,
+      "total_outlays": null
+    },
+    {
+      "id": 700,
+      "code": "EPA",
+      "name": "Environmental Protection Agency",
+      "agency_slug": "environmental-protection-agency",
+      "amount": 1999991.0,
+      "total_outlays": null
+    },
+    {
+      "id": 1475,
+      "code": "NEH",
+      "name": "National Endowment for the Humanities",
+      "agency_slug": "national-endowment-for-the-humanities",
+      "amount": 1188308.33,
+      "total_outlays": null
+    },
+    {
+      "id": 267,
+      "code": "DOL",
+      "name": "Department of Labor",
+      "agency_slug": "department-of-labor",
+      "amount": 1024487.26,
+      "total_outlays": null
+    },
+    {
+      "id": 561,
+      "code": "VA",
+      "name": "Department of Veterans Affairs",
+      "agency_slug": "department-of-veterans-affairs",
+      "amount": 291641.0,
+      "total_outlays": null
+    },
+    {
+      "id": 925,
+      "code": "NARA",
+      "name": "National Archives and Records Administration",
+      "agency_slug": "national-archives-and-records-administration",
+      "amount": 215085.0,
+      "total_outlays": null
+    },
+    {
+      "id": 687,
+      "code": "NEA",
+      "name": "National Endowment for the Arts",
+      "agency_slug": "national-endowment-for-the-arts",
+      "amount": 35000.0,
+      "total_outlays": null
+    },
+    {
+      "id": 315,
+      "code": "DOS",
+      "name": "Department of State",
+      "agency_slug": "department-of-state",
+      "amount": -207988.25,
+      "total_outlays": null
+    }
+  ],
+  "largest_prime_awards": [
+    {
+      "award_group": "grants",
+      "award_id": "70NANB21H085",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Commerce",
+      "awarding_sub_agency": "National Institute of Standards and Technology",
+      "start_date": "2021-07-01",
+      "end_date": "2025-06-30",
+      "award_amount": 83000000.0,
+      "total_outlays": 0.0,
+      "description": "NIIMBL RESEARCH, DEVELOPMENT, AND TESTBEDS TO HELP THE NATION PREVENT, PREPARE FOR, AND RESPOND TO CORONAVIRUS",
+      "generated_internal_id": "ASST_NON_70NANB21H085_013",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_70NANB21H085_013/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "70NANB21H086",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Commerce",
+      "awarding_sub_agency": "National Institute of Standards and Technology",
+      "start_date": "2021-07-01",
+      "end_date": "2028-06-30",
+      "award_amount": 70000000.0,
+      "total_outlays": 0.0,
+      "description": "THE NATIONAL INSTITUTE FOR INNOVATION IN MANUFACTURING BIOPHARMACEUTICALS (NIIMBL)",
+      "generated_internal_id": "ASST_NON_70NANB21H086_013",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_70NANB21H086_013/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "70NANB17H002",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Commerce",
+      "awarding_sub_agency": "National Institute of Standards and Technology",
+      "start_date": "2017-03-01",
+      "end_date": "2024-02-29",
+      "award_amount": 69999999.98,
+      "total_outlays": 0.0,
+      "description": "THE NATIONAL INSTITUTE FOR INNOVATION IN MANUFACTURING BIOPHARMACEUTICALS (NIIMBL)",
+      "generated_internal_id": "ASST_NON_70NANB17H002_013",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_70NANB17H002_013/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "P20GM103446",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "National Institutes of Health",
+      "start_date": "2001-09-30",
+      "end_date": "2030-04-30",
+      "award_amount": 62932780.19,
+      "total_outlays": 21166103.69,
+      "description": "DELAWARE INBRE",
+      "generated_internal_id": "ASST_NON_P20GM103446_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM103446_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "DESC0001004",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Energy",
+      "awarding_sub_agency": "Department of Energy",
+      "start_date": "2009-07-30",
+      "end_date": "2024-07-31",
+      "award_amount": 60103330.97,
+      "total_outlays": 10283766.86,
+      "description": "TAS::89 0227::TAS RECOVERY; NEW: RECOVERY ACT -  RATIONAL DESIGN OF INNOVATIVE CATALYTIC TECHNOLOGIES FOR BIOMASS DERIVATIVE UTILIZATION -- EFRC; PI",
+      "generated_internal_id": "ASST_NON_DESC0001004_089",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_DESC0001004_089/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "U54GM104941",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "National Institutes of Health",
+      "start_date": "2013-09-25",
+      "end_date": "2028-06-30",
+      "award_amount": 56938161.0,
+      "total_outlays": 16427526.67,
+      "description": "DELAWARE - CTR",
+      "generated_internal_id": "ASST_NON_U54GM104941_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_U54GM104941_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "NA24NOSX012C0034",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Commerce",
+      "awarding_sub_agency": "National Oceanic and Atmospheric Administration",
+      "start_date": "2024-09-01",
+      "end_date": "2029-08-31",
+      "award_amount": 40157012.0,
+      "total_outlays": 5392710.04,
+      "description": "PURPOSE:  PROJECT SUMMARY: MEETING LOCAL RESILIENCE NEEDS THROUGH NATIONAL AND PAN-REGIONAL COLLABORATION  PROJECT TITLE: MEETING LOCAL RESILIENCE NEEDS THROUGH NATIONAL AND PAN-REGIONAL COLLABORATION  PRIMARY CONTACT: GERHARD F. KUSKA, MARACOOS, UNIVERSITY OF DELAWARE 451 WYOMING AVE NEWARK DE 19716 302-519-1971 KUSKA@MARACOOS.ORG  PRIMARY RECIPIENT INSTITUTION: UNIVERSITY OF DELAWARE  OTHER INVESTIGATORS/PARTNERS (NAME, AFFILIATED INSTITUTION):   CLARISSA ANDERSON, SCRIPPS INSTITUTION OF OCEANOGRAPHY, UNIVERSITY OF CALIFORNIA SAN DIEGO (SCOOS)   JENNIFER BOEHME, GREAT LAKES OBSERVING SYSTEM (GLOS)   JORGE BRENNER, TEXAS A&M UNIVERSITY, COLLEGE STATION (GCOOS)   DEBRA HERNANDEZ, SOUTHEAST COASTAL OCEAN OBSERVING REGIONAL ASSOCIATION (SECOORA)   MELISSA IWAMOTO, PACIFIC ISLANDS OCEAN OBSERVING SYSTEM, UNIVERSITY OF HAWAII (PACIOOS)   JAKE KRITZER, NORTHEASTERN REGIONAL ASSOCIATION OF COASTAL OCEAN OBSERVING SYSTEMS (NERACOOS)   JULIO MORELL, CARICOOS, INC.   JAN NEWTON, UNIVERSITY OF WASHINGTON (NANOOS)   HENRY RUHL, MONTEREY BAY AQUARIUM RESEARCH INSTITUTE (CENCOOS)   SHEYNA WISDOM, ALASKA SEALIFE CENTER (AOOS)   KRISTEN YARINCIK, IOOS ASSOCIATION  SUMMARY: COASTAL COMMUNITIES AND THE ECOSYSTEMS THAT SUPPORT THEM ARE INCREASINGLY THREATENED BY THE IMPACTS OF CLIMATE CHANGE, INCLUDING RISING TEMPERATURES, OCEAN ACIDIFICATION, SEA LEVEL RISE, COASTAL EROSION AND INUNDATION, HIGHER STORM SURGE, HEAVIER PRECIPITATION, AND STRONGER STORMS. COMMUNITIES ON THE FRONTLINE WHO ARE TRADITIONALLY MARGINALIZED AND UNDERSERVED  FOR EXAMPLE LOW-INCOME COMMUNITIES, COMMUNITIES OF COLOR, AND TRIBES AND INDIGENOUS COMMUNITIES  ARE DISPROPORTIONATELY AFFECTED BY THE IMPACTS OF CLIMATE AND ECOSYSTEM CHANGE. THIS PROPOSED PROJECT BUILDS ON EXISTING IOOS INFRASTRUCTURE (E.G., OBSERVING PLATFORMS, DATA AND DATA MANAGEMENT SYSTEMS) AND THE DECADES OF EXPERIENCE WITHIN THE IOOS REGIONAL ASSOCIATIONS (RAS) FOR ENGAGING WITH DIVERSE LOCAL COMMUNITIES TO INCREASE DATA AND INFORMATION TOOLS NEEDED BY THOSE COMMUNITIES FOR IMPROVED PLANNING, PREPAREDNESS, AND RESILIENCE. AT THE SAME TIME, THE PROJECT BUILDS NATIONAL CAPACITY FOR UNDERSTANDING ECOSYSTEM AND COASTAL CHANGE AND FOR SERVICE DELIVERY AT SCALES RANGING FROM THE HYPERLOCAL COMMUNITY LEVEL TO NATIONAL MODELS, FORECASTS, ASSESSMENTS, AND TOOLS. THIS PROJECT INTEGRATES THREE INITIATIVES THAT LEVERAGE EXISTING IOOS CAPACITY. THE FIRST TWO  ECOSYSTEM CHANGE (ECOCHG) AND WATER LEVEL, WAVES, AND WEBCAMS (WWW)  FOCUS ON DATA RELATED TO MONITORING AND UNDERSTANDING EXTREME EVENTS AND CHANGE TO INFORM DECISIONS. THEY INCLUDE GOALS TO: UNDERSTAND AND MEET COMMUNITY NEEDS FOR RELATED OBSERVATIONS; BUILD COMMUNITIES OF PRACTICE TO SHARE AND EVOLVE BEST PRACTICES; DEVELOP COMMON DATA MANAGEMENT PRACTICES AND STANDARDS; AND TO OPTIMIZE PRODUCT DEVELOPMENT AND DELIVERY THROUGH ITERATIVE COMMUNITY ENGAGEMENT. MORE SPECIFICALLY, THE ECOCHG INITIATIVE RE-ENVISIONS ECOSYSTEM CHANGE ASSESSMENT BY BUILDING NATIONAL AND PAN-REGIONAL PARTNERSHIPS TO DELIVER EQUITABLE ECOSYSTEM INFORMATION SERVICES. WORKING IN COLLABORATION, RAS WILL COLLECT AND PROCESS ECOSYSTEM-SCALE INFORMATION THAT ENABLES DECISIONS THAT PROTECT THE ECONOMY, SAFETY, AND LIVELIHOODS OF COMMUNITIES AND THE NATION. THE RESULTING NATIONAL ECOSYSTEM OBSERVING CAPACITY WILL DELIVER REGIONAL INFORMATION THAT IS NEEDED BY FEDERAL, STATE, AND TRIBAL AGENCIES, LOCAL COMMUNITIES, AND INDUSTRIES. THE WWW INITIATIVE WILL BRING OCEAN OBSERVATIONS TO PLACES WHERE INFRASTRUCTURE IS LACKING TO ENABLE WIDER SERVICE TO FRONTLINE COMMUNITIES TO BUILD RESILIENCE TO COASTAL HAZARDS AND INUNDATION. THE RAS WILL WORK WITH COMMUNITIES TO ESTABLISH COORDINATED AND COST-EFFICIENT WWW OBSERVING NETWORKS THAT MEET THEIR LOCAL NEEDS FOR INFORMATION AND DEVELOP SCALABLE GUIDANCE USEFUL FOR NATIONAL IMPLEMENTATION AND INCREASING COVERAGE IN EXISTING FEDERAL NETWORKS OF OBSERVATIONS (E.G., NOAA NATIONAL DATA BUOY CENTER WAVE BUOYS AND NATIONAL WATER LEVEL OBSERVATION NETWORK WATER",
+      "generated_internal_id": "ASST_NON_NA24NOSX012C0034_013",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_NA24NOSX012C0034_013/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "NA21NOS0120096",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Commerce",
+      "awarding_sub_agency": "National Oceanic and Atmospheric Administration",
+      "start_date": "2021-08-01",
+      "end_date": "2027-07-31",
+      "award_amount": 27706552.0,
+      "total_outlays": 13435712.26,
+      "description": "MARACOOS (MID-ATLANTIC IOOS): POWERING UNDERSTANDING AND PREDICTION OF THE MID-ATLANTIC OCEAN, COAST, AND ESTUARIES",
+      "generated_internal_id": "ASST_NON_NA21NOS0120096_013",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_NA21NOS0120096_013/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "P20GM104316",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "National Institutes of Health",
+      "start_date": "2014-09-01",
+      "end_date": "2026-06-30",
+      "award_amount": 26796416.69,
+      "total_outlays": 11911662.84,
+      "description": "DISCOVERY OF CHEMICAL PROBES AND THERAPEUTIC LEADS",
+      "generated_internal_id": "ASST_NON_P20GM104316_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM104316_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "P20GM113125",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "National Institutes of Health",
+      "start_date": "2016-05-15",
+      "end_date": "2027-05-31",
+      "award_amount": 23208115.42,
+      "total_outlays": 8650722.33,
+      "description": "CENTER OF BIOMEDICAL RESEARCH EXCELLENCE IN CARDIOVASCULAR HEALTH",
+      "generated_internal_id": "ASST_NON_P20GM113125_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM113125_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "HR00111620014",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Defense",
+      "awarding_sub_agency": "Defense Advanced Research Projects Agency",
+      "start_date": "2016-03-14",
+      "end_date": "2021-10-31",
+      "award_amount": 22728344.29,
+      "total_outlays": 0.0,
+      "description": "THE PURPOSE OF THIS MODIFICATION IS TO ADD INCREMENTAL FUNDING IN THE AMOUNT OF 4,563,596.00",
+      "generated_internal_id": "ASST_NON_HR00111620014_097",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_HR00111620014_097/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "DESC0021166",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Energy",
+      "awarding_sub_agency": "Department of Energy",
+      "start_date": "2020-08-01",
+      "end_date": "2027-07-31",
+      "award_amount": 21225000.0,
+      "total_outlays": 15906764.97,
+      "description": "CENTER FOR PLASTICS INNOVATION (CPI)",
+      "generated_internal_id": "ASST_NON_DESC0021166_089",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_DESC0021166_089/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "1757353",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "National Science Foundation",
+      "awarding_sub_agency": "National Science Foundation",
+      "start_date": "2018-10-01",
+      "end_date": "2023-09-30",
+      "award_amount": 19200000.0,
+      "total_outlays": 9488850.91,
+      "description": "RII TRACK 1: WATER SECURITY IN DELAWARE'S CHANGING COASTAL ENVIRONMENT",
+      "generated_internal_id": "ASST_NON_1757353_049",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_1757353_049/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "2011824",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "National Science Foundation",
+      "awarding_sub_agency": "National Science Foundation",
+      "start_date": "2020-09-01",
+      "end_date": "2026-08-31",
+      "award_amount": 17721000.0,
+      "total_outlays": 14393144.27,
+      "description": "UNIVERSITY OF DELAWARE MRSEC - CENTER FOR HYBRID, ACTIVE, AND RESPONSIVE MATERIALS (CHARM)",
+      "generated_internal_id": "ASST_NON_2011824_049",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_2011824_049/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "P20GM139760",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "National Institutes of Health",
+      "start_date": "2021-02-15",
+      "end_date": "2026-08-13",
+      "award_amount": 16730455.0,
+      "total_outlays": 12203502.69,
+      "description": "DELAWARE CENTER FOR MUSCULOSKELETAL RESEARCH - PROJECT SUMMARY/ABSTRACT  THE MUSCULOSKELETAL SYSTEM HAS BOTH MECHANICAL AND BIOLOGICAL FUNCTIONS—IT GENERATES, TRANSMITS, AND SUPPORTS FORCES, AND IT REGULATES ORGAN-LEVEL HOMEOSTASIS AND WHOLE-BODY METABOLISM. THE MECHANICS AND BIOLOGY OF THE MUSCULOSKELETAL SYSTEM ARE INEXTRICABLY INTERTWINED AND LONG-RANGING, WHERE MECHANICAL CUES, MOLECULAR SIGNALS, AND CELL INTERACTIONS AFFECT EACH OTHER ACROSS MULTIPLE SCALES, FROM THE BODY, TO ORGAN, TISSUE, CELL, AND MOLECULE LEVELS. PROGRESS IN MUSCULOSKELETAL RESEARCH DEPENDS ON ADDRESSING THE MECHANICS AND BIOLOGY OF ADJACENT ORGANS, AND EVALUATING THE EFFECTS OF INJURY AS WELL AS AGING. IDENTIFYING THE MECHANISMS UNDERLYING MUSCULOSKELETAL HEALTH AND MUSCULOSKELETAL DISORDERS (E.G., OSTEOARTHRITIS, OSTEOPOROSIS, MUSCLE WASTING, POST-TRAUMATIC REPAIR, DEGENERATION) THEREFORE REQUIRES A RESEARCH PARADIGM THAT ADDRESSES THE SYNERGIES WITHIN THE MUSCULOSKELETAL SYSTEM AND COMBINES BOTH MECHANICAL AND BIOLOGICAL APPROACHES ACROSS MULTIPLE SCALES.  THE DELAWARE CENTER FOR MUSCULOSKELETAL RESEARCH (DCMR) WILL SUPPORT BASIC AND PRECLINICAL RESEARCH ON THE CENTRAL THEME OF MUSCULOSKELETAL HEALTH—FROM THE LEVEL OF THE ENTIRE BODY TO THE ACTIONS OF KEY CELLS AND MOLECULES—WITH EMPHASIS ON UNDERSTANDING THE MECHANISMS BY WHICH PHYSICAL AND BIOLOGICAL CUES INFLUENCE TISSUE STRUCTURE AND NORMAL FUNCTION AND DYSFUNCTION, AND IDENTIFYING POTENTIAL THERAPEUTIC INTERVENTIONS. THE PROPOSED DCMR WILL: AIM 1: ACCELERATE FUNDAMENTAL MUSCULOSKELETAL RESEARCH BY SUPPORTING SYNERGISTIC AND MULTIDISCIPLINARY  RESEARCH PROJECTS. AIM 2: GALVANIZE CAPABILITIES FOR MUSCULOSKELETAL RESEARCH BY ESTABLISHING A MULTISCALE ASSESSMENTS  RESEARCH CORE. AIM 3: AMPLIFY THE IMPACT OF MUSCULOSKELETAL RESEARCH THROUGH FACULTY MENTORING, EXPANSION, AND RETENTION.  COMPLETION OF THIS 5-YEAR PHASE I COBRE WILL BUILD CROSS-CUTTING AND SYNERGISTIC RESEARCH COLLABORATIONS ACROSS MULTI-SCALE AND MULTIDISCIPLINARY RESEARCH PROJECTS AND ESTABLISH A STATE-OF-THE-ART RESEARCH CORE. THE DCMR, WHICH WILL FOCUS ON FUNDAMENTAL DISCOVERY AND PRECLINICAL RESEARCH, WILL COMPLEMENT THE OUTSTANDING TRANSLATIONAL AND CLINICAL MUSCULOSKELETAL RESEARCH PROGRAMS AT DELAWARE, CREATING A COMPREHENSIVE BASIC-TO- CLINICAL RESEARCH PIPELINE AT UD. THROUGH FOSTERING CROSS-CUTTING AND CONVERGENT RESEARCH PARTNERSHIPS, THE DCMR AIMS TO SUBSTANTIALLY REDUCE THE BURDEN OF MUSCULOSKELETAL DISORDERS AND IMPROVE MUSCULOSKELETAL HEALTH.",
+      "generated_internal_id": "ASST_NON_P20GM139760_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM139760_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "2209190",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "National Science Foundation",
+      "awarding_sub_agency": "National Science Foundation",
+      "start_date": "2022-09-01",
+      "end_date": "2027-08-31",
+      "award_amount": 16605009.0,
+      "total_outlays": 8618197.02,
+      "description": "LARGE-SCALE COPE: COASTAL HAZARDS, EQUITY, ECONOMIC PROSPERITY, AND RESILIENCE (CHEER) -COMMUNITY RESILIENCE REMAINS CHALLENGING TO ACHIEVE IN PRACTICE IN PART DUE TO CONSTRAINTS IMPOSED BY THE PARALLEL, AND SOMETIMES COMPETING, OBJECTIVES OF EQUITY AND ECONOMIC PROSPERITY, PARTICULARLY IN THE CONTEXT OF CLIMATE CHANGE. TO ADDRESS THIS CHALLENGE, THE HUB RESEARCH GOALS ARE TO: (1) IDENTIFY, EXPLAIN, AND QUANTIFY INTERACTIONS AND TRADEOFFS AMONG THE COASTAL COMMUNITY GOALS OF EQUITY, ECONOMIC PROSPERITY, AND RESILIENCE TO HAZARDS; (2) DEVELOP METHODS TO MODEL LONG-TERM HURRICANE HAZARDS THAT ACCOUNT FOR CLIMATE CHANGE AND INTEGRATE MULTIPLE HAZARDS?WIND, RAIN, STORM SURGE, WAVES; AND (3) DEVELOP A COMPUTATIONAL FRAMEWORK TO DESIGN AND EVALUATE POLICY INTERVENTIONS THAT CAN ACHIEVE SUSTAINABLE EQUITY, ECONOMIC PROSPERITY, AND COASTAL RESILIENCE IN THE CONTEXT OF CLIMATE CHANGE. THE NEW DYNAMIC AND SPATIAL COMPUTATIONAL FRAMEWORK WILL CONSIST OF SEVEN INTERACTING MODULES DESCRIBING THE INTERACTIVE DECISION-MAKING OF THREE STAKEHOLDER TYPES--(1) HOUSEHOLDS, (2) INSURERS, AND (3) THREE LEVELS OF GOVERNMENT; AND THE NATURAL, BUILT, AND ECONOMIC ENVIRONMENTS IN WHICH THOSE DECISIONS ARE MADE?(4) HAZARDS, (5) DAMAGE/LOSS, (6) BUILDINGS, AND (7) ECONOMY. THE FRAMEWORK RESULTS WILL INCLUDE: (A) RECOMMENDED GOVERNMENT POLICIES DESIGNED WITH AN AWARENESS OF HOW INSURERS AND HOUSEHOLDS ARE LIKELY TO RESPOND; (B) OUTCOMES FOR EACH STAKEHOLDER TYPE INCLUDING UNCERTAINTY AND HETEROGENEITY WITHIN THEM; AND (C) BASED ON THOSE STAKEHOLDER-SPECIFIC OUTCOMES, ASSESSMENTS OF COMMUNITY EQUITY, ECONOMIC PROSPERITY, AND RESILIENCE OVER TIME. HUB RESEARCH WILL FOCUS ON THREE CASE STUDY AREAS?EASTERN NORTH CAROLINA; PORT ARTHUR, TX; AND HOUSTON, TX. THE COMPUTATIONAL FRAMEWORK WILL SERVE AS THE BASIS OF A DECISION SUPPORT TOOL, WHICH WILL PROPEL IMPLEMENTATION OF COASTAL RESILIENCE FORWARD BY ADDRESSING IMPEDIMENTS THAT INTERACTIONS WITH EQUITY, ECONOMIC PROSPERITY, AND CLIMATE CHANGE CREATE, AND CAPITALIZING ON THE OPPORTUNITIES THEY PRESENT. CLOSE COLLABORATION WITH PRACTITIONER AND COMMUNITY PARTNERS WILL ENSURE THE DECISION TOOL IS USEFUL TO PRACTITIONERS AND ADVANCES THE INTERESTS OF COMMUNITIES. JUST AS THE REGIONAL LOSS MODELING FRAMEWORK PROVIDED A STRUCTURE THAT HAS GUIDED RESEARCH FOR DECADES, THE HUB?S FRAMEWORK CAN FACILITATE FUTURE INTERDISCIPLINARY RESEARCH THAT MAKES LOSS MODELING DYNAMIC AND INCLUDES A RICH REPRESENTATION OF DECISION-MAKING EMBEDDED IN THE RELEVANT SOCIAL AND ECONOMIC CONTEXT. MORE SPECIFIC DISCIPLINARY ADVANCES INCLUDE UNDERSTANDING HOW WIND, RAIN, INLAND AND COASTAL FLOODING HAZARDS DYNAMICALLY INTERACT, INCLUDING POTENTIAL IMPACTS UNDER FUTURE CLIMATE SCENARIOS; DEVELOPING AN AUTOMATED, SCALABLE METHOD FOR CREATING A HIGH RESOLUTION, DETAILED INVENTORY OF RESIDENTIAL BUILDINGS; ENHANCING UNDERSTANDING OF HURRICANES? EFFECTS ON REGIONAL ECONOMIES? EVOLUTION; MODELING INTERACTIONS AMONG LEVELS OF GOVERNMENT; OPERATIONALIZING MULTIPLE CONCEPTS OF EQUITY AND THEIR IMPLICATIONS; AND EXPANDING UNDERSTANDING OF RENTERS? AND MOBILE HOME RESIDENTS? EXPERIENCES WITH RISK AND RISK MANAGEMENT. THE HUB WILL IMPLEMENT A COMPREHENSIVE, RESEARCH-BASED MENTORING PROGRAM, INCLUDING QUICK RESPONSE FIELDWORK TRAINING, AND WILL BROADEN PARTICIPATION OF STUDENTS THROUGH PARTNERSHIPS WITH THE MCNAIR SCHOLARS PROGRAM AND BILL ANDERSON FUND, NATIONAL ORGANIZATIONS SUPPORTING GRADUATE STUDENTS FROM UNDERREPRESENTED GROUPS. THE HUB WILL ENGAGE OTHER RESEARCHERS AND THE PUBLIC THROUGH DEVELOPMENT OF DISCIPLINE PRIMERS AND DRC IT! MODULES; WORKSHOPS WITHIN THE CASE STUDY COMMUNITIES; AND THE HURRICON II CONFERENCE. PARTNERSHIPS WITH SIMCENTER, DESIGNSAFE-CI, AND THE DISASTER RESEARCH CENTER WILL HELP ENSURE SUSTAINABILITY. THIS PROJECT IS JOINTLY FUNDED BY THE COASTLINES & PEOPLE (COPE) PROGRAM AND THE ESTABLISHED PROGRAM TO STIMULATE COMPETITIVE RESEARCH (EPSCOR). THIS AWARD REFLECTS NSF'S STATUTORY MISSION AND HAS BEEN DEEMED WORTHY OF SUPPORT THROUGH EVALUATION USING THE FOUNDATION'S INTELLECTUAL MERIT AND BROADER IMPACTS REVIEW CRITERIA.",
+      "generated_internal_id": "ASST_NON_2209190_049",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_2209190_049/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "W911NF1820299",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Defense",
+      "awarding_sub_agency": "Department of the Army",
+      "start_date": "2018-10-01",
+      "end_date": "2024-11-16",
+      "award_amount": 14601362.0,
+      "total_outlays": 0.0,
+      "description": "COMPOSITES RESEARCH, ENGINEERING AND ADVANCED TECHNOLOGY CREATE",
+      "generated_internal_id": "ASST_NON_W911NF1820299_097",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_W911NF1820299_097/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "69A36526422110CRSDE",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Transportation",
+      "awarding_sub_agency": "Federal Railroad Administration",
+      "start_date": "2025-12-01",
+      "end_date": "2029-10-31",
+      "award_amount": 14483892.0,
+      "total_outlays": 0.0,
+      "description": "CENTER FOR HANDS-ON TRAINING AND LEARNING ENVIRONMENT FOR THE NEXT GENERATION RAILROAD TECHNICAL WORKFORCE HTL",
+      "generated_internal_id": "ASST_NON_69A36526422110CRSDE_069",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_69A36526422110CRSDE_069/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "03CH010669",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Health and Human Services",
+      "awarding_sub_agency": "Administration for Children and Families",
+      "start_date": "2018-09-01",
+      "end_date": "2023-08-31",
+      "award_amount": 13405070.97,
+      "total_outlays": 5670079.27,
+      "description": "EARLY HEAD START",
+      "generated_internal_id": "ASST_NON_03CH010669_075",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_03CH010669_075/latest"
+    },
+    {
+      "award_group": "grants",
+      "award_id": "FA86502125264",
+      "recipient_name": "UNIVERSITY OF DELAWARE",
+      "recipient_uei": "T72NHKM259N3",
+      "awarding_agency": "Department of Defense",
+      "awarding_sub_agency": "Department of the Air Force",
+      "start_date": "2021-09-07",
+      "end_date": "2027-09-27",
+      "award_amount": 13146382.0,
+      "total_outlays": null,
+      "description": "THIS COOPERATIVE AGREEMENT SHALL BE PERFORMED IN ACCORDANCE WITH THE STATEMENT OF WORK (SOW) ENTITLED, \"LOW-COST COMPOSITE PARTS - TAILORABLE FEEDSTOC",
+      "generated_internal_id": "ASST_NON_FA86502125264_097",
+      "official_record_url": "https://www.usaspending.gov/award/ASST_NON_FA86502125264_097/latest"
+    }
+  ],
+  "query_urls": {
+    "recipient_profile": "https://www.usaspending.gov/recipient/88f4772d-e0bd-42e6-ed20-c3144d3bace8-R/latest",
+    "api_documentation": "https://api.usaspending.gov/docs/endpoints",
+    "recipient_api": "https://api.usaspending.gov/api/v2/recipient/",
+    "spending_over_time_api": "https://api.usaspending.gov/api/v2/search/spending_over_time/"
+  }
+}
