@@ -1,57 +1,57 @@
 {
   "source_id": "OPENALEX",
-  "retrieved_at": "2026-09-30",
+  "retrieved_at": "2026-10-03",
   "institution_name": "University of Delaware",
   "openalex_id": "I86501945",
   "ror": "https://ror.org/01sbq1a82",
   "record_grain": "one OpenAlex work with at least one authorship linked to the exact OpenAlex institution record",
   "window_start": "2021-01-01",
   "window_end": "2025-12-31",
-  "works_count": 19118,
-  "open_access_works": 12321,
-  "topic_classified_works": 18788,
+  "works_count": 19104,
+  "open_access_works": 12343,
+  "topic_classified_works": 18774,
   "year_summary": [
     {
       "id": "2021",
       "label": "2021",
-      "works": 3773
+      "works": 3771
     },
     {
       "id": "2022",
       "label": "2022",
-      "works": 3951
+      "works": 3946
     },
     {
       "id": "2023",
       "label": "2023",
-      "works": 3696
+      "works": 3690
     },
     {
       "id": "2024",
       "label": "2024",
-      "works": 3685
+      "works": 3679
     },
     {
       "id": "2025",
       "label": "2025",
-      "works": 4013
+      "works": 4018
     }
   ],
   "open_access_summary": [
     {
       "id": "closed",
       "label": "closed",
-      "works": 6797
+      "works": 6761
     },
     {
       "id": "green",
       "label": "green",
-      "works": 4298
+      "works": 4308
     },
     {
       "id": "gold",
       "label": "gold",
-      "works": 3783
+      "works": 3784
     },
     {
       "id": "hybrid",
@@ -61,34 +61,34 @@
     {
       "id": "bronze",
       "label": "bronze",
-      "works": 1656
+      "works": 1658
     },
     {
       "id": "diamond",
       "label": "diamond",
-      "works": 697
+      "works": 706
     }
   ],
   "type_summary": [
     {
       "id": "https://api.openalex.org/types/article",
       "label": "article",
-      "works": 12166
+      "works": 12180
     },
     {
       "id": "https://api.openalex.org/types/preprint",
       "label": "preprint",
-      "works": 2199
+      "works": 2175
     },
     {
       "id": "https://api.openalex.org/types/conference-paper",
       "label": "conference-paper",
-      "works": 1617
+      "works": 1615
     },
     {
       "id": "https://api.openalex.org/types/book-chapter",
       "label": "book-chapter",
-      "works": 785
+      "works": 782
     },
     {
       "id": "https://api.openalex.org/types/dataset",
@@ -103,7 +103,7 @@
     {
       "id": "https://api.openalex.org/types/other",
       "label": "other",
-      "works": 241
+      "works": 242
     },
     {
       "id": "https://api.openalex.org/types/peer-review",
@@ -118,7 +118,7 @@
     {
       "id": "https://api.openalex.org/types/editorial",
       "label": "editorial",
-      "works": 100
+      "works": 97
     },
     {
       "id": "https://api.openalex.org/types/erratum",
@@ -135,17 +135,17 @@
     {
       "id": "https://api.openalex.org/domains/3",
       "label": "Physical Sciences",
-      "works": 9518
+      "works": 9501
     },
     {
       "id": "https://api.openalex.org/domains/2",
       "label": "Social Sciences",
-      "works": 3952
+      "works": 3954
     },
     {
       "id": "https://api.openalex.org/domains/4",
       "label": "Health Sciences",
-      "works": 2662
+      "works": 2663
     },
     {
       "id": "https://api.openalex.org/domains/1",
@@ -157,22 +157,22 @@
     {
       "id": "https://api.openalex.org/fields/22",
       "label": "Engineering",
-      "works": 2484
+      "works": 2485
     },
     {
       "id": "https://api.openalex.org/fields/27",
       "label": "Medicine",
-      "works": 2197
+      "works": 2198
     },
     {
       "id": "https://api.openalex.org/fields/33",
       "label": "Social Sciences",
-      "works": 1850
+      "works": 1851
     },
     {
       "id": "https://api.openalex.org/fields/31",
       "label": "Physics and Astronomy",
-      "works": 1569
+      "works": 1550
     },
     {
       "id": "https://api.openalex.org/fields/23",
@@ -187,12 +187,12 @@
     {
       "id": "https://api.openalex.org/fields/17",
       "label": "Computer Science",
-      "works": 1142
+      "works": 1141
     },
     {
       "id": "https://api.openalex.org/fields/19",
       "label": "Earth and Planetary Sciences",
-      "works": 979
+      "works": 982
     },
     {
       "id": "https://api.openalex.org/fields/32",
@@ -216,9 +216,9 @@
     }
   ],
   "institution_profile": {
-    "works_count": 101330,
-    "cited_by_count": 7414957,
-    "updated_date": "2026-09-30T05:58:29"
+    "works_count": 102334,
+    "cited_by_count": 7427054,
+    "updated_date": "2026-10-03T06:00:17"
   },
   "boundary_note": "Exact OpenAlex institution I86501945 only. ROR child and related organizations are not rolled into these counts.",
   "query_urls": {

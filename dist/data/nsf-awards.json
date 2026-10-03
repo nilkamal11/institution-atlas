@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0.0",
-  "retrieved_at": "2026-09-29",
+  "retrieved_at": "2026-10-03",
   "source": "U.S. National Science Foundation Awards API",
   "focal_uei": "T72NHKM259N3",
   "all_time_record_count": 2527,
-  "active_award_count": 249,
-  "active_estimated_total_amount": 250424764,
-  "active_funds_obligated_amount": 225151269,
+  "active_award_count": 239,
+  "active_estimated_total_amount": 234606506,
+  "active_funds_obligated_amount": 210038538,
   "recent_period_start": "2022-01-01",
-  "recent_period_end": "2026-09-29",
+  "recent_period_end": "2026-10-03",
   "recent_award_count": 289,
-  "recent_estimated_total_amount": 215512439,
-  "recent_funds_obligated_amount": 188889220,
+  "recent_estimated_total_amount": 215576781,
+  "recent_funds_obligated_amount": 188701789,
   "year_summary": [
     {
       "year": "2022",
@@ -34,8 +34,8 @@
     {
       "year": "2025",
       "award_count": 59,
-      "estimated_total_amount": 44127257,
-      "funds_obligated_amount": 34389999
+      "estimated_total_amount": 44191599,
+      "funds_obligated_amount": 34202568
     },
     {
       "year": "2026",
@@ -47,38 +47,38 @@
   "active_directorates": [
     {
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "award_count": 56,
-      "estimated_total_amount": 53781548
+      "award_count": 55,
+      "estimated_total_amount": 41778691
     },
     {
       "directorate": "Directorate for Engineering",
-      "award_count": 46,
-      "estimated_total_amount": 22401028
+      "award_count": 45,
+      "estimated_total_amount": 21597643
     },
     {
       "directorate": "Directorate for Geosciences",
-      "award_count": 45,
-      "estimated_total_amount": 44429295
+      "award_count": 39,
+      "estimated_total_amount": 42302761
     },
     {
       "directorate": "Directorate for Computer and Information Science and Engineering",
-      "award_count": 41,
-      "estimated_total_amount": 46072214
+      "award_count": 35,
+      "estimated_total_amount": 42909148
     },
     {
       "directorate": "Directorate for Biological Sciences",
       "award_count": 21,
-      "estimated_total_amount": 18069149
+      "estimated_total_amount": 17914206
     },
     {
       "directorate": "Directorate for STEM Education",
-      "award_count": 17,
-      "estimated_total_amount": 26076464
+      "award_count": 18,
+      "estimated_total_amount": 26576463
     },
     {
-      "directorate": "Office Of The Director",
-      "award_count": 11,
-      "estimated_total_amount": 28979148
+      "directorate": "Office of the Director",
+      "award_count": 13,
+      "estimated_total_amount": 30361677
     },
     {
       "directorate": "Directorate for Social, Behavioral and Economic Sciences",
@@ -87,8 +87,8 @@
     },
     {
       "directorate": "Directorate for Technology, Innovation, and Partnerships",
-      "award_count": 2,
-      "estimated_total_amount": 6497280
+      "award_count": 3,
+      "estimated_total_amount": 7047279
     }
   ],
   "recent_awards": [
@@ -101,7 +101,7 @@
       "estimated_total_amount": 2385000,
       "funds_obligated_amount": 2385000,
       "directorate": "Directorate for STEM Education",
-      "division": "Division Of Graduate Education",
+      "division": "Scholarships, Fellowships, and Traineeships Section",
       "program": "EGF-EPSCoR Graduate Fellowship",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -116,7 +116,7 @@
       "estimated_total_amount": 670000,
       "funds_obligated_amount": 670000,
       "directorate": "Directorate for STEM Education",
-      "division": "Division of Research on Learning in Formal and Informal Settings (DRL)",
+      "division": "Education Innovation & Translation Section",
       "program": "Discovery Research K-12",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -131,7 +131,7 @@
       "estimated_total_amount": 281224,
       "funds_obligated_amount": 281224,
       "directorate": "Directorate for Engineering",
-      "division": "Division of Chemical, Bioengineering, Environmental, and Transport Systems",
+      "division": "Chemical, Bioengineering, Environmental, & Transport Systems",
       "program": "Cellular & Biochem Engineering",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -145,8 +145,8 @@
       "expiration_date": "08/31/2030",
       "estimated_total_amount": 1394072,
       "funds_obligated_amount": 1394072,
-      "directorate": "Office Of The Director",
-      "division": "OIA-Office of Integrative Activities",
+      "directorate": "Office of the Director",
+      "division": "Office of Integrative Activities",
       "program": "EPSCoR RII: Focused EPSCoR Col",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -161,7 +161,7 @@
       "estimated_total_amount": 649903,
       "funds_obligated_amount": 649903,
       "directorate": "Directorate for Computer and Information Science and Engineering",
-      "division": "Division Of Computer and Network Systems",
+      "division": "Cyber, Physical, & Intelligent Systems",
       "program": "CPS-Cyber-Physical Systems",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -176,7 +176,7 @@
       "estimated_total_amount": 381170,
       "funds_obligated_amount": 381170,
       "directorate": "Directorate for STEM Education",
-      "division": "Division of Research on Learning in Formal and Informal Settings (DRL)",
+      "division": "Education Innovation & Translation Section",
       "program": "Discovery Research K-12",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -191,7 +191,7 @@
       "estimated_total_amount": 536330,
       "funds_obligated_amount": 536330,
       "directorate": "Directorate for Engineering",
-      "division": "Division of Electrical, Communications and Cyber Systems",
+      "division": "Electrical, Communications, & Cyber Systems",
       "program": "CSCS: Circuits and Systems for",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -206,7 +206,7 @@
       "estimated_total_amount": 400000,
       "funds_obligated_amount": 400000,
       "directorate": "Directorate for STEM Education",
-      "division": "Division Of Undergraduate Education",
+      "division": "Education Innovation & Translation Section",
       "program": "IUSE",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -221,8 +221,8 @@
       "estimated_total_amount": 109926,
       "funds_obligated_amount": 109926,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
-      "program": "Particle Astrophysics/Cosmic P",
+      "division": "Physics Section",
+      "program": "Particle Astrophysics-Exp",
       "transaction_type": "Standard Grant",
       "active": true,
       "official_record_url": "https://api.nsf.gov/services/v1/awards/2608118.json"
@@ -236,7 +236,7 @@
       "estimated_total_amount": 524630,
       "funds_obligated_amount": 524630,
       "directorate": "Directorate for Engineering",
-      "division": "Division of Civil, Mechanical, and Manufacturing Innovation",
+      "division": "Civil, Mechanical, & Manufacturing Innovation",
       "program": "ISP-Infrastructre Systms & Ppl",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -251,8 +251,8 @@
       "estimated_total_amount": 420000,
       "funds_obligated_amount": 420000,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
-      "program": "Particle Astrophysics/Cosmic P, OFFICE OF MULTIDISCIPLINARY AC",
+      "division": "Physics Section",
+      "program": "OFFICE OF MULTIDISCIPLINARY AC, Particle Astrophysics-Exp",
       "transaction_type": "Standard Grant",
       "active": true,
       "official_record_url": "https://api.nsf.gov/services/v1/awards/2609320.json"
@@ -266,8 +266,8 @@
       "estimated_total_amount": 70000,
       "funds_obligated_amount": 70000,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
-      "program": "Particle Astrophysics/Cosmic P",
+      "division": "Physics Section",
+      "program": "Particle Astrophysics-Exp",
       "transaction_type": "Standard Grant",
       "active": true,
       "official_record_url": "https://api.nsf.gov/services/v1/awards/2609262.json"
@@ -281,8 +281,8 @@
       "estimated_total_amount": 79894,
       "funds_obligated_amount": 79894,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
-      "program": "Particle Astrophysics/Cosmic P",
+      "division": "Physics Section",
+      "program": "Particle Astrophysics-Exp",
       "transaction_type": "Standard Grant",
       "active": true,
       "official_record_url": "https://api.nsf.gov/services/v1/awards/2607911.json"
@@ -296,7 +296,7 @@
       "estimated_total_amount": 700000,
       "funds_obligated_amount": 700000,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Chemistry",
+      "division": "Chemistry Section",
       "program": "Chemical Catalysis, OFFICE OF MULTIDISCIPLINARY AC",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -311,8 +311,8 @@
       "estimated_total_amount": 800000,
       "funds_obligated_amount": 800000,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
-      "program": "Particle Astrophysics/Cosmic P",
+      "division": "Physics Section",
+      "program": "Particle Astrophysics-Exp",
       "transaction_type": "Standard Grant",
       "active": true,
       "official_record_url": "https://api.nsf.gov/services/v1/awards/2609280.json"
@@ -326,7 +326,7 @@
       "estimated_total_amount": 404540,
       "funds_obligated_amount": 404540,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
+      "division": "Physics Section",
       "program": "AMO Theory/Atomic, Molecular &",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -341,7 +341,7 @@
       "estimated_total_amount": 413090,
       "funds_obligated_amount": 413090,
       "directorate": "Directorate for Mathematical and Physical Sciences",
-      "division": "Division Of Physics",
+      "division": "Physics Section",
       "program": "AMO Theory/Atomic, Molecular &",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -356,7 +356,7 @@
       "estimated_total_amount": 200000,
       "funds_obligated_amount": 200000,
       "directorate": "Directorate for Biological Sciences",
-      "division": "Division of Molecular and Cellular Biosciences",
+      "division": "Molecular Biosciences",
       "program": "SSA-Special Studies & Analysis",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -386,7 +386,7 @@
       "estimated_total_amount": 268817,
       "funds_obligated_amount": 268817,
       "directorate": "Directorate for Engineering",
-      "division": "Division of Electrical, Communications and Cyber Systems",
+      "division": "Electrical, Communications, & Cyber Systems",
       "program": "EPMQD: Electronic, Photonic, M",
       "transaction_type": "Standard Grant",
       "active": true,
@@ -396,7 +396,7 @@
   "query_urls": {
     "all": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3",
     "active": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&ActiveAwards=True",
-    "recent": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&dateStart=01/01/2022&dateEnd=09/29/2026",
+    "recent": "https://api.nsf.gov/services/v1/awards.json?ueiNumber=T72NHKM259N3&dateStart=01/01/2022&dateEnd=10/03/2026",
     "documentation": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm"
   }
 }

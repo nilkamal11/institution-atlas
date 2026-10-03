@@ -1,6 +1,6 @@
 {
   "source_id": "USASPENDING",
-  "retrieved_at": "2026-09-30",
+  "retrieved_at": "2026-10-03",
   "recipient_name": "UNIVERSITY OF DELAWARE",
   "uei": "T72NHKM259N3",
   "duns": "059007500",
@@ -54,23 +54,23 @@
     },
     {
       "fiscal_year": 2026,
-      "obligations": 176139919.78,
+      "obligations": 188362202.0,
       "contract_obligations": 1926885.1,
-      "direct_obligations": 13774982.0,
-      "grant_obligations": 160310479.33,
+      "direct_obligations": 24767772.0,
+      "grant_obligations": 161539971.55,
       "loan_obligations": 0.0,
       "other_obligations": 127573.35
     }
   ],
-  "five_year_obligations": 1085317440.53,
+  "five_year_obligations": 1097539722.75,
   "type_obligations": [
     {
       "award_type": "Grants",
-      "obligations": 970262893.1100001
+      "obligations": 971492385.3300002
     },
     {
       "award_type": "Direct payments",
-      "obligations": 86362973.0
+      "obligations": 97355763.0
     },
     {
       "award_type": "Contracts",
@@ -87,13 +87,13 @@
   ],
   "award_counts": {
     "contracts": 61,
-    "direct_payments": 28,
-    "grants": 1242,
+    "direct_payments": 30,
+    "grants": 1244,
     "idvs": 0,
     "loans": 9,
     "other": 50
   },
-  "prime_award_count": 1390,
+  "prime_award_count": 1394,
   "awarding_agencies": [
     {
       "id": 806,
@@ -116,7 +116,15 @@
       "code": "DOC",
       "name": "Department of Commerce",
       "agency_slug": "department-of-commerce",
-      "amount": 189170966.17,
+      "amount": 189971885.17,
+      "total_outlays": null
+    },
+    {
+      "id": 1068,
+      "code": "ED",
+      "name": "Department of Education",
+      "agency_slug": "department-of-education",
+      "amount": 116349341.7,
       "total_outlays": null
     },
     {
@@ -128,19 +136,11 @@
       "total_outlays": null
     },
     {
-      "id": 1068,
-      "code": "ED",
-      "name": "Department of Education",
-      "agency_slug": "department-of-education",
-      "amount": 104927658.7,
-      "total_outlays": null
-    },
-    {
       "id": 95,
       "code": "USDA",
       "name": "Department of Agriculture",
       "agency_slug": "department-of-agriculture",
-      "amount": 55325366.1,
+      "amount": 55325046.32,
       "total_outlays": null
     },
     {
@@ -356,7 +356,7 @@
       "start_date": "2021-08-01",
       "end_date": "2027-07-31",
       "award_amount": 27706552.0,
-      "total_outlays": 13435712.26,
+      "total_outlays": 14362557.71,
       "description": "MARACOOS (MID-ATLANTIC IOOS): POWERING UNDERSTANDING AND PREDICTION OF THE MID-ATLANTIC OCEAN, COAST, AND ESTUARIES",
       "generated_internal_id": "ASST_NON_NA21NOS0120096_013",
       "official_record_url": "https://www.usaspending.gov/award/ASST_NON_NA21NOS0120096_013/latest"
@@ -371,7 +371,7 @@
       "start_date": "2014-09-01",
       "end_date": "2026-06-30",
       "award_amount": 26796416.69,
-      "total_outlays": 11911662.84,
+      "total_outlays": 12302287.03,
       "description": "DISCOVERY OF CHEMICAL PROBES AND THERAPEUTIC LEADS",
       "generated_internal_id": "ASST_NON_P20GM104316_075",
       "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM104316_075/latest"
@@ -386,7 +386,7 @@
       "start_date": "2016-05-15",
       "end_date": "2027-05-31",
       "award_amount": 23208115.42,
-      "total_outlays": 8650722.33,
+      "total_outlays": 9293460.0,
       "description": "CENTER OF BIOMEDICAL RESEARCH EXCELLENCE IN CARDIOVASCULAR HEALTH",
       "generated_internal_id": "ASST_NON_P20GM113125_075",
       "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM113125_075/latest"
@@ -461,7 +461,7 @@
       "start_date": "2021-02-15",
       "end_date": "2026-08-13",
       "award_amount": 16730455.0,
-      "total_outlays": 12203502.69,
+      "total_outlays": 12956758.47,
       "description": "DELAWARE CENTER FOR MUSCULOSKELETAL RESEARCH - PROJECT SUMMARY/ABSTRACT  THE MUSCULOSKELETAL SYSTEM HAS BOTH MECHANICAL AND BIOLOGICAL FUNCTIONS—IT GENERATES, TRANSMITS, AND SUPPORTS FORCES, AND IT REGULATES ORGAN-LEVEL HOMEOSTASIS AND WHOLE-BODY METABOLISM. THE MECHANICS AND BIOLOGY OF THE MUSCULOSKELETAL SYSTEM ARE INEXTRICABLY INTERTWINED AND LONG-RANGING, WHERE MECHANICAL CUES, MOLECULAR SIGNALS, AND CELL INTERACTIONS AFFECT EACH OTHER ACROSS MULTIPLE SCALES, FROM THE BODY, TO ORGAN, TISSUE, CELL, AND MOLECULE LEVELS. PROGRESS IN MUSCULOSKELETAL RESEARCH DEPENDS ON ADDRESSING THE MECHANICS AND BIOLOGY OF ADJACENT ORGANS, AND EVALUATING THE EFFECTS OF INJURY AS WELL AS AGING. IDENTIFYING THE MECHANISMS UNDERLYING MUSCULOSKELETAL HEALTH AND MUSCULOSKELETAL DISORDERS (E.G., OSTEOARTHRITIS, OSTEOPOROSIS, MUSCLE WASTING, POST-TRAUMATIC REPAIR, DEGENERATION) THEREFORE REQUIRES A RESEARCH PARADIGM THAT ADDRESSES THE SYNERGIES WITHIN THE MUSCULOSKELETAL SYSTEM AND COMBINES BOTH MECHANICAL AND BIOLOGICAL APPROACHES ACROSS MULTIPLE SCALES.  THE DELAWARE CENTER FOR MUSCULOSKELETAL RESEARCH (DCMR) WILL SUPPORT BASIC AND PRECLINICAL RESEARCH ON THE CENTRAL THEME OF MUSCULOSKELETAL HEALTH—FROM THE LEVEL OF THE ENTIRE BODY TO THE ACTIONS OF KEY CELLS AND MOLECULES—WITH EMPHASIS ON UNDERSTANDING THE MECHANISMS BY WHICH PHYSICAL AND BIOLOGICAL CUES INFLUENCE TISSUE STRUCTURE AND NORMAL FUNCTION AND DYSFUNCTION, AND IDENTIFYING POTENTIAL THERAPEUTIC INTERVENTIONS. THE PROPOSED DCMR WILL: AIM 1: ACCELERATE FUNDAMENTAL MUSCULOSKELETAL RESEARCH BY SUPPORTING SYNERGISTIC AND MULTIDISCIPLINARY  RESEARCH PROJECTS. AIM 2: GALVANIZE CAPABILITIES FOR MUSCULOSKELETAL RESEARCH BY ESTABLISHING A MULTISCALE ASSESSMENTS  RESEARCH CORE. AIM 3: AMPLIFY THE IMPACT OF MUSCULOSKELETAL RESEARCH THROUGH FACULTY MENTORING, EXPANSION, AND RETENTION.  COMPLETION OF THIS 5-YEAR PHASE I COBRE WILL BUILD CROSS-CUTTING AND SYNERGISTIC RESEARCH COLLABORATIONS ACROSS MULTI-SCALE AND MULTIDISCIPLINARY RESEARCH PROJECTS AND ESTABLISH A STATE-OF-THE-ART RESEARCH CORE. THE DCMR, WHICH WILL FOCUS ON FUNDAMENTAL DISCOVERY AND PRECLINICAL RESEARCH, WILL COMPLEMENT THE OUTSTANDING TRANSLATIONAL AND CLINICAL MUSCULOSKELETAL RESEARCH PROGRAMS AT DELAWARE, CREATING A COMPREHENSIVE BASIC-TO- CLINICAL RESEARCH PIPELINE AT UD. THROUGH FOSTERING CROSS-CUTTING AND CONVERGENT RESEARCH PARTNERSHIPS, THE DCMR AIMS TO SUBSTANTIALLY REDUCE THE BURDEN OF MUSCULOSKELETAL DISORDERS AND IMPROVE MUSCULOSKELETAL HEALTH.",
       "generated_internal_id": "ASST_NON_P20GM139760_075",
       "official_record_url": "https://www.usaspending.gov/award/ASST_NON_P20GM139760_075/latest"

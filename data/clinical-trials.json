@@ -1,7 +1,7 @@
 {
   "source_id": "CLINICALTRIALS",
   "institution": "University of Delaware",
-  "retrieved_at": "2026-09-30",
+  "retrieved_at": "2026-10-03",
   "query_url": "https://clinicaltrials.gov/api/v2/studies?query.spons=University+of+Delaware&pageSize=1000&countTotal=true&format=json",
   "documentation_url": "https://clinicaltrials.gov/data-api/api",
   "search_url": "https://clinicaltrials.gov/search?term=University%20of%20Delaware",

@@ -6,11 +6,32 @@
   "next_review": "October 2026",
   "workflow_url": "https://github.com/nilkamal11/institution-atlas/actions",
   "last_completed_review": {
-    "date": "2026-09-30",
-    "date_display": "30 Sep 2026",
+    "date": "2026-10-03",
+    "date_display": "3 Oct 2026",
     "result": "Five research and classification sources refreshed and validated"
   },
   "history": [
+    {
+      "date": "2026-10-03",
+      "type": "Source-page expansion",
+      "owner": "Nil Shah",
+      "result": "Passed",
+      "details": "Refreshed NCSES GSS, earned-doctorate, and facilities profile tables; exact-name ClinicalTrials.gov sponsor records; and Carnegie 2025 classifications."
+    },
+    {
+      "date": "2026-10-03",
+      "type": "Source-page expansion",
+      "owner": "Nil Shah",
+      "result": "Completed",
+      "details": "Refreshed exact-identifier NIH RePORTER, USAspending, and OpenAlex snapshots and rebuilt source pages."
+    },
+    {
+      "date": "2026-10-03",
+      "type": "Automated source refresh",
+      "owner": "Nil Shah",
+      "result": "Passed",
+      "details": "College Scorecard returned 31 institution records for file year 2024. NSF returned 239 active and 289 recent exact-UEI award records."
+    },
     {
       "date": "2026-09-30",
       "type": "Source-page expansion",

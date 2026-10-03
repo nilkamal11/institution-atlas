@@ -1,6 +1,6 @@
 {
   "source_id": "NIH_REPORTER",
-  "retrieved_at": "2026-09-30",
+  "retrieved_at": "2026-10-03",
   "organization": "UNIVERSITY OF DELAWARE",
   "org_ipf_code": "2076701",
   "uei": "T72NHKM259N3",
@@ -15,13 +15,13 @@
   "record_grain": "one funded application record by appl_id and fiscal year",
   "record_count": 622,
   "distinct_core_projects": 168,
-  "award_amount": 324246516,
+  "award_amount": 324532592,
   "year_summary": [
     {
       "fiscal_year": 2022,
       "application_records": 126,
-      "award_amount": 60017267,
-      "core_projects": 80
+      "award_amount": 60303343,
+      "core_projects": 82
     },
     {
       "fiscal_year": 2023,
@@ -51,8 +51,8 @@
   "admin_ic_summary": [
     {
       "admin_ic": "National Institute of General Medical Sciences",
-      "application_records": 323,
-      "award_amount": 207677318
+      "application_records": 324,
+      "award_amount": 208077318
     },
     {
       "admin_ic": "National Institute on Aging",
@@ -65,9 +65,9 @@
       "award_amount": 13336399
     },
     {
-      "admin_ic": "National Eye Institute",
-      "application_records": 29,
-      "award_amount": 10940972
+      "admin_ic": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "application_records": 33,
+      "award_amount": 10840998
     },
     {
       "admin_ic": "National Institute of Mental Health",
@@ -75,14 +75,14 @@
       "award_amount": 10676641
     },
     {
-      "admin_ic": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
-      "application_records": 32,
-      "award_amount": 10422530
+      "admin_ic": "National Eye Institute",
+      "application_records": 28,
+      "award_amount": 10604091
     },
     {
       "admin_ic": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
-      "application_records": 37,
-      "award_amount": 10231496
+      "application_records": 36,
+      "award_amount": 10035985
     },
     {
       "admin_ic": "National Heart Lung and Blood Institute",
@@ -11654,48 +11654,49 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10405108"
     },
     {
-      "appl_id": 10470201,
+      "appl_id": 10414778,
       "fiscal_year": 2022,
-      "project_num": "5R01AA027269-04",
-      "core_project_num": "R01AA027269",
-      "project_title": "Hippocampal-thalamo-prefrontal circuitry damage and therapeutic intervention in a model of FASD",
+      "project_num": "5R01CA211925-04",
+      "core_project_num": "R01CA211925",
+      "project_title": "Multifunctional siRNA/antibody nanocarriers to treat metastatic triple-negative breast cancer",
       "activity_code": "R01",
-      "award_amount": 397545,
-      "award_notice_date": "2022-08-19T00:00:00",
-      "project_start_date": "2019-09-01T00:00:00",
-      "project_end_date": "2024-08-31T00:00:00",
-      "admin_ic_code": "AA",
-      "admin_ic_name": "National Institute on Alcohol Abuse and Alcoholism",
+      "award_amount": 342278,
+      "award_notice_date": "2022-07-25T00:00:00",
+      "project_start_date": "2019-06-07T00:00:00",
+      "project_end_date": "2024-05-31T00:00:00",
+      "admin_ic_code": "CA",
+      "admin_ic_name": "National Cancer Institute",
       "principal_investigators": [
-        "ANNA Y KLINTSOVA"
+        "Emily S Day"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10470201"
+      "official_record_url": "https://reporter.nih.gov/project-details/10414778"
     },
     {
-      "appl_id": 10478824,
+      "appl_id": 10410370,
       "fiscal_year": 2022,
-      "project_num": "5R01HL155764-02",
-      "core_project_num": "R01HL155764",
-      "project_title": "Cardiovascular Consequences of Duchenne and Becker Muscular Dystrophinopathies",
+      "project_num": "5R01MH074374-14",
+      "core_project_num": "R01MH074374",
+      "project_title": "Intervening Early with Neglected Children: Key Behavioral and Neurobiological Outcomes in Adolescence",
       "activity_code": "R01",
-      "award_amount": 639855,
-      "award_notice_date": "2022-08-09T00:00:00",
-      "project_start_date": "2021-09-01T00:00:00",
-      "project_end_date": "2026-08-31T00:00:00",
-      "admin_ic_code": "HL",
-      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "award_amount": 719437,
+      "award_notice_date": "2022-06-13T00:00:00",
+      "project_start_date": "2006-02-01T00:00:00",
+      "project_end_date": "2024-05-31T00:00:00",
+      "admin_ic_code": "MH",
+      "admin_ic_name": "National Institute of Mental Health",
       "principal_investigators": [
-        "Melissa A.H. Witman"
+        "Mary  Dozier",
+        "Nim  Tottenham"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10478824"
+      "official_record_url": "https://reporter.nih.gov/project-details/10410370"
     },
     {
       "appl_id": 10445385,
@@ -11742,48 +11743,136 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10618548"
     },
     {
-      "appl_id": 10591284,
+      "appl_id": 10434154,
       "fiscal_year": 2022,
-      "project_num": "3P20GM139760-02S1",
-      "core_project_num": "P20GM139760",
-      "project_title": "Delaware Center for Musculoskeletal Research, Administrative Supplement for Equipment",
-      "activity_code": "P20",
-      "award_amount": 249183,
-      "award_notice_date": "2022-06-20T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2026-01-31T00:00:00",
+      "project_num": "5R35GM142496-02",
+      "core_project_num": "R35GM142496",
+      "project_title": "Heme trafficking in prokaryotic cytochrome c biogenesis",
+      "activity_code": "R35",
+      "award_amount": 400000,
+      "award_notice_date": "2022-05-06T00:00:00",
+      "project_start_date": "2021-07-01T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
       "admin_ic_code": "GM",
       "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "DAWN M ELLIOTT"
+        "Molly Cuddy Sutherland"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10591284"
+      "official_record_url": "https://reporter.nih.gov/project-details/10434154"
     },
     {
-      "appl_id": 10611080,
+      "appl_id": 10470201,
       "fiscal_year": 2022,
-      "project_num": "3R01AR072034-05S1",
-      "core_project_num": "R01AR072034",
-      "project_title": "Recovery of symptoms, function, tendon structure and mechanical properties in patients with Achilles Tendinopathy: A comparison between men and women",
+      "project_num": "5R01AA027269-04",
+      "core_project_num": "R01AA027269",
+      "project_title": "Hippocampal-thalamo-prefrontal circuitry damage and therapeutic intervention in a model of FASD",
       "activity_code": "R01",
-      "award_amount": 64503,
-      "award_notice_date": "2022-05-11T00:00:00",
-      "project_start_date": "2018-04-01T00:00:00",
-      "project_end_date": "2024-03-31T00:00:00",
-      "admin_ic_code": "AR",
-      "admin_ic_name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "award_amount": 397545,
+      "award_notice_date": "2022-08-19T00:00:00",
+      "project_start_date": "2019-09-01T00:00:00",
+      "project_end_date": "2024-08-31T00:00:00",
+      "admin_ic_code": "AA",
+      "admin_ic_name": "National Institute on Alcohol Abuse and Alcoholism",
       "principal_investigators": [
-        "Karin M E Gravare Silbernagel"
+        "ANNA Y KLINTSOVA"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10611080"
+      "official_record_url": "https://reporter.nih.gov/project-details/10470201"
+    },
+    {
+      "appl_id": 10478824,
+      "fiscal_year": 2022,
+      "project_num": "5R01HL155764-02",
+      "core_project_num": "R01HL155764",
+      "project_title": "Cardiovascular Consequences of Duchenne and Becker Muscular Dystrophinopathies",
+      "activity_code": "R01",
+      "award_amount": 639855,
+      "award_notice_date": "2022-08-09T00:00:00",
+      "project_start_date": "2021-09-01T00:00:00",
+      "project_end_date": "2026-08-31T00:00:00",
+      "admin_ic_code": "HL",
+      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "principal_investigators": [
+        "Melissa A.H. Witman"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10478824"
+    },
+    {
+      "appl_id": 10698375,
+      "fiscal_year": 2022,
+      "project_num": "3F31HL152611-03S1",
+      "core_project_num": "F31HL152611",
+      "project_title": "PPARg as a key regulator of sex-based differences in bronchopulmonary dysplasia",
+      "activity_code": "F31",
+      "award_amount": 2500,
+      "award_notice_date": "2022-09-07T00:00:00",
+      "project_start_date": "2020-06-01T00:00:00",
+      "project_end_date": "2023-05-31T00:00:00",
+      "admin_ic_code": "HL",
+      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "principal_investigators": [
+        "Brielle  Hayward-Piatkovskyi"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10698375"
+    },
+    {
+      "appl_id": 10453602,
+      "fiscal_year": 2022,
+      "project_num": "5F31HL152611-03",
+      "core_project_num": "F31HL152611",
+      "project_title": "PPARg as a key regulator of sex-based differences in bronchopulmonary dysplasia",
+      "activity_code": "F31",
+      "award_amount": 46752,
+      "award_notice_date": "2022-05-30T00:00:00",
+      "project_start_date": "2020-06-01T00:00:00",
+      "project_end_date": "2023-05-31T00:00:00",
+      "admin_ic_code": "HL",
+      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "principal_investigators": [
+        "Brielle  Hayward-Piatkovskyi"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10453602"
+    },
+    {
+      "appl_id": 10709083,
+      "fiscal_year": 2022,
+      "project_num": "3U01FD007695-01S1",
+      "core_project_num": "U01FD007695",
+      "project_title": "Advancing continuous biomanufacturing of monoclonal antibodies using an experimentally validated modeling platform",
+      "activity_code": "U01",
+      "award_amount": 529598,
+      "award_notice_date": "2022-09-23T00:00:00",
+      "project_start_date": "2022-09-01T00:00:00",
+      "project_end_date": "2027-08-31T00:00:00",
+      "admin_ic_code": "FD",
+      "admin_ic_name": "Food and Drug Administration",
+      "principal_investigators": [
+        "Marianthi  Ierapetritou"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10709083"
     },
     {
       "appl_id": 10595272,
@@ -11806,72 +11895,6 @@
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
       "official_record_url": "https://reporter.nih.gov/project-details/10595272"
-    },
-    {
-      "appl_id": 10393581,
-      "fiscal_year": 2022,
-      "project_num": "5T32HD007490-23",
-      "core_project_num": "T32HD007490",
-      "project_title": "Predoctoral Training in Physical Therapy and Rehabilitation Research",
-      "activity_code": "T32",
-      "award_amount": 195511,
-      "award_notice_date": "2022-04-21T00:00:00",
-      "project_start_date": "1996-08-20T00:00:00",
-      "project_end_date": "2025-04-30T00:00:00",
-      "admin_ic_code": "HD",
-      "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
-      "principal_investigators": [
-        "DARCY S. REISMAN"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10393581"
-    },
-    {
-      "appl_id": 10405108,
-      "fiscal_year": 2022,
-      "project_num": "5R01EY017724-15",
-      "core_project_num": "R01EY017724",
-      "project_title": "Actin cytoskeleton regulation of lens architecture, transparency and mechanics",
-      "activity_code": "R01",
-      "award_amount": 336881,
-      "award_notice_date": "2022-05-27T00:00:00",
-      "project_start_date": "2008-09-01T00:00:00",
-      "project_end_date": "2025-05-31T00:00:00",
-      "admin_ic_code": "EY",
-      "admin_ic_name": "National Eye Institute",
-      "principal_investigators": [
-        "Velia M Fowler"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10405108"
-    },
-    {
-      "appl_id": 10414778,
-      "fiscal_year": 2022,
-      "project_num": "5R01CA211925-04",
-      "core_project_num": "R01CA211925",
-      "project_title": "Multifunctional siRNA/antibody nanocarriers to treat metastatic triple-negative breast cancer",
-      "activity_code": "R01",
-      "award_amount": 342278,
-      "award_notice_date": "2022-07-25T00:00:00",
-      "project_start_date": "2019-06-07T00:00:00",
-      "project_end_date": "2024-05-31T00:00:00",
-      "admin_ic_code": "CA",
-      "admin_ic_name": "National Cancer Institute",
-      "principal_investigators": [
-        "Emily S Day"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10414778"
     },
     {
       "appl_id": 10472983,
@@ -11918,49 +11941,70 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10493150"
     },
     {
-      "appl_id": 10698375,
+      "appl_id": 10014564,
       "fiscal_year": 2022,
-      "project_num": "3F31HL152611-03S1",
-      "core_project_num": "F31HL152611",
-      "project_title": "PPARg as a key regulator of sex-based differences in bronchopulmonary dysplasia",
-      "activity_code": "F31",
-      "award_amount": 2500,
-      "award_notice_date": "2022-09-07T00:00:00",
-      "project_start_date": "2020-06-01T00:00:00",
-      "project_end_date": "2023-05-31T00:00:00",
-      "admin_ic_code": "HL",
-      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "project_num": "5R01AR050052-12",
+      "core_project_num": "R01AR050052",
+      "project_title": "Disc mechanics and altered loading in degeneration",
+      "activity_code": "R01",
+      "award_amount": 418468,
+      "award_notice_date": "2022-08-19T00:00:00",
+      "project_start_date": "2005-02-01T00:00:00",
+      "project_end_date": "2025-07-31T00:00:00",
+      "admin_ic_code": "AR",
+      "admin_ic_name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
       "principal_investigators": [
-        "Brielle  Hayward-Piatkovskyi"
+        "DAWN M ELLIOTT"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10698375"
+      "official_record_url": "https://reporter.nih.gov/project-details/10014564"
     },
     {
-      "appl_id": 10410370,
+      "appl_id": 10475097,
       "fiscal_year": 2022,
-      "project_num": "5R01MH074374-14",
-      "core_project_num": "R01MH074374",
-      "project_title": "Intervening Early with Neglected Children: Key Behavioral and Neurobiological Outcomes in Adolescence",
-      "activity_code": "R01",
-      "award_amount": 719437,
-      "award_notice_date": "2022-06-13T00:00:00",
-      "project_start_date": "2006-02-01T00:00:00",
-      "project_end_date": "2024-05-31T00:00:00",
-      "admin_ic_code": "MH",
-      "admin_ic_name": "National Institute of Mental Health",
+      "project_num": "5P20GM113125-07",
+      "core_project_num": "P20GM113125",
+      "project_title": "Family Meals as a Strategy for the Primary Prevention of Cardiovascular Disease in Children",
+      "activity_code": "P20",
+      "award_amount": 315376,
+      "award_notice_date": "2022-06-07T00:00:00",
+      "project_start_date": "2016-05-15T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Mary  Dozier",
-        "Nim  Tottenham"
+        "Shannon Marie Robson"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10410370"
+      "official_record_url": "https://reporter.nih.gov/project-details/10475097"
+    },
+    {
+      "appl_id": 10352306,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM139760-02",
+      "core_project_num": "P20GM139760",
+      "project_title": "The Influence of Sedentary vs. Active Lifestyles on Chondrocyte Homeostasis and Cartilage Health:  A Novel Benchtop Explant Study",
+      "activity_code": "P20",
+      "award_amount": 33754,
+      "award_notice_date": "2022-02-09T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2021-02-15T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Christopher  Price"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10352306"
     },
     {
       "appl_id": 10440419,
@@ -11985,48 +12029,48 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10440419"
     },
     {
-      "appl_id": 10453602,
+      "appl_id": 10591284,
       "fiscal_year": 2022,
-      "project_num": "5F31HL152611-03",
-      "core_project_num": "F31HL152611",
-      "project_title": "PPARg as a key regulator of sex-based differences in bronchopulmonary dysplasia",
-      "activity_code": "F31",
-      "award_amount": 46752,
-      "award_notice_date": "2022-05-30T00:00:00",
-      "project_start_date": "2020-06-01T00:00:00",
-      "project_end_date": "2023-05-31T00:00:00",
-      "admin_ic_code": "HL",
-      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "project_num": "3P20GM139760-02S1",
+      "core_project_num": "P20GM139760",
+      "project_title": "Delaware Center for Musculoskeletal Research, Administrative Supplement for Equipment",
+      "activity_code": "P20",
+      "award_amount": 249183,
+      "award_notice_date": "2022-06-20T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2026-01-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Brielle  Hayward-Piatkovskyi"
+        "DAWN M ELLIOTT"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10453602"
+      "official_record_url": "https://reporter.nih.gov/project-details/10591284"
     },
     {
-      "appl_id": 10709083,
+      "appl_id": 10611080,
       "fiscal_year": 2022,
-      "project_num": "3U01FD007695-01S1",
-      "core_project_num": "U01FD007695",
-      "project_title": "Advancing continuous biomanufacturing of monoclonal antibodies using an experimentally validated modeling platform",
-      "activity_code": "U01",
-      "award_amount": 529598,
-      "award_notice_date": "2022-09-23T00:00:00",
-      "project_start_date": "2022-09-01T00:00:00",
-      "project_end_date": "2027-08-31T00:00:00",
-      "admin_ic_code": "FD",
-      "admin_ic_name": "Food and Drug Administration",
+      "project_num": "3R01AR072034-05S1",
+      "core_project_num": "R01AR072034",
+      "project_title": "Recovery of symptoms, function, tendon structure and mechanical properties in patients with Achilles Tendinopathy: A comparison between men and women",
+      "activity_code": "R01",
+      "award_amount": 64503,
+      "award_notice_date": "2022-05-11T00:00:00",
+      "project_start_date": "2018-04-01T00:00:00",
+      "project_end_date": "2024-03-31T00:00:00",
+      "admin_ic_code": "AR",
+      "admin_ic_name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
       "principal_investigators": [
-        "Marianthi  Ierapetritou"
+        "Karin M E Gravare Silbernagel"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10709083"
+      "official_record_url": "https://reporter.nih.gov/project-details/10611080"
     },
     {
       "appl_id": 10352303,
@@ -12095,26 +12139,26 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10400124"
     },
     {
-      "appl_id": 10475097,
+      "appl_id": 10468704,
       "fiscal_year": 2022,
-      "project_num": "5P20GM113125-07",
-      "core_project_num": "P20GM113125",
-      "project_title": "Family Meals as a Strategy for the Primary Prevention of Cardiovascular Disease in Children",
+      "project_num": "5P20GM104316-08",
+      "core_project_num": "P20GM104316",
+      "project_title": "FOX CORE Phase II Research Core #1 Synthesis",
       "activity_code": "P20",
-      "award_amount": 315376,
-      "award_notice_date": "2022-06-07T00:00:00",
-      "project_start_date": "2016-05-15T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
+      "award_amount": 396800,
+      "award_notice_date": "2022-06-28T00:00:00",
+      "project_start_date": "2014-09-01T00:00:00",
+      "project_end_date": "2025-06-30T00:00:00",
       "admin_ic_code": "GM",
       "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Shannon Marie Robson"
+        "Donald Allen Watson"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10475097"
+      "official_record_url": "https://reporter.nih.gov/project-details/10468704"
     },
     {
       "appl_id": 10400121,
@@ -12161,336 +12205,26 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10437678"
     },
     {
-      "appl_id": 10352306,
+      "appl_id": 10621056,
       "fiscal_year": 2022,
-      "project_num": "5P20GM139760-02",
-      "core_project_num": "P20GM139760",
-      "project_title": "The Influence of Sedentary vs. Active Lifestyles on Chondrocyte Homeostasis and Cartilage Health:  A Novel Benchtop Explant Study",
-      "activity_code": "P20",
-      "award_amount": 33754,
-      "award_notice_date": "2022-02-09T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2021-02-15T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Christopher  Price"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10352306"
-    },
-    {
-      "appl_id": 10468704,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM104316-08",
-      "core_project_num": "P20GM104316",
-      "project_title": "FOX CORE Phase II Research Core #1 Synthesis",
-      "activity_code": "P20",
-      "award_amount": 396800,
-      "award_notice_date": "2022-06-28T00:00:00",
-      "project_start_date": "2014-09-01T00:00:00",
-      "project_end_date": "2025-06-30T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Donald Allen Watson"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10468704"
-    },
-    {
-      "appl_id": 10469495,
-      "fiscal_year": 2022,
-      "project_num": "5R21AI157889-02",
-      "core_project_num": "R21AI157889",
-      "project_title": "Cell-Mediated Antiretroviral Drug Transport in the Lymph Node",
-      "activity_code": "R21",
-      "award_amount": 202196,
-      "award_notice_date": "2022-07-29T00:00:00",
-      "project_start_date": "2021-08-13T00:00:00",
+      "project_num": "3R03HD104051-02S1",
+      "core_project_num": "R03HD104051",
+      "project_title": "The impact of socioeconomic status on the neurobiological underpinnings of reading.",
+      "activity_code": "R03",
+      "award_amount": 65593,
+      "award_notice_date": "2022-08-23T00:00:00",
+      "project_start_date": "2021-08-20T00:00:00",
       "project_end_date": "2024-07-31T00:00:00",
-      "admin_ic_code": "AI",
-      "admin_ic_name": "National Institute of Allergy and Infectious Diseases",
-      "principal_investigators": [
-        "Jason Paul Gleghorn",
-        "Elias  Rosen",
-        "RYAN M ZURAKOWSKI"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10469495"
-    },
-    {
-      "appl_id": 10601240,
-      "fiscal_year": 2022,
-      "project_num": "1R01HD111071-01",
-      "core_project_num": "R01HD111071",
-      "project_title": "SCH: Model-informed patient-specific rehabilitation using robotics and neuromuscular modeling",
-      "activity_code": "R01",
-      "award_amount": 299971,
-      "award_notice_date": "2022-09-21T00:00:00",
-      "project_start_date": "2022-09-21T00:00:00",
-      "project_end_date": "2026-06-30T00:00:00",
       "admin_ic_code": "HD",
       "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
       "principal_investigators": [
-        "Panagiotis  Artemiadis"
+        "Stephanie N Del Tufo"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10601240"
-    },
-    {
-      "appl_id": 10617925,
-      "fiscal_year": 2022,
-      "project_num": "3R35GM131816-04S1",
-      "core_project_num": "R35GM131816",
-      "project_title": "Harnessing Alkyl Amines and Alkyl Alcohols in Cross-Coupling Reactions",
-      "activity_code": "R35",
-      "award_amount": 59730,
-      "award_notice_date": "2022-05-11T00:00:00",
-      "project_start_date": "2019-06-01T00:00:00",
-      "project_end_date": "2024-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Mary P Watson"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10617925"
-    },
-    {
-      "appl_id": 10643364,
-      "fiscal_year": 2022,
-      "project_num": "3R01GM135433-03S1",
-      "core_project_num": "R01GM135433",
-      "project_title": "Supplement to Elucidating biogenesis and cargo sorting mechanisms for discrete extracellular vesicle subpopulations in C. elegans",
-      "activity_code": "R01",
-      "award_amount": 57737,
-      "award_notice_date": "2022-09-13T00:00:00",
-      "project_start_date": "2020-08-01T00:00:00",
-      "project_end_date": "2025-07-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Jessica E Tanis"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10643364"
-    },
-    {
-      "appl_id": 10470901,
-      "fiscal_year": 2022,
-      "project_num": "5R01DC017923-04",
-      "core_project_num": "R01DC017923",
-      "project_title": "Cognitive and Biological Mechanisms in Pediatric Voice Therapy",
-      "activity_code": "R01",
-      "award_amount": 608925,
-      "award_notice_date": "2022-08-17T00:00:00",
-      "project_start_date": "2019-09-01T00:00:00",
-      "project_end_date": "2024-08-31T00:00:00",
-      "admin_ic_code": "DC",
-      "admin_ic_name": "National Institute on Deafness and Other Communication Disorders",
-      "principal_investigators": [
-        "Katherine  Verdolini"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10470901"
-    },
-    {
-      "appl_id": 10584877,
-      "fiscal_year": 2022,
-      "project_num": "3U54GM104941-10S1",
-      "core_project_num": "U54GM104941",
-      "project_title": "Acquisition of a MICRON IV ocular imaging system",
-      "activity_code": "U54",
-      "award_amount": 187350,
-      "award_notice_date": "2022-07-22T00:00:00",
-      "project_start_date": "2013-09-25T00:00:00",
-      "project_end_date": "2024-06-30T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Gregory E Hicks"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10584877"
-    },
-    {
-      "appl_id": 10451677,
-      "fiscal_year": 2022,
-      "project_num": "5R35GM142524-02",
-      "core_project_num": "R35GM142524",
-      "project_title": "New roles for Topoisomerase II in meiosis",
-      "activity_code": "R35",
-      "award_amount": 400000,
-      "award_notice_date": "2022-05-24T00:00:00",
-      "project_start_date": "2021-07-15T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Aimee  Jaramillo-Lambert"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10451677"
-    },
-    {
-      "appl_id": 10458113,
-      "fiscal_year": 2022,
-      "project_num": "5R01MH123470-02",
-      "core_project_num": "R01MH123470",
-      "project_title": "Testing a Dual Mechanism Model of Adolescent Anxiety Development & Related Sex Differences",
-      "activity_code": "R01",
-      "award_amount": 733337,
-      "award_notice_date": "2022-05-11T00:00:00",
-      "project_start_date": "2021-08-01T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "MH",
-      "admin_ic_name": "National Institute of Mental Health",
-      "principal_investigators": [
-        "Jeffrey Martin Spielberg"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10458113"
-    },
-    {
-      "appl_id": 10318933,
-      "fiscal_year": 2022,
-      "project_num": "5R01MH116228-04",
-      "core_project_num": "R01MH116228",
-      "project_title": "Adaptive and Maladaptive Neural Network Responses to Inhibitory Challenges",
-      "activity_code": "R01",
-      "award_amount": 580630,
-      "award_notice_date": "2021-12-17T00:00:00",
-      "project_start_date": "2019-04-01T00:00:00",
-      "project_end_date": "2023-12-31T00:00:00",
-      "admin_ic_code": "MH",
-      "admin_ic_name": "National Institute of Mental Health",
-      "principal_investigators": [
-        "Naomi  Samimi-Sadeh"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10318933"
-    },
-    {
-      "appl_id": 10356066,
-      "fiscal_year": 2022,
-      "project_num": "5R01EY029770-04",
-      "core_project_num": "R01EY029770",
-      "project_title": "RNA-binding proteins in early eye development.",
-      "activity_code": "R01",
-      "award_amount": 336678,
-      "award_notice_date": "2022-03-09T00:00:00",
-      "project_start_date": "2019-03-01T00:00:00",
-      "project_end_date": "2024-02-29T00:00:00",
-      "admin_ic_code": "EY",
-      "admin_ic_name": "National Eye Institute",
-      "principal_investigators": [
-        "Salil  Lachke"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10356066"
-    },
-    {
-      "appl_id": 10364118,
-      "fiscal_year": 2022,
-      "project_num": "1R01AG071585-01A1",
-      "core_project_num": "R01AG071585",
-      "project_title": "Pain and Motor Learning in Older Adults",
-      "activity_code": "R01",
-      "award_amount": 504788,
-      "award_notice_date": "2022-01-17T00:00:00",
-      "project_start_date": "2022-02-01T00:00:00",
-      "project_end_date": "2027-01-31T00:00:00",
-      "admin_ic_code": "AG",
-      "admin_ic_name": "National Institute on Aging",
-      "principal_investigators": [
-        "Susanne M Morton"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10364118"
-    },
-    {
-      "appl_id": 10387589,
-      "fiscal_year": 2022,
-      "project_num": "1R21AG074544-01A1",
-      "core_project_num": "R21AG074544",
-      "project_title": "Central Sodium Sensing in Older Humans: Implications for Blood Pressure Regulation",
-      "activity_code": "R21",
-      "award_amount": 240000,
-      "award_notice_date": "2022-01-14T00:00:00",
-      "project_start_date": "2022-02-01T00:00:00",
-      "project_end_date": "2024-01-31T00:00:00",
-      "admin_ic_code": "AG",
-      "admin_ic_name": "National Institute on Aging",
-      "principal_investigators": [
-        "William B Farquhar"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10387589"
-    },
-    {
-      "appl_id": 10400243,
-      "fiscal_year": 2022,
-      "project_num": "5R01DE029655-02",
-      "core_project_num": "R01DE029655",
-      "project_title": "Bottom-Up Assembly of Functional Salivary Gland Tissues",
-      "activity_code": "R01",
-      "award_amount": 453487,
-      "award_notice_date": "2022-01-04T00:00:00",
-      "project_start_date": "2021-05-01T00:00:00",
-      "project_end_date": "2026-01-31T00:00:00",
-      "admin_ic_code": "DE",
-      "admin_ic_name": "National Institute of Dental and Craniofacial Research",
-      "principal_investigators": [
-        "Xinqiao  Jia"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10400243"
+      "official_record_url": "https://reporter.nih.gov/project-details/10621056"
     },
     {
       "appl_id": 10371190,
@@ -12537,71 +12271,70 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10378550"
     },
     {
-      "appl_id": 10364174,
+      "appl_id": 10470901,
       "fiscal_year": 2022,
-      "project_num": "1R01MH126196-01A1",
-      "core_project_num": "R01MH126196",
-      "project_title": "Pathways to mental health care: Examining the longitudinal impact of stigma mechanisms on treatment engagement in emerging adults",
+      "project_num": "5R01DC017923-04",
+      "core_project_num": "R01DC017923",
+      "project_title": "Cognitive and Biological Mechanisms in Pediatric Voice Therapy",
       "activity_code": "R01",
-      "award_amount": 653235,
-      "award_notice_date": "2022-01-12T00:00:00",
-      "project_start_date": "2022-01-12T00:00:00",
-      "project_end_date": "2026-12-31T00:00:00",
-      "admin_ic_code": "MH",
-      "admin_ic_name": "National Institute of Mental Health",
+      "award_amount": 608925,
+      "award_notice_date": "2022-08-17T00:00:00",
+      "project_start_date": "2019-09-01T00:00:00",
+      "project_end_date": "2024-08-31T00:00:00",
+      "admin_ic_code": "DC",
+      "admin_ic_name": "National Institute on Deafness and Other Communication Disorders",
       "principal_investigators": [
-        "Valerie Ann Earnshaw",
-        "Annie Beth Fox"
+        "Katherine  Verdolini"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10364174"
+      "official_record_url": "https://reporter.nih.gov/project-details/10470901"
     },
     {
-      "appl_id": 10398826,
+      "appl_id": 10617925,
       "fiscal_year": 2022,
-      "project_num": "5F31HD105398-02",
-      "core_project_num": "F31HD105398",
-      "project_title": "The impact of the physical microenvironment on trophoblast function",
-      "activity_code": "F31",
-      "award_amount": 46752,
-      "award_notice_date": "2022-04-18T00:00:00",
-      "project_start_date": "2021-04-01T00:00:00",
-      "project_end_date": "2024-03-31T00:00:00",
-      "admin_ic_code": "HD",
-      "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
-      "principal_investigators": [
-        "Katherine  Nelson"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10398826"
-    },
-    {
-      "appl_id": 10416714,
-      "fiscal_year": 2022,
-      "project_num": "1R01GM145617-01",
-      "core_project_num": "R01GM145617",
-      "project_title": "Novel Reactions of Electrophilic Nitrogen for Preparing Bioactive Molecules",
-      "activity_code": "R01",
-      "award_amount": 362608,
-      "award_notice_date": "2022-06-21T00:00:00",
-      "project_start_date": "2022-07-01T00:00:00",
-      "project_end_date": "2026-03-31T00:00:00",
+      "project_num": "3R35GM131816-04S1",
+      "core_project_num": "R35GM131816",
+      "project_title": "Harnessing Alkyl Amines and Alkyl Alcohols in Cross-Coupling Reactions",
+      "activity_code": "R35",
+      "award_amount": 59730,
+      "award_notice_date": "2022-05-11T00:00:00",
+      "project_start_date": "2019-06-01T00:00:00",
+      "project_end_date": "2024-05-31T00:00:00",
       "admin_ic_code": "GM",
       "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Donald Allen Watson"
+        "Mary P Watson"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10416714"
+      "official_record_url": "https://reporter.nih.gov/project-details/10617925"
+    },
+    {
+      "appl_id": 10643364,
+      "fiscal_year": 2022,
+      "project_num": "3R01GM135433-03S1",
+      "core_project_num": "R01GM135433",
+      "project_title": "Supplement to Elucidating biogenesis and cargo sorting mechanisms for discrete extracellular vesicle subpopulations in C. elegans",
+      "activity_code": "R01",
+      "award_amount": 57737,
+      "award_notice_date": "2022-09-13T00:00:00",
+      "project_start_date": "2020-08-01T00:00:00",
+      "project_end_date": "2025-07-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Jessica E Tanis"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10643364"
     },
     {
       "appl_id": 10402325,
@@ -12627,26 +12360,182 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10402325"
     },
     {
-      "appl_id": 10581950,
+      "appl_id": 10584877,
       "fiscal_year": 2022,
-      "project_num": "3P20GM104316-08S1",
-      "core_project_num": "P20GM104316",
-      "project_title": "Discovery of Chemical Probes and Therapeutic Leads: Cryoprobe Upgrade of a 400 MHz NMR",
-      "activity_code": "P20",
-      "award_amount": 240446,
-      "award_notice_date": "2022-06-29T00:00:00",
-      "project_start_date": "2014-09-01T00:00:00",
-      "project_end_date": "2025-06-30T00:00:00",
+      "project_num": "3U54GM104941-10S1",
+      "core_project_num": "U54GM104941",
+      "project_title": "Acquisition of a MICRON IV ocular imaging system",
+      "activity_code": "U54",
+      "award_amount": 187350,
+      "award_notice_date": "2022-07-22T00:00:00",
+      "project_start_date": "2013-09-25T00:00:00",
+      "project_end_date": "2024-06-30T00:00:00",
       "admin_ic_code": "GM",
       "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "JOSEPH M FOX"
+        "Gregory E Hicks"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10581950"
+      "official_record_url": "https://reporter.nih.gov/project-details/10584877"
+    },
+    {
+      "appl_id": 10601240,
+      "fiscal_year": 2022,
+      "project_num": "1R01HD111071-01",
+      "core_project_num": "R01HD111071",
+      "project_title": "SCH: Model-informed patient-specific rehabilitation using robotics and neuromuscular modeling",
+      "activity_code": "R01",
+      "award_amount": 299971,
+      "award_notice_date": "2022-09-21T00:00:00",
+      "project_start_date": "2022-09-21T00:00:00",
+      "project_end_date": "2026-06-30T00:00:00",
+      "admin_ic_code": "HD",
+      "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+      "principal_investigators": [
+        "Panagiotis  Artemiadis"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10601240"
+    },
+    {
+      "appl_id": 10318933,
+      "fiscal_year": 2022,
+      "project_num": "5R01MH116228-04",
+      "core_project_num": "R01MH116228",
+      "project_title": "Adaptive and Maladaptive Neural Network Responses to Inhibitory Challenges",
+      "activity_code": "R01",
+      "award_amount": 580630,
+      "award_notice_date": "2021-12-17T00:00:00",
+      "project_start_date": "2019-04-01T00:00:00",
+      "project_end_date": "2023-12-31T00:00:00",
+      "admin_ic_code": "MH",
+      "admin_ic_name": "National Institute of Mental Health",
+      "principal_investigators": [
+        "Naomi  Samimi-Sadeh"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10318933"
+    },
+    {
+      "appl_id": 10469495,
+      "fiscal_year": 2022,
+      "project_num": "5R21AI157889-02",
+      "core_project_num": "R21AI157889",
+      "project_title": "Cell-Mediated Antiretroviral Drug Transport in the Lymph Node",
+      "activity_code": "R21",
+      "award_amount": 202196,
+      "award_notice_date": "2022-07-29T00:00:00",
+      "project_start_date": "2021-08-13T00:00:00",
+      "project_end_date": "2024-07-31T00:00:00",
+      "admin_ic_code": "AI",
+      "admin_ic_name": "National Institute of Allergy and Infectious Diseases",
+      "principal_investigators": [
+        "Jason Paul Gleghorn",
+        "Elias  Rosen",
+        "RYAN M ZURAKOWSKI"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10469495"
+    },
+    {
+      "appl_id": 10514527,
+      "fiscal_year": 2022,
+      "project_num": "5F31HL160153-02",
+      "core_project_num": "F31HL160153",
+      "project_title": "Dynamic, Cellularized, 3D Printed Model Development for Aerosol Targeting in Pediatric JORRP Patients",
+      "activity_code": "F31",
+      "award_amount": 14312,
+      "award_notice_date": "2022-08-19T00:00:00",
+      "project_start_date": "2021-09-01T00:00:00",
+      "project_end_date": "2023-03-01T00:00:00",
+      "admin_ic_code": "HL",
+      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "principal_investigators": [
+        "Emily  Kolewe"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10514527"
+    },
+    {
+      "appl_id": 10443884,
+      "fiscal_year": 2022,
+      "project_num": "5R35GM142866-02",
+      "core_project_num": "R35GM142866",
+      "project_title": "Multiscale considerations for immune engineering at mucosal interfaces",
+      "activity_code": "R35",
+      "award_amount": 400000,
+      "award_notice_date": "2022-05-16T00:00:00",
+      "project_start_date": "2021-07-02T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Catherine A Fromen"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10443884"
+    },
+    {
+      "appl_id": 10451677,
+      "fiscal_year": 2022,
+      "project_num": "5R35GM142524-02",
+      "core_project_num": "R35GM142524",
+      "project_title": "New roles for Topoisomerase II in meiosis",
+      "activity_code": "R35",
+      "award_amount": 400000,
+      "award_notice_date": "2022-05-24T00:00:00",
+      "project_start_date": "2021-07-15T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Aimee  Jaramillo-Lambert"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10451677"
+    },
+    {
+      "appl_id": 10458113,
+      "fiscal_year": 2022,
+      "project_num": "5R01MH123470-02",
+      "core_project_num": "R01MH123470",
+      "project_title": "Testing a Dual Mechanism Model of Adolescent Anxiety Development & Related Sex Differences",
+      "activity_code": "R01",
+      "award_amount": 733337,
+      "award_notice_date": "2022-05-11T00:00:00",
+      "project_start_date": "2021-08-01T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "MH",
+      "admin_ic_name": "National Institute of Mental Health",
+      "principal_investigators": [
+        "Jeffrey Martin Spielberg"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10458113"
     },
     {
       "appl_id": 10416082,
@@ -12759,70 +12648,181 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10478019"
     },
     {
-      "appl_id": 10443884,
+      "appl_id": 10356066,
       "fiscal_year": 2022,
-      "project_num": "5R35GM142866-02",
-      "core_project_num": "R35GM142866",
-      "project_title": "Multiscale considerations for immune engineering at mucosal interfaces",
-      "activity_code": "R35",
-      "award_amount": 400000,
-      "award_notice_date": "2022-05-16T00:00:00",
-      "project_start_date": "2021-07-02T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
+      "project_num": "5R01EY029770-04",
+      "core_project_num": "R01EY029770",
+      "project_title": "RNA-binding proteins in early eye development.",
+      "activity_code": "R01",
+      "award_amount": 336678,
+      "award_notice_date": "2022-03-09T00:00:00",
+      "project_start_date": "2019-03-01T00:00:00",
+      "project_end_date": "2024-02-29T00:00:00",
+      "admin_ic_code": "EY",
+      "admin_ic_name": "National Eye Institute",
       "principal_investigators": [
-        "Catherine A Fromen"
+        "Salil  Lachke"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10443884"
+      "official_record_url": "https://reporter.nih.gov/project-details/10356066"
     },
     {
-      "appl_id": 10621056,
+      "appl_id": 10364118,
       "fiscal_year": 2022,
-      "project_num": "3R03HD104051-02S1",
-      "core_project_num": "R03HD104051",
-      "project_title": "The impact of socioeconomic status on the neurobiological underpinnings of reading.",
-      "activity_code": "R03",
-      "award_amount": 65593,
-      "award_notice_date": "2022-08-23T00:00:00",
-      "project_start_date": "2021-08-20T00:00:00",
-      "project_end_date": "2024-07-31T00:00:00",
+      "project_num": "1R01AG071585-01A1",
+      "core_project_num": "R01AG071585",
+      "project_title": "Pain and Motor Learning in Older Adults",
+      "activity_code": "R01",
+      "award_amount": 504788,
+      "award_notice_date": "2022-01-17T00:00:00",
+      "project_start_date": "2022-02-01T00:00:00",
+      "project_end_date": "2027-01-31T00:00:00",
+      "admin_ic_code": "AG",
+      "admin_ic_name": "National Institute on Aging",
+      "principal_investigators": [
+        "Susanne M Morton"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10364118"
+    },
+    {
+      "appl_id": 10387589,
+      "fiscal_year": 2022,
+      "project_num": "1R21AG074544-01A1",
+      "core_project_num": "R21AG074544",
+      "project_title": "Central Sodium Sensing in Older Humans: Implications for Blood Pressure Regulation",
+      "activity_code": "R21",
+      "award_amount": 240000,
+      "award_notice_date": "2022-01-14T00:00:00",
+      "project_start_date": "2022-02-01T00:00:00",
+      "project_end_date": "2024-01-31T00:00:00",
+      "admin_ic_code": "AG",
+      "admin_ic_name": "National Institute on Aging",
+      "principal_investigators": [
+        "William B Farquhar"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10387589"
+    },
+    {
+      "appl_id": 10400243,
+      "fiscal_year": 2022,
+      "project_num": "5R01DE029655-02",
+      "core_project_num": "R01DE029655",
+      "project_title": "Bottom-Up Assembly of Functional Salivary Gland Tissues",
+      "activity_code": "R01",
+      "award_amount": 453487,
+      "award_notice_date": "2022-01-04T00:00:00",
+      "project_start_date": "2021-05-01T00:00:00",
+      "project_end_date": "2026-01-31T00:00:00",
+      "admin_ic_code": "DE",
+      "admin_ic_name": "National Institute of Dental and Craniofacial Research",
+      "principal_investigators": [
+        "Xinqiao  Jia"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10400243"
+    },
+    {
+      "appl_id": 10398826,
+      "fiscal_year": 2022,
+      "project_num": "5F31HD105398-02",
+      "core_project_num": "F31HD105398",
+      "project_title": "The impact of the physical microenvironment on trophoblast function",
+      "activity_code": "F31",
+      "award_amount": 46752,
+      "award_notice_date": "2022-04-18T00:00:00",
+      "project_start_date": "2021-04-01T00:00:00",
+      "project_end_date": "2024-03-31T00:00:00",
       "admin_ic_code": "HD",
       "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
       "principal_investigators": [
-        "Stephanie N Del Tufo"
+        "Katherine  Nelson"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10621056"
+      "official_record_url": "https://reporter.nih.gov/project-details/10398826"
     },
     {
-      "appl_id": 10514527,
+      "appl_id": 10416714,
       "fiscal_year": 2022,
-      "project_num": "5F31HL160153-02",
-      "core_project_num": "F31HL160153",
-      "project_title": "Dynamic, Cellularized, 3D Printed Model Development for Aerosol Targeting in Pediatric JORRP Patients",
-      "activity_code": "F31",
-      "award_amount": 14312,
-      "award_notice_date": "2022-08-19T00:00:00",
-      "project_start_date": "2021-09-01T00:00:00",
-      "project_end_date": "2023-03-01T00:00:00",
-      "admin_ic_code": "HL",
-      "admin_ic_name": "National Heart Lung and Blood Institute",
+      "project_num": "1R01GM145617-01",
+      "core_project_num": "R01GM145617",
+      "project_title": "Novel Reactions of Electrophilic Nitrogen for Preparing Bioactive Molecules",
+      "activity_code": "R01",
+      "award_amount": 362608,
+      "award_notice_date": "2022-06-21T00:00:00",
+      "project_start_date": "2022-07-01T00:00:00",
+      "project_end_date": "2026-03-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Emily  Kolewe"
+        "Donald Allen Watson"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10514527"
+      "official_record_url": "https://reporter.nih.gov/project-details/10416714"
+    },
+    {
+      "appl_id": 10364174,
+      "fiscal_year": 2022,
+      "project_num": "1R01MH126196-01A1",
+      "core_project_num": "R01MH126196",
+      "project_title": "Pathways to mental health care: Examining the longitudinal impact of stigma mechanisms on treatment engagement in emerging adults",
+      "activity_code": "R01",
+      "award_amount": 653235,
+      "award_notice_date": "2022-01-12T00:00:00",
+      "project_start_date": "2022-01-12T00:00:00",
+      "project_end_date": "2026-12-31T00:00:00",
+      "admin_ic_code": "MH",
+      "admin_ic_name": "National Institute of Mental Health",
+      "principal_investigators": [
+        "Valerie Ann Earnshaw",
+        "Annie Beth Fox"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10364174"
+    },
+    {
+      "appl_id": 10581950,
+      "fiscal_year": 2022,
+      "project_num": "3P20GM104316-08S1",
+      "core_project_num": "P20GM104316",
+      "project_title": "Discovery of Chemical Probes and Therapeutic Leads: Cryoprobe Upgrade of a 400 MHz NMR",
+      "activity_code": "P20",
+      "award_amount": 240446,
+      "award_notice_date": "2022-06-29T00:00:00",
+      "project_start_date": "2014-09-01T00:00:00",
+      "project_end_date": "2025-06-30T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "JOSEPH M FOX"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10581950"
     },
     {
       "appl_id": 10708395,
@@ -12869,28 +12869,6 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10432378"
     },
     {
-      "appl_id": 10527306,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM139760-02",
-      "core_project_num": "P20GM139760",
-      "project_title": "Cytoskeletal Mechanisms that Regulate Chondrocyte Architecture and Phenotype",
-      "activity_code": "P20",
-      "award_amount": 246868,
-      "award_notice_date": "2022-02-09T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2026-01-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Justin  Parreno"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10527306"
-    },
-    {
       "appl_id": 10437683,
       "fiscal_year": 2022,
       "project_num": "5U54GM104941-10",
@@ -12933,6 +12911,50 @@
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
       "official_record_url": "https://reporter.nih.gov/project-details/10475101"
+    },
+    {
+      "appl_id": 10352302,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM139760-02",
+      "core_project_num": "P20GM139760",
+      "project_title": "Delaware Center for Musculoskeletal Research – Administrative Core",
+      "activity_code": "P20",
+      "award_amount": 1023130,
+      "award_notice_date": "2022-02-09T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2026-01-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "DAWN M ELLIOTT"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10352302"
+    },
+    {
+      "appl_id": 10527306,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM139760-02",
+      "core_project_num": "P20GM139760",
+      "project_title": "Cytoskeletal Mechanisms that Regulate Chondrocyte Architecture and Phenotype",
+      "activity_code": "P20",
+      "award_amount": 246868,
+      "award_notice_date": "2022-02-09T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2026-01-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Justin  Parreno"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10527306"
     },
     {
       "appl_id": 10400122,
@@ -12979,50 +13001,6 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10437680"
     },
     {
-      "appl_id": 10352302,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM139760-02",
-      "core_project_num": "P20GM139760",
-      "project_title": "Delaware Center for Musculoskeletal Research – Administrative Core",
-      "activity_code": "P20",
-      "award_amount": 1023130,
-      "award_notice_date": "2022-02-09T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2026-01-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "DAWN M ELLIOTT"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10352302"
-    },
-    {
-      "appl_id": 10395572,
-      "fiscal_year": 2022,
-      "project_num": "5R01DE029802-03",
-      "core_project_num": "R01DE029802",
-      "project_title": "Mechanisms of Neural Crest Induction and Craniofacial Disorders",
-      "activity_code": "R01",
-      "award_amount": 368488,
-      "award_notice_date": "2022-04-26T00:00:00",
-      "project_start_date": "2020-07-17T00:00:00",
-      "project_end_date": "2025-04-30T00:00:00",
-      "admin_ic_code": "DE",
-      "admin_ic_name": "National Institute of Dental and Craniofacial Research",
-      "principal_investigators": [
-        "Shuo  Wei"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10395572"
-    },
-    {
       "appl_id": 10417124,
       "fiscal_year": 2022,
       "project_num": "5T32GM133395-04",
@@ -13046,26 +13024,26 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10417124"
     },
     {
-      "appl_id": 10438887,
+      "appl_id": 10452516,
       "fiscal_year": 2022,
-      "project_num": "5R35GM143000-02",
-      "core_project_num": "R35GM143000",
-      "project_title": "Selectivity and regulation of mRNA demethylation by iron-dependent dioxygenases",
-      "activity_code": "R35",
-      "award_amount": 391554,
-      "award_notice_date": "2022-05-11T00:00:00",
-      "project_start_date": "2021-08-01T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
+      "project_num": "5R01HL145055-04",
+      "core_project_num": "R01HL145055",
+      "project_title": "Mechanisms Underlying the Protective Vascular Effects of Dietary Potassium in Humans",
+      "activity_code": "R01",
+      "award_amount": 559644,
+      "award_notice_date": "2022-07-12T00:00:00",
+      "project_start_date": "2019-09-01T00:00:00",
+      "project_end_date": "2024-07-31T00:00:00",
+      "admin_ic_code": "HL",
+      "admin_ic_name": "National Heart Lung and Blood Institute",
       "principal_investigators": [
-        "Jeffrey Scott Mugridge"
+        "Shannon L. Lennon"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10438887"
+      "official_record_url": "https://reporter.nih.gov/project-details/10452516"
     },
     {
       "appl_id": 10459594,
@@ -13093,92 +13071,26 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10459594"
     },
     {
-      "appl_id": 10400034,
+      "appl_id": 10475082,
       "fiscal_year": 2022,
-      "project_num": "5R01AR072034-05",
-      "core_project_num": "R01AR072034",
-      "project_title": "Recovery of symptoms, function, tendon structure and mechanical properties in patients with Achilles Tendinopathy: A comparison between men and women",
-      "activity_code": "R01",
-      "award_amount": 332598,
-      "award_notice_date": "2022-05-10T00:00:00",
-      "project_start_date": "2018-04-01T00:00:00",
-      "project_end_date": "2024-03-31T00:00:00",
-      "admin_ic_code": "AR",
-      "admin_ic_name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "project_num": "5P20GM113125-07",
+      "core_project_num": "P20GM113125",
+      "project_title": "Center of Biomedical Research Excellence in Cardiovascular Health",
+      "activity_code": "P20",
+      "award_amount": 2347347,
+      "award_notice_date": "2022-06-07T00:00:00",
+      "project_start_date": "2016-05-15T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "Karin M E Gravare Silbernagel"
+        "DAVID G EDWARDS"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10400034"
-    },
-    {
-      "appl_id": 10470884,
-      "fiscal_year": 2022,
-      "project_num": "5R03HD104051-02",
-      "core_project_num": "R03HD104051",
-      "project_title": "NEUROBIOLOGY OF READING COMPENSATION",
-      "activity_code": "R03",
-      "award_amount": 86854,
-      "award_notice_date": "2022-08-02T00:00:00",
-      "project_start_date": "2021-08-20T00:00:00",
-      "project_end_date": "2024-07-31T00:00:00",
-      "admin_ic_code": "HD",
-      "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
-      "principal_investigators": [
-        "Stephanie N Del Tufo"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10470884"
-    },
-    {
-      "appl_id": 10480890,
-      "fiscal_year": 2022,
-      "project_num": "5R21NS122033-02",
-      "core_project_num": "R21NS122033",
-      "project_title": "Integrative Data Analysis to Identify Persistent Post-Concussion Deficits and Subsequent Musculoskeletal Injury Risk",
-      "activity_code": "R21",
-      "award_amount": 229746,
-      "award_notice_date": "2022-08-04T00:00:00",
-      "project_start_date": "2021-09-03T00:00:00",
-      "project_end_date": "2024-07-31T00:00:00",
-      "admin_ic_code": "NS",
-      "admin_ic_name": "National Institute of Neurological Disorders and Stroke",
-      "principal_investigators": [
-        "Thomas A. Buckley"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10480890"
-    },
-    {
-      "appl_id": 10394924,
-      "fiscal_year": 2022,
-      "project_num": "5R01DC014461-07",
-      "core_project_num": "R01DC014461",
-      "project_title": "A Hydrogel-Based Cellular Model of the Human Vocal Fold",
-      "activity_code": "R01",
-      "award_amount": 496738,
-      "award_notice_date": "2022-04-06T00:00:00",
-      "project_start_date": "2015-12-01T00:00:00",
-      "project_end_date": "2026-03-31T00:00:00",
-      "admin_ic_code": "DC",
-      "admin_ic_name": "National Institute on Deafness and Other Communication Disorders",
-      "principal_investigators": [
-        "Xinqiao  Jia"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10394924"
+      "official_record_url": "https://reporter.nih.gov/project-details/10475082"
     },
     {
       "appl_id": 10343710,
@@ -13225,48 +13137,48 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10386518"
     },
     {
-      "appl_id": 10468701,
+      "appl_id": 10395572,
       "fiscal_year": 2022,
-      "project_num": "5P20GM104316-08",
-      "core_project_num": "P20GM104316",
-      "project_title": "Discovery of Chemical Probes and Therapeutic Leads, Phase II",
-      "activity_code": "P20",
-      "award_amount": 2359432,
-      "award_notice_date": "2022-06-28T00:00:00",
-      "project_start_date": "2014-09-01T00:00:00",
-      "project_end_date": "2025-06-30T00:00:00",
+      "project_num": "5R01DE029802-03",
+      "core_project_num": "R01DE029802",
+      "project_title": "Mechanisms of Neural Crest Induction and Craniofacial Disorders",
+      "activity_code": "R01",
+      "award_amount": 368488,
+      "award_notice_date": "2022-04-26T00:00:00",
+      "project_start_date": "2020-07-17T00:00:00",
+      "project_end_date": "2025-04-30T00:00:00",
+      "admin_ic_code": "DE",
+      "admin_ic_name": "National Institute of Dental and Craniofacial Research",
+      "principal_investigators": [
+        "Shuo  Wei"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10395572"
+    },
+    {
+      "appl_id": 10438887,
+      "fiscal_year": 2022,
+      "project_num": "5R35GM143000-02",
+      "core_project_num": "R35GM143000",
+      "project_title": "Selectivity and regulation of mRNA demethylation by iron-dependent dioxygenases",
+      "activity_code": "R35",
+      "award_amount": 391554,
+      "award_notice_date": "2022-05-11T00:00:00",
+      "project_start_date": "2021-08-01T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
       "admin_ic_code": "GM",
       "admin_ic_name": "National Institute of General Medical Sciences",
       "principal_investigators": [
-        "JOSEPH M FOX"
+        "Jeffrey Scott Mugridge"
       ],
       "org_name": "UNIVERSITY OF DELAWARE",
       "org_ipf_code": "2076701",
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10468701"
-    },
-    {
-      "appl_id": 10452516,
-      "fiscal_year": 2022,
-      "project_num": "5R01HL145055-04",
-      "core_project_num": "R01HL145055",
-      "project_title": "Mechanisms Underlying the Protective Vascular Effects of Dietary Potassium in Humans",
-      "activity_code": "R01",
-      "award_amount": 559644,
-      "award_notice_date": "2022-07-12T00:00:00",
-      "project_start_date": "2019-09-01T00:00:00",
-      "project_end_date": "2024-07-31T00:00:00",
-      "admin_ic_code": "HL",
-      "admin_ic_name": "National Heart Lung and Blood Institute",
-      "principal_investigators": [
-        "Shannon L. Lennon"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10452516"
+      "official_record_url": "https://reporter.nih.gov/project-details/10438887"
     },
     {
       "appl_id": 10495900,
@@ -13291,28 +13203,6 @@
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
       "official_record_url": "https://reporter.nih.gov/project-details/10495900"
-    },
-    {
-      "appl_id": 10475082,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM113125-07",
-      "core_project_num": "P20GM113125",
-      "project_title": "Center of Biomedical Research Excellence in Cardiovascular Health",
-      "activity_code": "P20",
-      "award_amount": 2347347,
-      "award_notice_date": "2022-06-07T00:00:00",
-      "project_start_date": "2016-05-15T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "DAVID G EDWARDS"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10475082"
     },
     {
       "appl_id": 10378741,
@@ -13359,6 +13249,94 @@
       "official_record_url": "https://reporter.nih.gov/project-details/10421414"
     },
     {
+      "appl_id": 10400034,
+      "fiscal_year": 2022,
+      "project_num": "5R01AR072034-05",
+      "core_project_num": "R01AR072034",
+      "project_title": "Recovery of symptoms, function, tendon structure and mechanical properties in patients with Achilles Tendinopathy: A comparison between men and women",
+      "activity_code": "R01",
+      "award_amount": 332598,
+      "award_notice_date": "2022-05-10T00:00:00",
+      "project_start_date": "2018-04-01T00:00:00",
+      "project_end_date": "2024-03-31T00:00:00",
+      "admin_ic_code": "AR",
+      "admin_ic_name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "principal_investigators": [
+        "Karin M E Gravare Silbernagel"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10400034"
+    },
+    {
+      "appl_id": 10394924,
+      "fiscal_year": 2022,
+      "project_num": "5R01DC014461-07",
+      "core_project_num": "R01DC014461",
+      "project_title": "A Hydrogel-Based Cellular Model of the Human Vocal Fold",
+      "activity_code": "R01",
+      "award_amount": 496738,
+      "award_notice_date": "2022-04-06T00:00:00",
+      "project_start_date": "2015-12-01T00:00:00",
+      "project_end_date": "2026-03-31T00:00:00",
+      "admin_ic_code": "DC",
+      "admin_ic_name": "National Institute on Deafness and Other Communication Disorders",
+      "principal_investigators": [
+        "Xinqiao  Jia"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10394924"
+    },
+    {
+      "appl_id": 10470884,
+      "fiscal_year": 2022,
+      "project_num": "5R03HD104051-02",
+      "core_project_num": "R03HD104051",
+      "project_title": "NEUROBIOLOGY OF READING COMPENSATION",
+      "activity_code": "R03",
+      "award_amount": 86854,
+      "award_notice_date": "2022-08-02T00:00:00",
+      "project_start_date": "2021-08-20T00:00:00",
+      "project_end_date": "2024-07-31T00:00:00",
+      "admin_ic_code": "HD",
+      "admin_ic_name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+      "principal_investigators": [
+        "Stephanie N Del Tufo"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10470884"
+    },
+    {
+      "appl_id": 10480890,
+      "fiscal_year": 2022,
+      "project_num": "5R21NS122033-02",
+      "core_project_num": "R21NS122033",
+      "project_title": "Integrative Data Analysis to Identify Persistent Post-Concussion Deficits and Subsequent Musculoskeletal Injury Risk",
+      "activity_code": "R21",
+      "award_amount": 229746,
+      "award_notice_date": "2022-08-04T00:00:00",
+      "project_start_date": "2021-09-03T00:00:00",
+      "project_end_date": "2024-07-31T00:00:00",
+      "admin_ic_code": "NS",
+      "admin_ic_name": "National Institute of Neurological Disorders and Stroke",
+      "principal_investigators": [
+        "Thomas A. Buckley"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10480890"
+    },
+    {
       "appl_id": 10687673,
       "fiscal_year": 2022,
       "project_num": "3R01AR074472-02S1",
@@ -13379,6 +13357,160 @@
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
       "official_record_url": "https://reporter.nih.gov/project-details/10687673"
+    },
+    {
+      "appl_id": 10468701,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM104316-08",
+      "core_project_num": "P20GM104316",
+      "project_title": "Discovery of Chemical Probes and Therapeutic Leads, Phase II",
+      "activity_code": "P20",
+      "award_amount": 2359432,
+      "award_notice_date": "2022-06-28T00:00:00",
+      "project_start_date": "2014-09-01T00:00:00",
+      "project_end_date": "2025-06-30T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "JOSEPH M FOX"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10468701"
+    },
+    {
+      "appl_id": 10400123,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM103446-22",
+      "core_project_num": "P20GM103446",
+      "project_title": "Delaware INBRE",
+      "activity_code": "P20",
+      "award_amount": 821530,
+      "award_notice_date": "2022-04-27T00:00:00",
+      "project_start_date": "2001-09-30T00:00:00",
+      "project_end_date": "2024-04-30T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "MELINDA K DUNCAN"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10400123"
+    },
+    {
+      "appl_id": 10468705,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM104316-08",
+      "core_project_num": "P20GM104316",
+      "project_title": "Dissection of Mycobacterium tuberculosis Clp protease assembly, activity and regulation",
+      "activity_code": "P20",
+      "award_amount": 265130,
+      "award_notice_date": "2022-06-28T00:00:00",
+      "project_start_date": "2014-09-01T00:00:00",
+      "project_end_date": "2025-06-30T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Karl Robert Schmitz"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10468705"
+    },
+    {
+      "appl_id": 10352307,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM139760-02",
+      "core_project_num": "P20GM139760",
+      "project_title": "Identification of mechanisms that regulate postsynaptic receptor abundance at the neuromuscular junction",
+      "activity_code": "P20",
+      "award_amount": 33753,
+      "award_notice_date": "2022-02-09T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2021-02-15T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Jessica E Tanis"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10352307"
+    },
+    {
+      "appl_id": 10352305,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM139760-02",
+      "core_project_num": "P20GM139760",
+      "project_title": "Understanding synovial macrophage inflamm-aging within osteoarthritis",
+      "activity_code": "P20",
+      "award_amount": 33754,
+      "award_notice_date": "2022-02-09T00:00:00",
+      "project_start_date": "2021-02-15T00:00:00",
+      "project_end_date": "2021-02-15T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Catherine A Fromen"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10352305"
+    },
+    {
+      "appl_id": 10437681,
+      "fiscal_year": 2022,
+      "project_num": "5U54GM104941-10",
+      "core_project_num": "U54GM104941",
+      "project_title": "Delaware Clinical and Translational Research ACCEL Program-BERD Core",
+      "activity_code": "U54",
+      "award_amount": 848958,
+      "award_notice_date": "2022-07-19T00:00:00",
+      "project_start_date": "2013-09-25T00:00:00",
+      "project_end_date": "2023-07-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Claudine  Jurkovitz"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10437681"
+    },
+    {
+      "appl_id": 10475090,
+      "fiscal_year": 2022,
+      "project_num": "5P20GM113125-07",
+      "core_project_num": "P20GM113125",
+      "project_title": "The effects of added sugar intake on brain blood flow and hippocampal function in midlife adults",
+      "activity_code": "P20",
+      "award_amount": 341474,
+      "award_notice_date": "2022-06-07T00:00:00",
+      "project_start_date": "2016-05-15T00:00:00",
+      "project_end_date": "2026-05-31T00:00:00",
+      "admin_ic_code": "GM",
+      "admin_ic_name": "National Institute of General Medical Sciences",
+      "principal_investigators": [
+        "Christopher  Martens"
+      ],
+      "org_name": "UNIVERSITY OF DELAWARE",
+      "org_ipf_code": "2076701",
+      "primary_uei": "T72NHKM259N3",
+      "primary_duns": "059007500",
+      "official_record_url": "https://reporter.nih.gov/project-details/10475090"
     },
     {
       "appl_id": 10400120,
@@ -13511,138 +13643,6 @@
       "primary_uei": "T72NHKM259N3",
       "primary_duns": "059007500",
       "official_record_url": "https://reporter.nih.gov/project-details/10475093"
-    },
-    {
-      "appl_id": 10352305,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM139760-02",
-      "core_project_num": "P20GM139760",
-      "project_title": "Understanding synovial macrophage inflamm-aging within osteoarthritis",
-      "activity_code": "P20",
-      "award_amount": 33754,
-      "award_notice_date": "2022-02-09T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2021-02-15T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Catherine A Fromen"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10352305"
-    },
-    {
-      "appl_id": 10437681,
-      "fiscal_year": 2022,
-      "project_num": "5U54GM104941-10",
-      "core_project_num": "U54GM104941",
-      "project_title": "Delaware Clinical and Translational Research ACCEL Program-BERD Core",
-      "activity_code": "U54",
-      "award_amount": 848958,
-      "award_notice_date": "2022-07-19T00:00:00",
-      "project_start_date": "2013-09-25T00:00:00",
-      "project_end_date": "2023-07-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Claudine  Jurkovitz"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10437681"
-    },
-    {
-      "appl_id": 10475090,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM113125-07",
-      "core_project_num": "P20GM113125",
-      "project_title": "The effects of added sugar intake on brain blood flow and hippocampal function in midlife adults",
-      "activity_code": "P20",
-      "award_amount": 341474,
-      "award_notice_date": "2022-06-07T00:00:00",
-      "project_start_date": "2016-05-15T00:00:00",
-      "project_end_date": "2026-05-31T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Christopher  Martens"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10475090"
-    },
-    {
-      "appl_id": 10468705,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM104316-08",
-      "core_project_num": "P20GM104316",
-      "project_title": "Dissection of Mycobacterium tuberculosis Clp protease assembly, activity and regulation",
-      "activity_code": "P20",
-      "award_amount": 265130,
-      "award_notice_date": "2022-06-28T00:00:00",
-      "project_start_date": "2014-09-01T00:00:00",
-      "project_end_date": "2025-06-30T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Karl Robert Schmitz"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10468705"
-    },
-    {
-      "appl_id": 10400123,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM103446-22",
-      "core_project_num": "P20GM103446",
-      "project_title": "Delaware INBRE",
-      "activity_code": "P20",
-      "award_amount": 821530,
-      "award_notice_date": "2022-04-27T00:00:00",
-      "project_start_date": "2001-09-30T00:00:00",
-      "project_end_date": "2024-04-30T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "MELINDA K DUNCAN"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10400123"
-    },
-    {
-      "appl_id": 10352307,
-      "fiscal_year": 2022,
-      "project_num": "5P20GM139760-02",
-      "core_project_num": "P20GM139760",
-      "project_title": "Identification of mechanisms that regulate postsynaptic receptor abundance at the neuromuscular junction",
-      "activity_code": "P20",
-      "award_amount": 33753,
-      "award_notice_date": "2022-02-09T00:00:00",
-      "project_start_date": "2021-02-15T00:00:00",
-      "project_end_date": "2021-02-15T00:00:00",
-      "admin_ic_code": "GM",
-      "admin_ic_name": "National Institute of General Medical Sciences",
-      "principal_investigators": [
-        "Jessica E Tanis"
-      ],
-      "org_name": "UNIVERSITY OF DELAWARE",
-      "org_ipf_code": "2076701",
-      "primary_uei": "T72NHKM259N3",
-      "primary_duns": "059007500",
-      "official_record_url": "https://reporter.nih.gov/project-details/10352307"
     },
     {
       "appl_id": 10412949,
@@ -14354,7 +14354,7 @@
   ],
   "query_urls": {
     "api": "https://api.reporter.nih.gov/v2/projects/search",
-    "search_results": "https://reporter.nih.gov/search/DB5QsjkOKUW6-oFKgzR1qg/projects",
+    "search_results": "https://reporter.nih.gov/search/KalKPeU9XEOJUdijbr0gIA/projects",
     "documentation": "https://api.reporter.nih.gov/"
   }
 }
